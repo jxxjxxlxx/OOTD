@@ -5,6 +5,7 @@ const requireAuth = require("../middleware/requireAuth");
 const uploader = require("../config/cloudinary.config");
 
 //Get all helpPosts from DB
+
 router.get("/", (req, res, next) =>{
 	helpPost.find()
 		.populate("postingUser", "-password")
@@ -16,8 +17,8 @@ router.get("/", (req, res, next) =>{
 		})
 })
 
-
 //Get one helpPost from DB
+
 router.get("/:id", (req, res, next) =>{
 	helpPost.findbyId(req.params.id)
 		.then((onePost)=>{
@@ -28,8 +29,8 @@ router.get("/:id", (req, res, next) =>{
 		})
 })
 
-
 //Create a helpPost
+
 router.post("/", requireAuth, uploader.single("image"), (req, res, next)=>{
 	req.body.postingUser = req.session.currentUser;
 	
@@ -39,7 +40,7 @@ router.post("/", requireAuth, uploader.single("image"), (req, res, next)=>{
 			.populate("postingUser", "-password")
 			.execPopulate()
 			.then((post)=>{
-				res.status.(201).json(post)
+				res.status(201).json(post)
 			})
 		})
 		.catch((e)=>{
@@ -49,7 +50,8 @@ router.post("/", requireAuth, uploader.single("image"), (req, res, next)=>{
 	})
 
 //Edit a helpPost
-router.path("/:id", requireAuth, uploader.single("image"), (req, res, next)=>{
+
+router.patch("/:id", requireAuth, uploader.single("image"), (req, res, next)=>{
 	helpPost.findByIdAndUpdate(req.params.id, req.body, {new:true})
 		.then((updatePost)=>{
 			res.send(updatePost)
@@ -59,8 +61,6 @@ router.path("/:id", requireAuth, uploader.single("image"), (req, res, next)=>{
 			res.status(500).json(e)
 		})
 })
-
-
 
 //Delete a helpPost
 
