@@ -1,0 +1,77 @@
+const express = require("express")
+const router = express.Router()
+const CoolPost = require("../models/CoolPost")
+const uploader = require("../config/cloudinary.config");
+const requireAuth = require("../middleware/requireAuth")
+
+//Get all coolPosts from DB
+
+router.get("/", (req, res, next)=>{
+    CoolPost.find()
+    .populate("postingUser", "-password")
+    .then((posts)=>{
+        res.status(200).json(posts)
+    })
+    .catch((e)=>{
+        res.status(500).json(e)
+    })
+})
+
+//Get one coolPost from DB
+
+router.get("/:id", (req, res, next)=>{
+    CoolPost.findById(req.params.id)
+    .then((onePost)=>{
+        res.status(200).json(onePost)
+    })
+    .catch((e)=>{
+        res.status(500).json(e)
+    })
+})
+
+//Create a coolPost
+
+router.post("/", requireAuth, uploader.single("image"), (req, res, next)=>{
+    req.body.postingUser = req.session.currentUser;
+
+    CoolPost.create(req.body)
+    .then((posts)=>{
+        posts
+        .populate("postingUser", "-password")
+        .execPopulate()
+        .then((post)=>{
+         res.status(201).json(post)   
+        })
+    })
+    .catch((e)=>{
+        res.status(500).json(e)
+    })
+})
+
+//Edit a coolPost
+
+router.patch("/:id", requireAuth, uploader.single("image"), (req, res, next)=> {
+    CoolPost.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    .then((updatePost)=>{
+        res.send(updatePost)
+        res.status(200).json(updatePost)
+    })
+    .catch((e)=>{
+    res.status(500).json(e)
+})
+})
+
+//Delete a coolPost
+
+router.delete("/:id", requireAuth, (req, res, next)=>{
+    CoolPost.findByIdAndDelete(req.params.id)
+    .then((posts)=>{
+        res.send(posts)
+        res.status(204)        
+    })
+    .catch((e)=>{
+        res.status(500).json(e)
+    })
+})
+
+module.exports = router;

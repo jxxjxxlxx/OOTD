@@ -1,20 +1,67 @@
+require("dotenv").config();
+require("./config/dbConnection");
+require("./config/cloudinary.config");
+
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const cors = require("cors");
 var app = express();
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// middlewares
+const corsOptions = { origin: process.env.FRONTEND_URL, credentials: true };
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(cors(corsOptions));
+app.use(logger("dev")); 
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: false })); 
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use(
+  session({
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }), 
+    secret: process.env.SESSION_SECRET,
+    cookie: {
+      maxAge: 24 * 60 * 60 * 1000,
+    },
+    resave: true,
+    saveUninitialized: true,
+  })
+)
+
+// Routes
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/users", require("./routes/users"));
+app.use("/api/damnilookgood", require("./routes/coolPost"))
+
+
+//404
+app.use((req, res, next) => {
+    const error = new Error("Resource not found.");
+    error.status = 404;
+    next(error);
+  });
+
+//404 handler middleware
+app.use((err, req, res, next) => {
+    if (process.env.NODE_ENV !== "production") {
+      console.error(err);
+    }
+    console.log("An error occured");
+    res.status(err.status || 500);
+    if (!res.headersSent) {
+      if (process.env.NODE_ENV === "production") {
+        res.json(err);
+      } else {
+        res.json(
+          JSON.parse(JSON.stringify(err, Object.getOwnPropertyNames(err)))
+        );
+      }
+    }
+  });
 
 module.exports = app;
