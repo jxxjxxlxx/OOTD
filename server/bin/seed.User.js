@@ -71,7 +71,7 @@ const users = [
 
 
 
-// ];
+];
 
 
 // async function seedUsers() {

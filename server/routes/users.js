@@ -4,11 +4,16 @@ const User = require("../models/User");
 const requireAuth = require("../middleware/requireAuth");
 const upload = require("../config/cloudinary.config");
 
-/* GET users listing. 
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+// GET users listing. 
+
+router.get("/me", requireAuth, (req, res, next) => {
+  User.findById(req.session.currentUser._id)
+    .then((user) => {
+      res.status(200).json(user);
+    })
+    .catch(next);
 });
-*/
+
 
 
 /* update current user info */
