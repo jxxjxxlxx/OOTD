@@ -1,5 +1,5 @@
 import React from 'react';
-import NavMain from "../../components/NavMain/NavMain";
+import NavMain from "../../../components/NavMain/NavMain";
 
 const UserProfile = () => {
 	return (

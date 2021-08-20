@@ -1,16 +1,16 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Landing from './pages/Landing';
-import Home from "./pages/Home";
-import UserProfile from "./pages/UserProfile";
-import DILG from "./pages/DILG";
-import CreateDILG from "./pages/CreateDILG";
-import PlzHelp from "./pages/PlzHelp"
-import CreatePlzHelp from "./pages/CreatePlzHelp";
-import EditDILG from "./pages/EditDILG";
-import EditPlzHelp from "./pages/EditPlzHelp";
-import SignIn from "./pages/SignIn"
-import SignUp from "./pages/SignUp"
+import Landing from './pages/Home&Landing/Landing';
+import Home from "./pages/Home&Landing/Home";
+import UserProfile from "./pages/Auth/UserProfile/UserProfile";
+import DILG from "./pages/MainPages/DILG";
+import CreateDILG from "./pages/Create/CreateDILG";
+import PlzHelp from "./pages/MainPages/PlzHelp"
+import CreatePlzHelp from "./pages/Create/CreatePlzHelp";
+import EditDILG from "./pages/Edit/EditDILG";
+import EditPlzHelp from "./pages/Edit/EditPlzHelp";
+import SignIn from "./pages/Auth/SignIn/SignIn";
+import SignUp from "./pages/Auth/SignUp/SignUp";
 import './App.css';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       <Switch>
 
         <Route exact path="/" component={Landing}/>
-       {/*} <Route exact path="/home" component={Home}/> */}
+       <Route exact path="/home" component={Home}/>
 
         <Route exact path="/ilookgood" component={DILG}/>
         <Route exact path="/plzhelp" component={PlzHelp}/>
