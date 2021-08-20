@@ -2,14 +2,14 @@ require("dotenv").config();
 require("./config/dbConnection");
 require("./config/cloudinary.config");
 
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const cors = require("cors");
-var app = express();
+const app = express();
 
 // middlewares
 const corsOptions = { origin: process.env.FRONTEND_URL, credentials: true };
