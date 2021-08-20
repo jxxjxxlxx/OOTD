@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CreateDILG = () => {
+const Footer = () => {
 	return (
 		<div>
 			
@@ -8,4 +8,4 @@ const CreateDILG = () => {
 	)
 }
 
-export default CreateDILG
+export default Footer
