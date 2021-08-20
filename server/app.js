@@ -35,7 +35,7 @@ app.use(
 
 // Routes
 app.use("/api/auth", require("./routes/auth"));
-app.use("/api/users", require("./routes/users"));
+app.use("/api/users", require("./routes/users")); //ok
 app.use("/api/ilookgood", require("./routes/coolPost"))
 app.use("/api/plzhelp", require("./routes/helpPost"))
 app.use("/api/detail", require("./routes/comment"))
