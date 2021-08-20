@@ -1,21 +1,112 @@
 const express = require("express")
 const router = express.Router()
-const comment = require("../models/comment")
+const Comment = require("../models/Comment")
 const requireAuth = require("../middleware/requireAuth")
 
 
-// post a comment 
-router.post("/", requireAuth, (req, res, next)=>{
-    
-    req.body.userId = req.session.currentUser;
-
-    CoolPost.create(req.body)
-    .then((posts)=>{
-        res.status(201).json(posts)
+//get all comments COOLPOST
+router.get("/ilookgood/:id", (req, res, next)=>{
+    Comment.find()
+    .populate()
+    .then((comments)=>{
+        res.status(200).json(comments)
     })
     .catch((e)=>{
         res.status(500).json(e)
     })
 })
+
+// post a comment COOLPOST
+router.post("/ilookgood/:id", requireAuth, (req, res, next)=>{
+    
+    const comment = new Comment(req.body)
+
+    req.body.userId = req.session.currentUser;
+
+    Comment.create(req.body)
+    .then((comment)=>{
+        res.status(201).json(comment)
+    })
+    .catch((e)=>{
+        res.status(500).json(e)
+    })
+})
+
+//edit comment COOLPOST
+router.patch("/ilookgood/:id", requireAuth, (req,res,next)=>{
+    Comment.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    .then((updateComment)=>{
+        res.status(200).json(updateComment)
+    })
+    .catch((e)=>{
+        res.status(500).json(e)
+    })
+})
+
+//delete comment COOLPOST
+router.delete("/ilookgood/:id", requireAuth, (req, res, next)=>{
+    Comment.findByIdAndDelete(req.params.id)
+    .then((deleteComment)=>{
+        res.send(deleteComment)
+        res.status(204)
+    })
+    .catch((e)=>{
+        res.status(500).json(e)
+    })
+})
+
+
+//get all comments HELPPOST
+router.get("/plzhelp/:id", (req, res, next)=>{
+    Comment.find()
+    .populate()
+    .then((comments)=>{
+        res.status(200).json(comments)
+    })
+    .catch((e)=>{
+        res.status(500).json(e)
+    })
+})
+
+// post a comment HELPPOST
+router.post("/plzhelp/:id", requireAuth, (req, res, next)=>{
+    
+    const comment = new Comment(req.body)
+
+    req.body.userId = req.session.currentUser;
+
+    Comment.create(req.body)
+    .then((comment)=>{
+        res.status(201).json(comment)
+    })
+    .catch((e)=>{
+        res.status(500).json(e)
+    })
+})
+
+//edit comment HELPPOST
+router.patch("/plzhelp/:id", requireAuth, (req,res,next)=>{
+    Comment.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    .then((updateComment)=>{
+        res.status(200).json(updateComment)
+    })
+    .catch((e)=>{
+        res.status(500).json(e)
+    })
+})
+//delete comment HELPPOST
+router.delete("/plzhelp/:id", requireAuth, (req, res, next)=>{
+    Comment.findByIdAndDelete(req.params.id)
+    .then((deleteComment)=>{
+        res.send(deleteComment)
+        res.status(204)
+    })
+    .catch((e)=>{
+        res.status(500).json(e)
+    })
+})
+
+
+
 
 module.exports = router;

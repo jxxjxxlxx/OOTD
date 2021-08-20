@@ -37,7 +37,8 @@ app.use(
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/users", require("./routes/users"));
 app.use("/api/ilookgood", require("./routes/coolPost"))
-app.use("api/plzhelp", require("./routes/helpPost"))
+app.use("/api/plzhelp", require("./routes/helpPost"))
+app.use("/api/detail", require("./routes/comment"))
 
 //404
 app.use((req, res, next) => {
