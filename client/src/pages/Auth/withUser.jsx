@@ -1,5 +1,5 @@
 import React from "react";
-import UserContext from "./UserContext";
+import { UserContext } from "./UserContext";
 
 export const withUser = (ComponentToExposeContextTo) => (props) => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import NavMain from "../../../components/NavMain/NavMain";
 
-const UserProfile = () => {
+const UserProfile = (props) => {
 	return (
 		<div>
 			<NavMain></NavMain>
@@ -10,4 +10,4 @@ const UserProfile = () => {
 	)
 }
 
-export default UserProfile
+export default UserProfile;

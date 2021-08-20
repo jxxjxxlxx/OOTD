@@ -3,11 +3,16 @@ import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import { withUser } from "../pages/Auth/withUser";
 import apiHandler from "../api/apiHandler";
+import UploadWidget from "../pages/Auth/UploadWidget";
+
 
 class FormSignup extends Component {
   state = {
     email: "",
     password: "",
+    userName: "",
+    profileImg: "",
+
   };
 
   handleChange = (event) => {
@@ -23,11 +28,15 @@ class FormSignup extends Component {
     apiHandler
       .signup(this.state)
       .then(() => {
-        this.props.history.push("/signin");
+        this.props.history.push("/signup");
       })
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  handleFileSelect = () => {
+    this.setState({})
   };
 
   render() {
@@ -38,6 +47,14 @@ class FormSignup extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Signup</h2>
+         <label htmlFor="userName">User Name </label>
+        <input
+          onChange={this.handleChange}
+          value={this.state.username}
+          type="userName"
+          id="userName"
+          name="userName"
+        />
         <label htmlFor="email">Email</label>
         <input
           onChange={this.handleChange}
@@ -54,6 +71,17 @@ class FormSignup extends Component {
           id="password"
           name="password"
         />
+        
+        { /* <label htmlFor="profileImg">Profile Pic</label> */}
+        <UploadWidget
+          ref={this.imageRef}
+          onFileSelect={this.handleFileSelect}
+          name="profileImg"
+          >
+            Upload Profile Pic
+          </UploadWidget>
+
+        
         <button>Submit</button>
       </form>
     );

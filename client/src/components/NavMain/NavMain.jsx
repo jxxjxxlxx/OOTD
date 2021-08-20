@@ -23,7 +23,7 @@ const NavMain = (props) => {
   return (
     <nav className="NavMain">
       <NavLink exact to="/">
-        <h3 className="logo">App name</h3>
+        <h3 className="logo">OOTD</h3>
       </NavLink>
       <ul className="nav-list">
         {context.isLoggedIn && (
