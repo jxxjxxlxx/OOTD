@@ -24,49 +24,49 @@ const users = [
 		userName: "Cindy",
 		email: "cindy@mail.com",
 		password: bcrypt.hashSync("1234", salt),
-		profileImg: "https://i.imgur.com/DYAmBoX.png"
+		profileImg: "https://i.imgur.com/DYAmBoX.png",
 	},
 	{
 		userName: "Daniela",
-		email: "anna@mail.com",
+		email: "daniela@mail.com",
 		password: bcrypt.hashSync("1234", salt),
-		profileImg: 
+		profileImg: "https://i.imgur.com/tPhnBD9.png",
 	},
 	{
-		userName: "Anna",
-		email: "anna@mail.com",
+		userName: "Elena",
+		email: "elena@mail.com",
 		password: bcrypt.hashSync("1234", salt),
-		profileImg: 
+		profileImg: "https://i.imgur.com/83fVrLd.png",
 	},
 	{
-		userName: "Anna",
-		email: "anna@mail.com",
+		userName: "Fiona",
+		email: "fiona@mail.com",
 		password: bcrypt.hashSync("1234", salt),
-		profileImg: 
+		profileImg: "https://i.imgur.com/DYAmBoX.png",
 	},
 	{
-		userName: "Anna",
-		email: "anna@mail.com",
+		userName: "Georgina",
+		email: "george@mail.com",
 		password: bcrypt.hashSync("1234", salt),
-		profileImg: 
+		profileImg: "https://i.imgur.com/CNsvyBj.png",
 	},
 	{
-		userName: "Anna",
-		email: "anna@mail.com",
+		userName: "Helen",
+		email: "helen@mail.com",
 		password: bcrypt.hashSync("1234", salt),
-		profileImg: 
+		profileImg: "https://i.imgur.com/QHvPXAf.png",
 	},
 	{
-		userName: "Anna",
-		email: "anna@mail.com",
+		userName: "Ilka",
+		email: "ilka@mail.com",
 		password: bcrypt.hashSync("1234", salt),
-		profileImg: 
+		profileImg: "https://i.imgur.com/gBB3U1H.png",
 	},
 	{
-		userName: "Anna",
-		email: "anna@mail.com",
+		userName: "Jinjoo",
+		email: "jinjoo@mail.com",
 		password: bcrypt.hashSync("1234", salt),
-		profileImg: 
+		profileImg: "https://i.imgur.com/cvsOkKL.png",
 	},
 
 
