@@ -1,11 +1,11 @@
-const path = require("path");
-require("dotenv").config({ path: path.join(__dirname, "../.env") });
-require ("../config/dbConnection");
-const bcrypt = require("bcrypt");
+// const path = require("path");
+// require("dotenv").config({ path: path.join(__dirname, "../.env") });
+// require ("../config/dbConnection");
+// const bcrypt = require("bcrypt");
 
-const User = require("../models/User");
+// const User = require("../models/User");
 
-const salt = 10;
+// const salt = 10;
 
 const users = [
 	{
@@ -71,22 +71,22 @@ const users = [
 
 
 
-];
+// ];
 
 
-async function seedUsers() {
-	try {
-		await User.collection
-			.drop()
-			.catch((e) => console.log("No collection.."));
+// async function seedUsers() {
+// 	try {
+// 		await User.collection
+// 			.drop()
+// 			.catch((e) => console.log("No collection.."));
 
-		const createdUsers = await User.create(users);
-		console.log(createdUsers);
-		process.exit();
-	} catch (e) {
-		console.log(e);
-		process.exit();
-	}
-}
+// 		const createdUsers = await User.create(users);
+// 		console.log(createdUsers);
+// 		process.exit();
+// 	} catch (e) {
+// 		console.log(e);
+// 		process.exit();
+// 	}
+// }
 
-seedUsers();
+// seedUsers();
