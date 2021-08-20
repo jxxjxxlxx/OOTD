@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import UserProvider from '../src/pages/Auth/UserProvider';
+import UserProvider from './pages/Auth/UserProvider';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,7 +13,6 @@ ReactDOM.render(
     <App />
     </UserProvider>
     </BrowserRouter>
-  
   </React.StrictMode>,
   document.getElementById('root')
 );
