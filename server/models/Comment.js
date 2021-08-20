@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
-    body: { 
+    comment: { 
     type: String, 
     required: true
     },
@@ -10,7 +10,7 @@ const commentSchema = new Schema({
     on: {
     type: Schema.types.ObjectId,
     required: true,
-    repath: 'onModel'
+    refPath: 'onModel'
     },
 
     onModel: {

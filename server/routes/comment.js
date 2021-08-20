@@ -6,6 +6,7 @@ const requireAuth = require("../middleware/requireAuth")
 
 // post a comment 
 router.post("/", requireAuth, (req, res, next)=>{
+    
     req.body.userId = req.session.currentUser;
 
     CoolPost.create(req.body)
