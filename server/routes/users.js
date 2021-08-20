@@ -15,7 +15,6 @@ router.get("/me", requireAuth, (req, res, next) => {
 });
 
 
-
 /* update current user info */
 router.patch("/me", requireAuth, upload.single("profileImg"), (req, res, next)=>{
       const userId = req.session.currentUser;

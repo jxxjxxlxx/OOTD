@@ -7,8 +7,8 @@ const commentSchema = new Schema({
     required: true
     },
 
-    on: {
-    type: Schema.types.ObjectId,
+    postId: {
+    type: Schema.Types.ObjectId,
     required: true,
     refPath: 'onModel'
     },
@@ -24,7 +24,7 @@ const commentSchema = new Schema({
     ref: "User",
     },
 
-    date: Date.now,
+    commnetedTime: { type: Date, default: Date.now }
     });
 
 const Comment = mongoose.model("Commnet", commentSchema);
