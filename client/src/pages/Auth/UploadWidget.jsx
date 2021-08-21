@@ -25,7 +25,7 @@ const UploadWidget = React.forwardRef((props, ref) => {
       <input
         onChange={handleFileSelect}
         ref={ref}
-        hidden
+        
         id={props.name}
         name={props.name}
         type="file"

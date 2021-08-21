@@ -72,4 +72,3 @@ class FormProfile extends Component {
 
 
 
-}
