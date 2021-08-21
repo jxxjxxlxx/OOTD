@@ -16,6 +16,8 @@ class FormDILG extends Component {
     outfitMoodComment: "",
   };
   
+  //this is where the preview happens 
+  //and our be loved DOC ref !! https://developer.mozilla.org/en-US/docs/Web/API/FileReader
   handleFileOnChange = (event) => {
     event.preventDefault();
     let reader = new FileReader();
@@ -70,7 +72,7 @@ class FormDILG extends Component {
           id="itemDescription"
           name="itemDescription"
         >
-          
+
         <option value="Top">Top</option>
         <option value="Bottom">Bottom</option>
         <option value="Dress">Dress</option>
