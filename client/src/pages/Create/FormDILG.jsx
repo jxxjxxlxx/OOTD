@@ -51,15 +51,15 @@ class FormDILG extends Component {
       });
   };
 
-  handleFileSelect = (temporaryURL) => {
-    this.setState({tempUrl: temporaryURL})
-  };
 
   render() {
 
+    //this part is also for the uploading preview, 
+    //if a file is uploaded, will have a url representing the file's data
+    //and puttin it in the src, it shows in preview !!  
     let file_preview = null;
     if(this.state.file !== "") {
-      file_preview = <img className="file_preview" src={this.state.previewURL} alt="ima"/>
+      file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview image"/>
     }
 
     return (
