@@ -1,0 +1,27 @@
+body {
+   margin: 0;
+   padding: 0;
+}
+
+
+#container {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+#first {
+    width: 50%;
+    float: left;
+    min-height: 700px;
+        background-color: #EF2917;
+	color: #B5F44A;
+	font-size: 5em;
+}
+#second {
+    width: 50%;
+    float: right;
+    min-height: 700px;
+	font-size: 5em;
+    	background-color: #FFFFFF;
+	color: #EF2917;
+}

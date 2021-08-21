@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Landing from './pages/Home&Landing/Landing';
-import Home from "./pages/Home&Landing/Home";
+import Landing from './pages/Home&Landing/Landing/Landing';
+import Home from "./pages/Home&Landing/Home/Home";
 import UserProfile from "./pages/Auth/UserProfile/UserProfile";
 import DILG from "./pages/MainPages/DILG";
 import CreateDILG from "./pages/Create/CreateDILG";
