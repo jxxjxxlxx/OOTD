@@ -1,2 +1,2 @@
 # OOTD
-Outfit Of The damnnn / final project Ironhack
+Outfit Of The dayumnnn / final project Ironhack
