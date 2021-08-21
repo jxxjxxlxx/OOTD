@@ -47,7 +47,7 @@ class FormSignup extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Signup</h2>
-         <label htmlFor="userName">User Name </label>
+         <label htmlFor="userName">Username </label>
         <input
           onChange={this.handleChange}
           value={this.state.username}
@@ -73,14 +73,17 @@ class FormSignup extends Component {
         />
         
         { /* <label htmlFor="profileImg">Profile Pic</label> */}
+        <label htmlFor="picture"> </label>
+       
         <UploadWidget
           ref={this.imageRef}
           onFileSelect={this.handleFileSelect}
           name="profileImg"
+          
           >
             Upload Profile Pic
           </UploadWidget>
-
+      
         
         <button>Submit</button>
       </form>
