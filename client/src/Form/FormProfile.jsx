@@ -78,7 +78,7 @@ class FormProfile extends Component {
 						status: "success",
 						message: "Profile successfully updated",
 
-					};
+					}
 				});
 
 				this.timeoutID = setTimeout(() => {
