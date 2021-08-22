@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import NavMain from "../../../components/NavMain/NavMain";
-import FeedBack from "../../../base/FeedBack;
+import FeedBack from "../../../base/FeedBack";
 import withUser from "../withUser";
 import apiHandler from '../../../api/apiHandler';
-impomrt { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 class UserProfile extends Component {
@@ -14,16 +14,19 @@ class UserProfile extends Component {
 
 
 	componentDidMount() {
-		const promises = Pr
+		const promises = Promise.all([
+			apiHandler.getUserInfos(),
+			apiHandler.getUserItems(),
+		]);
+
+		promises.then((allPromises) => {
+			const userInfos = allPromises[0];
+
+			this.setState({
+				user: userInfos,
+			});
+		});
 	}
-}
-const UserProfile = (props) => {
-	return (
-		<div>
-			<NavMain></NavMain>
-			<h1> User Profile </h1>
-		</div>
-	)
 }
 
 export default UserProfile;

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import apiHandler from "../api/apiHandler";
 import { withUser } from "../pages/Auth/withUser";
+import './Form.css';
+
 
 class FormSignin extends Component {
   state = {
@@ -32,12 +34,12 @@ class FormSignin extends Component {
 
   render() {
     if (this.props.context.user) {
-      return <Redirect to="/home" />;
+      return <Redirect to="/ilookgood" />;
     }
 
     return (
       <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-        <h2>Signin</h2>
+        <h2>Sign in</h2>
         <label htmlFor="email">Email</label>
         <input type="email" id="email" name="email" />
         <label htmlFor="password">Password</label>

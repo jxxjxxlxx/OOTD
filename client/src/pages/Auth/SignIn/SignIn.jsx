@@ -1,14 +1,22 @@
-import React from 'react';
+
 import FormSignin from '../../../Form/FormSignin';
 import '../../../pages/Auth/SignIn/SignIn.css';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import Home from '../../Home&Landing/Home/Home';
+
+
 
 const SignIn = (props) => {
 	return (
 		<div>
-			<h1> Sign In </h1>
-			<FormSignin></FormSignin>
+			
+			
+			<FormSignin>
+			</FormSignin>
 		</div>
 	)
 };
 
-export default SignIn;
+
+export default SignIn
