@@ -11,6 +11,9 @@ import EditDILG from "./pages/Edit/EditDILG";
 import EditPlzHelp from "./pages/Edit/EditPlzHelp";
 import SignIn from "./pages/Auth/SignIn/SignIn";
 import SignUp from "./pages/Auth/SignUp/SignUp";
+import UserHome from "./pages/Home&Landing/Home/UserHome";
+
+
 import './App.css';
 
 function App() {
@@ -20,6 +23,8 @@ function App() {
 
         <Route exact path="/" component={Landing}/>
        <Route exact path="/home" component={Home}/>
+       <Route exact path="/userhome" component ={UserHome}/>
+      
 
         <Route exact path="/ilookgood" component={DILG}/>
         <Route exact path="/plzhelp" component={PlzHelp}/>

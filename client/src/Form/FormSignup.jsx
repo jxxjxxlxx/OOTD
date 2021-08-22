@@ -6,6 +6,7 @@ import apiHandler from "../api/apiHandler";
 import UploadWidget from "../pages/Auth/UploadWidget";
 
 
+
 class FormSignup extends Component {
   state = {
     email: "",

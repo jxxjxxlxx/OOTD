@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import UserProvider from './pages/Auth/UserProvider';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
