@@ -46,7 +46,7 @@ const NavMain = (props) => {
                
              
         <li className="signout">
-              <NavLink to="/signout">SIGN OUT</NavLink>
+              <NavLink to="/signout" onClick={handleLogout}>SIGN OUT</NavLink>
                </li> 
           </React.Fragment>
         )}
