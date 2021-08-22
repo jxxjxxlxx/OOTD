@@ -24,7 +24,7 @@ const commentSchema = new Schema({
     ref: "User",
     },
 
-    commnetedTime: { type: Date, default: Date.now }
+    commnetingTime: { type: Date, default: Date.now }
     });
 
 const Comment = mongoose.model("Commnet", commentSchema);

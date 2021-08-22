@@ -2,8 +2,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
-import apiHandler from "../../api/apiHandler";
-
+// import apiHandler from "../../api/apiHandler";
+import axios from 'axios'
 
 class FormDILG extends Component {
   state = {
@@ -40,11 +40,19 @@ class FormDILG extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    const postDILG = {
+      postingUser: this.state.User,
+      itemDescription: this.state.itemDescription,
+      itemInformation: this.state.itemInformation,
+      occasionOfOutfit: this.state.occasionOfOutfit,
+      image: this.state.image,
+      outfitMoodComment: this.state.outfitMoodComment,
+    };
 
-    apiHandler
-      .post(this.state)
-      .then(() => {
-        this.props.history.push("/ilookgood/post");
+    axios
+      .post("http://localhost:7777/api/ilookgood", postDILG)
+      .then((apiResponse) => {
+        console.log(apiResponse);
       })
       .catch((error) => {
         console.log(error);
@@ -59,7 +67,7 @@ class FormDILG extends Component {
     //and puttin it in the src, it shows in preview !!  
     let file_preview = null;
     if(this.state.file !== "") {
-      file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview image"/>
+      file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview upload file"/>
     }
 
     return (
@@ -115,7 +123,7 @@ class FormDILG extends Component {
             <input
               type="file"
               id="picture"
-              name="picture"
+              name="file"
               value={this.state.image}
               onChange={this.handleFileOnChange}
             />

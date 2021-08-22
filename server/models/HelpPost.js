@@ -9,6 +9,7 @@ const helpPostSchema = new Schema ({
     occasionOfOutfit: String,
     image: String,
     problemComment: String,
+    postingTime: { type: Date, default: Date.now }
 })
 
 const HelpPost = mongoose.model("HelpPost", helpPostSchema)

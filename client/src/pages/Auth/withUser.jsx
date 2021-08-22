@@ -8,5 +8,3 @@ export const withUser = (ComponentToExposeContextTo) => (props) => {
     </UserContext.Consumer>
   );
 };
-
-//export default withUser;
