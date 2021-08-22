@@ -1,9 +1,8 @@
 //css file to import
 import React, { Component } from "react";
-import { withRouter, Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
 import apiHandler from "../../api/apiHandler";
-import UploadWidget from "../../pages/Auth/UploadWidget";
 
 
 class FormDILG extends Component {
@@ -12,8 +11,24 @@ class FormDILG extends Component {
     itemDescription: "",
     itemInformation: "",
     occasionOfOutfit: "",
-    file: null,
+    file: "",
+    previewURL:"",
     outfitMoodComment: "",
+  };
+  
+  //this is where the preview happens 
+  //and our be loved DOC ref !! https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+  handleFileOnChange = (event) => {
+    event.preventDefault();
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        file : file,
+        previewURL : reader.result
+      })
+    }
+    reader.readAsDataURL(file);
   };
 
   handleChange = (event) => {
@@ -36,14 +51,16 @@ class FormDILG extends Component {
       });
   };
 
-  handleFileSelect = (temporaryURL) => {
-    this.setState({tempUrl: temporaryURL})
-  };
 
   render() {
-    // if (this.props.context.user) {
-    //   return <Redirect to="/ilookgood/post" />;
-    // }
+
+    //this part is also for the uploading preview, 
+    //if a file is uploaded, will have a url representing the file's data
+    //and puttin it in the src, it shows in preview !!  
+    let file_preview = null;
+    if(this.state.file !== "") {
+      file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview image"/>
+    }
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -55,6 +72,7 @@ class FormDILG extends Component {
           id="itemDescription"
           name="itemDescription"
         >
+
         <option value="Top">Top</option>
         <option value="Bottom">Bottom</option>
         <option value="Dress">Dress</option>
@@ -64,7 +82,7 @@ class FormDILG extends Component {
         <option value="Other">Other</option>
         </select>
 
-        <label htmlFor="itemInformation">Where did you get this item?</label>
+        <label htmlFor="itemInformation">Where is this item from?</label>
         <input
           onChange={this.handleChange}
           value={this.state.itemInformation}
@@ -80,6 +98,7 @@ class FormDILG extends Component {
           id="occasionOfOutfit"
           name="occasionOfOutfit"
         >
+
         <option value="office">Office</option>
         <option value="school">School</option>
         <option value="sport">Sport</option>        
@@ -91,34 +110,19 @@ class FormDILG extends Component {
         <option value="other">Other</option>
         </select>
         
-        {/* <div>
+        <div>
             <label htmlFor="image">Your outfit picture</label>
             <input
               type="file"
               id="picture"
               name="picture"
               value={this.state.image}
-              onChange={this.handleChange}
+              onChange={this.handleFileOnChange}
             />
-          </div> */}
-
-
-          <div>
-          <UploadWidget
-          ref={this.imageRef}
-          onFileSelect={this.handleFileSelect}
-          onChange={this.handleChange}
-          name="image">
-        <div >
-            
-        <img
-              src={this.state.file}
-              alt={this.state.userName}
-            />
+            {file_preview}
           </div>
-            
-          </UploadWidget>
-        </div>
+
+          
         
           <label htmlFor="outfitMoodComment">say sth</label>
             <input
@@ -128,8 +132,8 @@ class FormDILG extends Component {
               value={this.state.outfitMoodComment}
               onChange={this.handleChange}
             />
-        
-        <button>Submit</button>
+        <button>add more item</button>
+        <button onChange={this.handleSubmit}>Submit</button>
       </form>
     );
   }
