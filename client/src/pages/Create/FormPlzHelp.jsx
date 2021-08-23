@@ -85,8 +85,7 @@ class FormPlzHelp extends Component {
           </div>
 
           <label htmlFor="problemComment">some comments?</label>
-            <input
-              type="text"
+            <textarea
               id="problemComment"
               name="problemComment"
               value={this.state.problemComment}

@@ -134,8 +134,7 @@ class FormDILG extends Component {
 
 
           <label htmlFor="outfitMoodComment">say sth</label>
-            <input
-              type="text"
+            <textarea
               id="outfitMoodComment"
               name="outfitMoodComment"
               value={this.state.outfitMoodComment}
