@@ -11,7 +11,7 @@ class FormDILG extends Component {
     itemDescription: "",
     itemInformation: "",
     occasionOfOutfit: "",
-    file: "",
+    image: "",
     previewURL:"",
     outfitMoodComment: "",
   };
@@ -22,9 +22,10 @@ class FormDILG extends Component {
     event.preventDefault();
     let reader = new FileReader();
     let file = event.target.files[0];
+    console.log(file)
     reader.onloadend = () => {
       this.setState({
-        file : file,
+        image : file,
         previewURL : reader.result
       })
     }
@@ -40,17 +41,21 @@ class FormDILG extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const postDILG = {
-      postingUser: this.state.User,
-      itemDescription: this.state.itemDescription,
-      itemInformation: this.state.itemInformation,
-      occasionOfOutfit: this.state.occasionOfOutfit,
-      image: this.state.image,
-      outfitMoodComment: this.state.outfitMoodComment,
-    };
+    
+    const postDILG = new FormData();
+    postDILG.append("image", this.state.image)
+    postDILG.append("itemDescription", this.state.itemDescription)
+    postDILG.append("itemInformation", this.state.itemInformation)
+    postDILG.append("occasionOfOutfit", this.state.occasionOfOutfit)
+    postDILG.append("outfitMoodComment", this.state.outfitMoodComment)
+
 
     axios
+<<<<<<< HEAD
       .post("http://localhost:7777/api/ilookgood", { withCredentials: true })
+=======
+      .post("http://localhost:7777/api/ilookgood", postDILG, { withCredentials: true })
+>>>>>>> 50d45d88114c8c220b4e8420982fd242150f46bb
       .then((apiResponse) => {
         console.log(apiResponse);
       })
@@ -70,6 +75,8 @@ class FormDILG extends Component {
       file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview upload file"/>
     }
 
+    console.log(this.state.image)
+
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>{this.state.postingUser} Show us your OOTD!</h2>
@@ -81,13 +88,13 @@ class FormDILG extends Component {
           name="itemDescription"
         >
 
-        <option value="Top">Top</option>
-        <option value="Bottom">Bottom</option>
-        <option value="Dress">Dress</option>
-        <option value="Outer">Outer</option>
-        <option value="Shoes">Shoes</option>
-        <option value="Accessary">Accessary</option>
-        <option value="Other">Other</option>
+        <option value="top">Top</option>
+        <option value="bottom">Bottom</option>
+        <option value="dress">Dress</option>
+        <option value="outer">Outer</option>
+        <option value="shoes">Shoes</option>
+        <option value="accessary">Accessary</option>
+        <option value="other">Other</option>
         </select>
 
         <label htmlFor="itemInformation">Where is this item from?</label>
@@ -123,8 +130,7 @@ class FormDILG extends Component {
             <input
               type="file"
               id="picture"
-              name="file"
-              value={this.state.image}
+              name="image"
               onChange={this.handleFileOnChange}
             />
             {file_preview}

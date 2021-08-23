@@ -32,9 +32,12 @@ router.get("/:id", (req, res, next)=>{
 //Create a coolPost
 
 router.post("/", requireAuth, uploader.single("image"), (req, res, next)=>{
-    req.body.postingUser = req.session.currentUser;
+    const newPost = req.body;
 
-    CoolPost.create(req.body)
+    newPost.postingUser = req.session.currentUser;
+    (req.file) && (newPost.image = req.file.path);
+
+    CoolPost.create(newPost)
     .then((posts)=>{
         posts
         .populate("postingUser", "-password")
