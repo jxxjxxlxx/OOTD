@@ -2,27 +2,24 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
-import apiHandler from "../../api/apiHandler";
-
+import axios from 'axios'
 
 class FormPlzHelp extends Component {
   state = {
     userName: "",
     occasionOfOutfit: "",
-    file: "",
+    iamge: "",
     previewURL:"",
     problemComment: "",
   };
   
-  //this is where the preview happens 
-  //and our be loved DOC ref !! https://developer.mozilla.org/en-US/docs/Web/API/FileReader
   handleFileOnChange = (event) => {
     event.preventDefault();
     let reader = new FileReader();
     let file = event.target.files[0];
     reader.onloadend = () => {
       this.setState({
-        file : file,
+        image : file,
         previewURL : reader.result
       })
     }
@@ -38,11 +35,17 @@ class FormPlzHelp extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    
+    const postHelp = new FormData();
+    postHelp.append("image", this.state.image)
+    postHelp.append("occasionOfOutfit", this.state.occasionOfOutfit)
+    postHelp.append("problemComment", this.state.problemComment)
 
-    apiHandler
-      .post(this.state)
-      .then(() => {
-        this.props.history.push("/plzhelp/post");
+
+    axios
+      .post("http://localhost:7777/api/plzhelp", postHelp, { withCredentials: true })
+      .then((apiResponse) => {
+        console.log(apiResponse);
       })
       .catch((error) => {
         console.log(error);
@@ -52,9 +55,6 @@ class FormPlzHelp extends Component {
 
   render() {
 
-    //this part is also for the uploading preview, 
-    //if a file is uploaded, will have a url representing the file's data
-    //and puttin it in the src, it shows in preview !!  
     let file_preview = null;
     if(this.state.file !== "") {
       file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview upload file"/>
@@ -77,16 +77,13 @@ class FormPlzHelp extends Component {
             <label htmlFor="image">Show us your outfit!</label>
             <input
               type="file"
-              id="picture"
-              name="picture"
-              value={this.state.image}
+              id="plzHelpPic"
+              name="image"
               onChange={this.handleFileOnChange}
             />
             {file_preview}
           </div>
 
-          
-        
           <label htmlFor="problemComment">some comments?</label>
             <input
               type="text"
