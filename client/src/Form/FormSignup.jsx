@@ -29,7 +29,7 @@ class FormSignup extends Component {
     apiHandler
       .signup(this.state)
       .then(() => {
-        this.props.history.push("/signup");
+        this.props.history.push("/signin");
       })
       .catch((error) => {
         console.log(error);

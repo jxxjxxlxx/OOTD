@@ -18,6 +18,7 @@ const coolPostSchema = new Schema ({
 		},
     image: String,
     outfitMoodComment: String,
+    postingTime: { type: Date, default: Date.now }
 })
 
 const CoolPost = mongoose.model("CoolPost", coolPostSchema)

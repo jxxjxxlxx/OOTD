@@ -11,6 +11,11 @@ const MongoStore = require("connect-mongo");
 const cors = require("cors");
 const app = express();
 
+app.use(cors({
+  origin: process.env.FRONTEND_URL,
+  credentials: true,
+}))
+
 // middlewares
 const corsOptions = { origin: process.env.FRONTEND_URL, credentials: true };
 
