@@ -2,7 +2,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
-// import apiHandler from "../../api/apiHandler";
 import axios from 'axios'
 
 class FormDILG extends Component {
@@ -125,15 +124,14 @@ class FormDILG extends Component {
             <label htmlFor="image">Your outfit picture</label>
             <input
               type="file"
-              id="picture"
+              id="coolPostPic"
               name="image"
               onChange={this.handleFileOnChange}
             />
             {file_preview}
           </div>
 
-          
-        
+
           <label htmlFor="outfitMoodComment">say sth</label>
             <input
               type="text"
