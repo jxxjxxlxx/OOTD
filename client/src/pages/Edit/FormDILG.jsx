@@ -67,7 +67,7 @@ class editDILG extends Component {
     const id = this.props.match.params.id;
 
     axios
-      .patch(`http://localhost:7777/api/ilookgood/${id}/edit`, editDILG, { withCredentials: true })
+      .patch(`http://localhost:7777/api/ilookgood/${id}`, editDILG, { withCredentials: true })
       .then((apiResponse) => {
         console.log(apiResponse);
       })
@@ -143,10 +143,11 @@ class editDILG extends Component {
               type="file"
               id="coolPostPic"
               name="image"
-              value={this.state.image}
+
               onChange={this.handleFileOnChange}
             />
             {file_preview}
+            <img src={this.state.image}/>
           </div>
 
 
@@ -159,7 +160,7 @@ class editDILG extends Component {
               onChange={this.handleChange}
             />
         <button>add more item</button>
-        <button onChange={this.handleSubmit}>Submit</button>
+        <button >Submit</button>
       </form>
     );
   }
