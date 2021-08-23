@@ -1,5 +1,6 @@
 import React from 'react';
 import NavMain from "../../components/NavMain/NavMain";
+import { NavLink } from "react-router-dom";
 
 
 const DILG = () => {
@@ -7,6 +8,7 @@ const DILG = () => {
 		<div>
 			<NavMain></NavMain>
 			<h1> DILG </h1>
+			<NavLink to="/ilookgood/post"> post here </NavLink>
 		</div>
 	)
 }

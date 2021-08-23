@@ -50,7 +50,7 @@ class FormDILG extends Component {
     };
 
     axios
-      .post("http://localhost:7777/api/ilookgood", postDILG)
+      .post("http://localhost:7777/api/ilookgood", { withCredentials: true })
       .then((apiResponse) => {
         console.log(apiResponse);
       })
