@@ -12,6 +12,7 @@ import EditPlzHelp from "./pages/Edit/EditPlzHelp";
 import SignIn from "./pages/Auth/SignIn/SignIn";
 import SignUp from "./pages/Auth/SignUp/SignUp";
 import UserHome from "./pages/Home&Landing/Home/UserHome";
+import SignOut from "./pages/Auth/SignOut/SignOut";
 
 
 import './App.css';
@@ -37,6 +38,7 @@ function App() {
 
         <Route exact path="/signin" component={SignIn}/>
         <Route exact path="/signup" component={SignUp}/>
+        <Route exact path="/signout" component ={SignOut} />
 
         <Route exact path="UserProfile" component={UserProfile}/>
         

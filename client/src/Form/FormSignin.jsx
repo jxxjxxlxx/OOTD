@@ -38,6 +38,11 @@ class FormSignin extends Component {
     }
 
     return (
+
+      <div> 
+
+      <div className="form-box" id="form-box">
+        <div className="first" id="first">
       <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
         <h2>Sign in</h2>
         <label htmlFor="email">Email</label>
@@ -46,8 +51,20 @@ class FormSignin extends Component {
         <input type="password" id="password" name="password" />
         <button>Submit</button>
       </form>
+        </div>
+
+      <div className="second" id="second">
+        <h1> sign up </h1>
+      </div>
+
+      </div>
+      </div>
     );
   }
 }
+
+
+
+
 
 export default withRouter(withUser(FormSignin));
