@@ -37,7 +37,7 @@ const NavMain = (props) => {
               </NavLink><span> ! </span>
              
             </li>
-             <li class="home">
+             <li className="home">
               <NavLink to="/userhome">HOME</NavLink>
             </li>
              {/* <li class="signout">
@@ -55,10 +55,10 @@ const NavMain = (props) => {
         
         {!context.isLoggedIn && (
           <React.Fragment>
-            <li class="signup">
+            <li className="signup">
               <NavLink to="/signup">CREATE ACCOUNT</NavLink>
             </li> 
-             <li class="signin">
+             <li className="signin">
               <NavLink to="/signin">LOG IN</NavLink>
             </li> 
 
