@@ -51,7 +51,7 @@ router.post("/signup", (req, res, next) => {
     .catch(next);
 });
 
-router.get("/logout", (req, res, next) => {
+router.get("/signout", (req, res, next) => {
   req.session.destroy(function (error) {
     if (error) next(error);
     else res.status(200).json({ message: "Succesfully disconnected." });

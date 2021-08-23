@@ -2,7 +2,7 @@ import React from "react";
 import { UserContext } from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
 
-class UserProvider extends React.Component {
+class UserProvider extends Component {
   state = {
     user: null,
     isLoggedIn: false,

@@ -39,7 +39,7 @@ const apiHandler = {
 
   logout() {
     return service
-      .get("/api/auth/logout")
+      .get("/api/auth/signout")
       .then((res) => res.data)
       .catch(errorHandler);
   },
