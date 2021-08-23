@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const helpPost = require("../models/helpPost");
+const HelpPost = require("../models/HelpPost");
 const requireAuth = require("../middleware/requireAuth");
 const uploader = require("../config/cloudinary.config");
 
-//Get all helpPosts from DB
 
+//Get all helpPosts from DB
 router.get("/", (req, res, next) =>{
-	helpPost.find()
+	HelpPost.find()
 		.populate("postingUser", "-password")
 		.then((posts)=>{
 		res.status(200).json(posts)
@@ -20,9 +20,9 @@ router.get("/", (req, res, next) =>{
 //Get one helpPost from DB
 
 router.get("/:id", (req, res, next) =>{
-	helpPost.findbyId(req.params.id)
+	HelpPost.findById(req.params.id)
 		.then((onePost)=>{
-			res.status(200),json(onePost)
+			res.status(200).json(onePost)
 		})
 		.catch((e)=>{
 			res.status(500).json(e)
@@ -32,9 +32,12 @@ router.get("/:id", (req, res, next) =>{
 //Create a helpPost
 
 router.post("/", requireAuth, uploader.single("image"), (req, res, next)=>{
-	req.body.postingUser = req.session.currentUser;
+    const newPost = req.body;
+
+    newPost.postingUser = req.session.currentUser;
+    (req.file) && (newPost.image = req.file.path);
 	
-	helpPost.create(req.body)
+	HelpPost.create(req.body)
 		.then((posts)=>{
 			posts
 			.populate("postingUser", "-password")
@@ -52,9 +55,8 @@ router.post("/", requireAuth, uploader.single("image"), (req, res, next)=>{
 //Edit a helpPost
 
 router.patch("/:id", requireAuth, uploader.single("image"), (req, res, next)=>{
-	helpPost.findByIdAndUpdate(req.params.id, req.body, {new:true})
+	HelpPost.findByIdAndUpdate(req.params.id, req.body, {new:true})
 		.then((updatePost)=>{
-			res.send(updatePost)
 			res.status(200).json(updatePost)
 		})
 		.catch((e)=>{
@@ -65,7 +67,7 @@ router.patch("/:id", requireAuth, uploader.single("image"), (req, res, next)=>{
 //Delete a helpPost
 
 router.delete("/:id", requireAuth, (req, res, next)=>{
-	helpPost.findByIdAndDelete(req.params.id)
+	HelpPost.findByIdAndDelete(req.params.id)
 		.then((posts)=>{
 			res.send(posts)
 			res.status(204)

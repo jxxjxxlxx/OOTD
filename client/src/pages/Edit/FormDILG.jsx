@@ -54,6 +54,8 @@ class editDILG extends Component {
     this.setState({ [key]: value });
   };
 
+
+  //Update
   handleSubmit = (event) => {
     event.preventDefault();
     
@@ -76,6 +78,21 @@ class editDILG extends Component {
       });
   };
 
+  //Delete
+  handleDelete = (id) =>{ 
+    axios
+    .delete("http://localhost:7777/api/ilookgood/" + id)
+    .then((apiRes)=>{
+        this.setState({
+            data: this.state.data.filter(
+                (coolpost) => coolpost._id !== id
+            ),
+        })
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+  }  
 
   render() {
 
@@ -90,6 +107,7 @@ class editDILG extends Component {
     console.log(this.state.image)
     console.log(this.state.postingUser)
     return (
+        
       <form onSubmit={this.handleSubmit}>
         <h2>{this.state.postingUser} Show us your OOTD!</h2>
          <label htmlFor="item">Which item you like the most?</label>
@@ -143,7 +161,6 @@ class editDILG extends Component {
               type="file"
               id="coolPostPic"
               name="image"
-
               onChange={this.handleFileOnChange}
             />
             {file_preview}
@@ -160,8 +177,11 @@ class editDILG extends Component {
               onChange={this.handleChange}
             />
         <button>add more item</button>
-        <button >Submit</button>
+        <button>Update</button>        
+        <button onClick={this.handleDelete}> Delete </button>
       </form>
+
+
     );
   }
 }
