@@ -40,6 +40,7 @@ class FormDILG extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    
     const postDILG = {
       postingUser: this.state.User,
       itemDescription: this.state.itemDescription,
@@ -50,7 +51,7 @@ class FormDILG extends Component {
     };
 
     axios
-      .post("http://localhost:7777/api/ilookgood", postDILG)
+      .post("http://localhost:7777/api/ilookgood", postDILG, { withCredentials: true })
       .then((apiResponse) => {
         console.log(apiResponse);
       })
