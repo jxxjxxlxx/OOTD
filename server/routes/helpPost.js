@@ -55,6 +55,11 @@ router.post("/", requireAuth, uploader.single("image"), (req, res, next)=>{
 //Edit a helpPost
 
 router.patch("/:id", requireAuth, uploader.single("image"), (req, res, next)=>{
+	
+	if(req.file){
+        req.body.image = req.file.path
+    }
+
 	HelpPost.findByIdAndUpdate(req.params.id, req.body, {new:true})
 		.then((updatePost)=>{
 			res.status(200).json(updatePost)

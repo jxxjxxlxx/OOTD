@@ -87,7 +87,8 @@ class FormPlzHelp extends Component {
   }  
 
   render() {
-
+    console.log(this.state.image)
+    
     let file_preview = null;
     if(this.state.file !== "") {
       file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview upload file"/>
