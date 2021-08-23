@@ -123,7 +123,7 @@ class FormDILG extends Component {
             <input
               type="file"
               id="picture"
-              name="file"
+              name="image"
               value={this.state.image}
               onChange={this.handleFileOnChange}
             />
