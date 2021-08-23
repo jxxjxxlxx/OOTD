@@ -4,7 +4,7 @@ import { withRouter, Redirect } from "react-router-dom";
 import { withUser } from "../pages/Auth/withUser";
 import apiHandler from "../api/apiHandler";
 import UploadWidget from "../pages/Auth/UploadWidget";
-
+import axios from 'axios';
 
 
 class FormSignup extends Component {
@@ -16,6 +16,20 @@ class FormSignup extends Component {
 
   };
 
+  handleFileOnChange = (event) => {
+    event.preventDefault();
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    console.log(file)
+    reader.onloaded= () => {
+      this.setState({
+        profileImg: file,
+        previewURL : reader.result
+      })
+    }
+    reader.readAsDataURL(file);
+  }
+
   handleChange = (event) => {
     const value = event.target.value;
     const key = event.target.name;
@@ -26,6 +40,14 @@ class FormSignup extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
+    const signUp = new FormData();
+    signUp.append("image", this.state.profileImg)
+    signUp.append("password", this.state.password)
+    signUp.append("email", this.state.email)
+    signUp.append("userName", this.state.userName)
+
+
+
     apiHandler
       .signup(this.state)
       .then(() => {
@@ -34,6 +56,17 @@ class FormSignup extends Component {
       .catch((error) => {
         console.log(error);
       });
+
+
+
+  //      axios
+  //    .post("http://localhost:7777/api/auth/signup", signUp)
+  //    .then((apiRes) => {
+  //      console.log(apiRes);
+  //    })
+  //    .catch((err) => {
+  //      console.log(err);
+  //    });
   };
 
   handleFileSelect = () => {
@@ -43,7 +76,13 @@ class FormSignup extends Component {
   render() {
     if (this.props.context.user) {
       return <Redirect to="/signin" />;
+      }
+
+    let file_preview = null;
+    if(this.state.file !== "") {
+      file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview pic" />
     }
+
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -74,17 +113,26 @@ class FormSignup extends Component {
         />
         
         { /* <label htmlFor="profileImg">Profile Pic</label> */}
-        <label htmlFor="picture"> </label>
+        <div>
+        <label htmlFor="profileImg"> Your pic here </label>
+        <input
+            type="file"
+            id="profileImg"
+            name="profileImg"
+            onChange={this.handleFileOnChange}
+            />
+            {file_preview}
+            </div>
        
-        <UploadWidget
+       {/* <UploadWidget
           ref={this.imageRef}
           onFileSelect={this.handleFileSelect}
           name="profileImg"
           
           >
             Upload Profile Pic
-          </UploadWidget>
-      
+       </UploadWidget> */}
+        
         
         <button>Submit</button>
       </form>

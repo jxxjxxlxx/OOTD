@@ -14,6 +14,14 @@ const SignOut = () => {
             </li>
 
 			</React.Fragment>
+
+
+			<React.Fragment>
+		<li class="signup">
+		<NavLink to ="/signup">Sign up</NavLink> 
+		</li>
+
+			</React.Fragment>
 		</div>
 	)
 }

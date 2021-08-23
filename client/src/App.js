@@ -40,7 +40,7 @@ function App() {
         <Route exact path="/signup" component={SignUp}/>
         <Route exact path="/signout" component ={SignOut} />
 
-        <Route exact path="UserProfile" component={UserProfile}/>
+        <Route exact path="/userprofile" component={UserProfile}/>
         
       </Switch>
     </div>

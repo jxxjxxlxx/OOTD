@@ -34,7 +34,7 @@ class FormSignin extends Component {
 
   render() {
     if (this.props.context.user) {
-      return <Redirect to="/ilookgood" />;
+      return <Redirect to="/userhome" />;
     }
 
     return (

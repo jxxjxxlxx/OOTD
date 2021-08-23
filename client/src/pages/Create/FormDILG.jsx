@@ -51,11 +51,7 @@ class FormDILG extends Component {
 
 
     axios
-<<<<<<< HEAD
-      .post("http://localhost:7777/api/ilookgood", { withCredentials: true })
-=======
       .post("http://localhost:7777/api/ilookgood", postDILG, { withCredentials: true })
->>>>>>> 50d45d88114c8c220b4e8420982fd242150f46bb
       .then((apiResponse) => {
         console.log(apiResponse);
       })

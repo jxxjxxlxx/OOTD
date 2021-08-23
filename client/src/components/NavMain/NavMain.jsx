@@ -31,7 +31,7 @@ const NavMain = (props) => {
           <React.Fragment>
             <li>
               
-             <span> Hi, </span> <NavLink to="/profile">
+             <span> Hi, </span> <NavLink to="/userprofile">
                  {context.user && context.user.userName} 
                  
               </NavLink><span> ! </span>
@@ -50,18 +50,23 @@ const NavMain = (props) => {
                </li> 
           </React.Fragment>
         )}
-        {/* {!context.isLoggedIn && (
+
+
+        
+        {!context.isLoggedIn && (
           <React.Fragment>
-            <li class="login">
+            <li class="signup">
               <NavLink to="/signup">CREATE ACCOUNT</NavLink>
-        </li> 
+            </li> 
+             <li class="signin">
+              <NavLink to="/signin">LOG IN</NavLink>
+            </li> 
 
          
             
-           
-          
+      
           </React.Fragment>
-        )}*/}
+         )}
       </ul>
     </nav>
   );
