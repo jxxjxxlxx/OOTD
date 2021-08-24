@@ -73,8 +73,8 @@ class editDILG extends Component {
     
     const id = this.props.match.params.id;
     
-    axios
-      .patch(`http://localhost:7777/api/ilookgood/${id}`, editDILG, { withCredentials: true })
+    service
+      .patch(`http://localhost:7777/api/ilookgood/${id}`, editDILG)
       .then((apiResponse) => {
         console.log(apiResponse);
         
@@ -89,7 +89,7 @@ class editDILG extends Component {
     const id = this.props.match.params.id;
 
     service
-    .delete(`http://localhost:7777/api/ilookgood/${id}`, { withCredentials: true })
+    .delete(`http://localhost:7777/api/ilookgood/${id}`)
     .then((apiRes)=>{
         console.log(apiRes)
         this.setState({
