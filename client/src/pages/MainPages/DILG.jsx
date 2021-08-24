@@ -1,6 +1,7 @@
 import React from 'react';
 import NavMain from "../../components/NavMain/NavMain";
 import { NavLink } from "react-router-dom";
+import {Link} from "react-router-dom";
 import axios from 'axios';
 import './DILG.css';
 
@@ -35,9 +36,13 @@ class DILG extends React.Component {
 			</div>
 			{this.state.coolPosts.map((coolPost)=>{
 				return(
-					
+
 					<div key={coolPost._id}>
-					<img src={coolPost.image} alt={coolPost.userName}/>
+						<Link to={`/ilookgood/${coolPost._id}`}>
+							<img src={coolPost.image} alt={coolPost.postingUser.userName}/>
+						</Link>
+					
+					<p>{coolPost.postingUser.userName}</p>
 					</div>
 				)
 			})}

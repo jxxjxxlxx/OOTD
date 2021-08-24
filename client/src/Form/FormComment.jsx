@@ -48,6 +48,7 @@ class FormComment extends Component {
 		
 		return (
 		<div>
+			
 			<form onSubmit={this.handleSubmit}>
 				<label htmlFor="comment">Comment Here</label>
 				<textarea onChange={this.handleChange} row='3' placeholder="be nice :)" maxLength='100' name="comment"/>
