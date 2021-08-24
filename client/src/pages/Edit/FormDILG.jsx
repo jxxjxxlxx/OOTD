@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
 import axios from 'axios'
+import apiHandler from '../../api/apiHandler.js'
+
+const {service} = apiHandler;
 
 class editDILG extends Component {
   state = {
@@ -14,6 +17,8 @@ class editDILG extends Component {
     previewURL:"",
     outfitMoodComment: "",
   };
+
+  
 
   componentDidMount() {
       const id = this.props.match.params.id;
@@ -65,13 +70,14 @@ class editDILG extends Component {
     editDILG.append("itemInformation", this.state.itemInformation)
     editDILG.append("occasionOfOutfit", this.state.occasionOfOutfit)
     editDILG.append("outfitMoodComment", this.state.outfitMoodComment)
-
+    
     const id = this.props.match.params.id;
-
+    
     axios
       .patch(`http://localhost:7777/api/ilookgood/${id}`, editDILG, { withCredentials: true })
       .then((apiResponse) => {
         console.log(apiResponse);
+        
       })
       .catch((error) => {
         console.log(error);
@@ -79,9 +85,11 @@ class editDILG extends Component {
   };
 
   //Delete
-  handleDelete = (id) =>{ 
-    axios
-    .delete("http://localhost:7777/api/ilookgood/" + id)
+  handleDelete = () => { 
+    const id = this.props.match.params.id;
+
+    service
+    .delete(`http://localhost:7777/api/ilookgood/${id}`, { withCredentials: true })
     .then((apiRes)=>{
         console.log(apiRes)
         this.setState({
@@ -105,8 +113,6 @@ class editDILG extends Component {
       file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview upload file"/>
     }
 
-    console.log(this.state.image)
-    console.log(this.state.postingUser)
    
     
     return (
@@ -180,7 +186,7 @@ class editDILG extends Component {
             />
         <button>add more item</button>
         <button>Update</button>        
-        <button onClick={() => this.handleDelete(this._id)}> Delete </button>
+        <button onClick={this.handleDelete}> Delete </button>
 
         </form>
 

@@ -1,19 +1,24 @@
 import React, { Component } from "react";
 import UploadWidget from "../pages/Auth/UploadWidget";
 import FeedBack from "../base/FeedBack";
-//import apiHandler from "../api/apiHandler";
+import apiHandler from "../api/apiHandler";
 import { withUser } from "../pages/Auth/withUser";
 import { withRouter } from "react-router-dom";
 import axios from 'axios'
 
+
+const {service} = apiHandler;
+
 class FormProfile extends Component {
+
 	state = {
-		username: "",
+		userName: "",
 		email: "",
 		profileImg: "",
 		password: "",
 	};
 
+<<<<<<< HEAD
 componentDidMount() {
 	console.log(this.props)
 	const id = this.props.match.params.id;
@@ -25,6 +30,17 @@ componentDidMount() {
 			console.log(apiRes)
 			const data = apiRes.data;
 			
+=======
+
+
+componentDidMount() {
+	
+	
+	service
+		.get("/api/users/me/")
+		.then((apiRes) => {
+			const data = apiRes;
+>>>>>>> 1fab589f80042514ffba8ef37d42737be411be15
 			this.setState({
 				...data,
 			})
@@ -32,6 +48,20 @@ componentDidMount() {
 		.catch((err)=> {
 			console.log(err)
 		})
+
+
+
+		// apiHandler.getUser()
+		// .then((apiRes) => {
+		// 	const data = apiRes;
+		// 	console.log(data)
+		// 	this.setState({
+		// 		...data,
+		// 	})
+		// })
+		// .catch((err)=> {
+		// 	console.log(err)
+		// })
 }	
 
 	handleFileOnChange = (event) => {
@@ -62,7 +92,7 @@ componentDidMount() {
 		const formProfile = new FormData();
 		formProfile.append("profileImg", this.state.profileImg)
 		formProfile.append("email", this.state.email)
-		formProfile.append("username", this.state.username)
+		formProfile.append("userName", this.state.userName)
 		formProfile.append("password", this.state.password)
 
 		const id = this.props.match.params.id;
@@ -89,28 +119,28 @@ componentDidMount() {
 		}
 
 		console.log(this.state.profileImg)
-		console.log(this.state.username)
+		console.log(this.state.userName)
 
 		return (
 			<form onSubmit={this.handleSubmit}>
-				<h2> {this.state.username} you wan to update your profile? </h2>
-				<label htmlFor="username"> </label>
+				<h2> {this.state.userName} you wan to update your profile? </h2>
+				<label htmlFor="username">USER NAME</label>
 				<input
 					onChange={this.handleChange}
-					value={this.state.username}
+					value={this.state.userName}
 					type="text"
 					id="text"
-					name="text"
+					name="username"
 				/>
 
 
-				<label htmlFor="email"> </label>
+				<label htmlFor="email">EMAIL</label>
 				<input
 					onChange={this.handleChange}
 					value={this.state.email}
 					type="email"
 					id="email"
-					name="text"
+					name="email"
 				/>
 
 

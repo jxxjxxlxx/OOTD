@@ -1,4 +1,5 @@
 const requireAuth = (req, res, next) => {
+
     if (req.session.currentUser) {
       next();
     } else {
