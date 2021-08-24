@@ -13,6 +13,8 @@ import SignIn from "./pages/Auth/SignIn/SignIn";
 import SignUp from "./pages/Auth/SignUp/SignUp";
 import UserHome from "./pages/Home&Landing/Home/UserHome";
 import SignOut from "./pages/Auth/SignOut/SignOut";
+import DILGOutfitDetail from "./pages/OutfitDetails/DILGOutfitDetail"
+import PlzHelpOutfitDetail from "./pages/OutfitDetails/PlzHelpOutfitDetail"
 import "react-tiger-transition/styles/main.min.css";
 import { Navigation, Screen, Link, glide } from "react-tiger-transition";
 
@@ -33,6 +35,9 @@ function App() {
 
         <Route exact path="/ilookgood/post" component={CreateDILG}/>
         <Route exact path="/plzhelp/post" component={CreatePlzHelp}/>
+
+        <Route exact path="/ilookgood/:id" component={DILGOutfitDetail}/>
+        <Route exact path="/plzhelp/:id" component={PlzHelpOutfitDetail}/>
 
         <Route exact path="/ilookgood/:id/edit" component={EditDILG}/>
         <Route exact path="/plzhelp/:id/edit" component={EditPlzHelp}/>

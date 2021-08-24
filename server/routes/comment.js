@@ -19,13 +19,18 @@ router.get("/ilookgood/:id", (req, res, next)=>{
 // post a comment COOLPOST
 router.post("/ilookgood/:id", requireAuth, (req, res, next)=>{
     
-    const comment = new Comment(req.body)
+    const newComment = req.body
 
-    req.body.userId = req.session.currentUser;
+    newComment.userId = req.session.currentUser;
 
-    Comment.create(req.body)
+    Comment.create(newComment)
     .then((comment)=>{
-        res.status(201).json(comment)
+        comment
+        .populate()
+        .then((comment)=>{
+            res.status(201).json(comment)
+        })
+        
     })
     .catch((e)=>{
         res.status(500).json(e)
