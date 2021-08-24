@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Redirect } from "react-router-dom";
+import { withRouter, Redirect, NavLink } from "react-router-dom";
 import apiHandler from "../api/apiHandler";
 import { withUser } from "../pages/Auth/withUser";
 import './Form.css';
@@ -43,19 +43,26 @@ class FormSignin extends Component {
       <div> 
 
       <div className="form-box" id="form-box">
-        <div className="first" id="first">
+        <div className="first sign" id="first" >
       <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-        <h2>Sign in</h2>
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" />
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" name="password" />
-        <button>Submit</button>
+
+        <div className="first-container">
+        <h2>SIGN IN</h2>
+        <label htmlFor="email"></label>
+        <input type="email" id="email" name="email" placeholder="Email" className="email" />
+        <p> <label htmlFor="password"></label>
+        <input type="password" id="password" name="password" placeholder="Password" className="password" /></p>
+        <button className="submit-signin">Submit</button>
+        </div>
       </form>
         </div>
 
-      <div className="second" id="second">
-        <h1> sign up </h1>
+      <div className="second sign" id="second">
+
+        <div className="second-container">
+        <h2> NEED FASHION ADVICE? </h2>
+        <NavLink to="signup" className="signup"> SIGN UP </NavLink>
+      </div>
       </div>
 
       </div>

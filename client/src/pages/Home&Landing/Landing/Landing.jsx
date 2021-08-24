@@ -1,12 +1,15 @@
 import React from 'react';
 import "../Landing/Landing.css";
 // import { useHistory } from "react-router-dom";
+import { Link, glide } from 'react-tiger-transition';
+import "react-tiger-transition/styles/main.min.css";
 
 
 
 
 const Landing = () => {
 	return (
+		
 		<div className="master-close">
 			 <meta name="viewport" content="initial-scale=1"></meta>
 			<div className="container" id="container-landing" onClick={() => {window.location.href="/home"}}>

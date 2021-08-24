@@ -7,6 +7,10 @@
     /* font-family: 'Timmana', sans-serif; */
     /* font-family: 'Paytone One', sans-serif; */
     /* font-family: 'Montserrat Alternates', sans-serif; */
+#root {
+  height: 100vh;
+}
+
 
 body {
    margin: 0;

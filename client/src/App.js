@@ -13,7 +13,8 @@ import SignIn from "./pages/Auth/SignIn/SignIn";
 import SignUp from "./pages/Auth/SignUp/SignUp";
 import UserHome from "./pages/Home&Landing/Home/UserHome";
 import SignOut from "./pages/Auth/SignOut/SignOut";
-
+import "react-tiger-transition/styles/main.min.css";
+import { Navigation, Screen, Link, glide } from "react-tiger-transition";
 
 import './App.css';
 
@@ -23,7 +24,7 @@ function App() {
       <Switch>
 
         <Route exact path="/" component={Landing}/>
-       <Route exact path="/home" component={Home}/>
+       <Route exact path="/home" transition="glide-right" component={Home}/>
        <Route exact path="/userhome" component ={UserHome}/>
       
 
@@ -47,4 +48,13 @@ function App() {
   );
 }
 
+
+glide({
+  name: 'glide-right',
+  direction: 'right'
+});
+glide({
+  name: 'glide-top',
+  direction: 'top'
+});
 export default App;
