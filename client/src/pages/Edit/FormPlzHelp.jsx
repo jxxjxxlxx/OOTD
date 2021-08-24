@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
 import axios from 'axios'
+import apiHandler from '../../api/apiHandler'
+
+const {service} = apiHandler;
 
 class FormPlzHelp extends Component {
   state = {
@@ -60,8 +63,8 @@ class FormPlzHelp extends Component {
     
     const id = this.props.match.params.id; 
 
-    axios
-      .patch(`http://localhost:7777/api/plzhelp/${id}`, postHelp, { withCredentials: true })
+    service
+      .patch(`http://localhost:7777/api/plzhelp/${id}`, postHelp)
       .then((apiResponse) => {
         console.log(apiResponse);
       })
@@ -71,9 +74,11 @@ class FormPlzHelp extends Component {
   };
 
   //Delete
-  handleDelete = (id) =>{ 
-    axios
-    .delete("http://localhost:7777/api/plzhelp/" + id)
+  handleDelete = () =>{ 
+    const id = this.props.match.params.id;
+
+    service
+    .delete(`http://localhost:7777/api/plzhelp/${id}`)
     .then((apiRes)=>{
         console.log(apiRes)
         this.setState({
