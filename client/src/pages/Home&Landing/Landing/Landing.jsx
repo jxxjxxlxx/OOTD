@@ -1,8 +1,6 @@
 import React from 'react';
 import "../Landing/Landing.css";
 // import { useHistory } from "react-router-dom";
-import { Link, glide } from 'react-tiger-transition';
-import "react-tiger-transition/styles/main.min.css";
 
 
 

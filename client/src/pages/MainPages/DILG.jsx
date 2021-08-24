@@ -17,6 +17,7 @@ class DILG extends React.Component {
 			this.setState({
 				coolPosts: apiRes.data,
 			})
+			console.log(apiRes)
 		})
 		.catch((error)=>{console.log(error)})
 	}	
@@ -34,6 +35,7 @@ class DILG extends React.Component {
 			</div>
 			{this.state.coolPosts.map((coolPost)=>{
 				return(
+					
 					<div key={coolPost._id}>
 					<img src={coolPost.image} alt={coolPost.userName}/>
 					</div>
