@@ -75,9 +75,10 @@ class FormPlzHelp extends Component {
     axios
     .delete("http://localhost:7777/api/plzhelp/" + id)
     .then((apiRes)=>{
+        console.log(apiRes)
         this.setState({
             data: this.state.data.filter(
-                (coolpost) => coolpost._id !== id
+                (postHelp) => postHelp._id !== id
             ),
         })
     })
@@ -88,7 +89,7 @@ class FormPlzHelp extends Component {
 
   render() {
     console.log(this.state.image)
-    
+
     let file_preview = null;
     if(this.state.file !== "") {
       file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview upload file"/>
@@ -120,8 +121,7 @@ class FormPlzHelp extends Component {
           </div>
 
           <label htmlFor="problemComment">some comments?</label>
-            <input
-              type="text"
+            <textarea
               id="problemComment"
               name="problemComment"
               value={this.state.problemComment}

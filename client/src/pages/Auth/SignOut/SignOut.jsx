@@ -9,7 +9,7 @@ const SignOut = () => {
 		<div>
 			<React.Fragment>
 			
-             <li class="signin">
+             <li className="signin">
               <NavLink to="/signin">Sign in</NavLink>
             </li>
 
@@ -17,7 +17,7 @@ const SignOut = () => {
 
 
 			<React.Fragment>
-		<li class="signup">
+		<li className="signup">
 		<NavLink to ="/signup">Sign up</NavLink> 
 		</li>
 

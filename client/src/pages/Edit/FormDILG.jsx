@@ -83,6 +83,7 @@ class editDILG extends Component {
     axios
     .delete("http://localhost:7777/api/ilookgood/" + id)
     .then((apiRes)=>{
+        console.log(apiRes)
         this.setState({
             data: this.state.data.filter(
                 (coolpost) => coolpost._id !== id
@@ -106,9 +107,11 @@ class editDILG extends Component {
 
     console.log(this.state.image)
     console.log(this.state.postingUser)
+   
+    
     return (
-        
-      <form onSubmit={this.handleSubmit}>
+    
+      <form onSubmit={this.handleSubmit} >
         <h2>{this.state.postingUser} Show us your OOTD!</h2>
          <label htmlFor="item">Which item you like the most?</label>
         <select
@@ -169,8 +172,7 @@ class editDILG extends Component {
 
 
           <label htmlFor="outfitMoodComment">say sth</label>
-            <input
-              type="text"
+            <textarea
               id="outfitMoodComment"
               name="outfitMoodComment"
               value={this.state.outfitMoodComment}
@@ -178,11 +180,13 @@ class editDILG extends Component {
             />
         <button>add more item</button>
         <button>Update</button>        
-        <button onClick={this.handleDelete}> Delete </button>
-      </form>
+        <button onClick={() => this.handleDelete(this._id)}> Delete </button>
+
+        </form>
 
 
     );
+
   }
 }
 
