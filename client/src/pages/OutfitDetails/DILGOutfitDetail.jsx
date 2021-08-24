@@ -11,7 +11,7 @@ class OutfitDetail extends React.Component {
 		image:"",
 		itemDescription:"",
 		occasionOfOutfit:"",
-		outfitMoodCommnet:"",
+		outfitMoodComment:"",
 		postingTime:"",
 	};
 
@@ -41,7 +41,7 @@ class OutfitDetail extends React.Component {
 			<img src={this.state.image} alt="post picture"/>
 			<p>{this.state.itemDescription}</p>
 			<p>{this.state.occasionOfOutfit}</p>
-			<p>{this.state.outfitMoodCommnet}</p>
+			<p>{this.state.outfitMoodComment}</p>
 			<p>{this.state.postingTime}</p>
 			</div>
 
