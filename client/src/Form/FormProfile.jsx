@@ -4,10 +4,13 @@ import FeedBack from "../base/FeedBack";
 import apiHandler from "../api/apiHandler";
 import { withUser } from "../pages/Auth/withUser";
 import { withRouter } from "react-router-dom";
-import axios from 'axios'
+import axios from 'axios';
+import './Form.css';
 
 
 const {service} = apiHandler;
+
+
 
 class FormProfile extends Component {
 
@@ -18,12 +21,13 @@ class FormProfile extends Component {
                 password: "",
         };
 
-
+imageRef = React.createRef();
 
 componentDidMount() {
         
         
         service
+		
                 .get("/api/users/me/")
                 .then((apiRes) => {
                         const data = apiRes;
@@ -82,10 +86,10 @@ componentDidMount() {
                 formProfile.append("password", this.state.password)
 
                 const id = this.props.match.params.id;
-                console.log(this.props)
+               
 
 
-                axios
+                service
                         .patch(`http://localhost:777/api/users/me/${id}`, formProfile,
                         { withCredentials: true })
                         .then((apiRes) => {
@@ -109,14 +113,15 @@ componentDidMount() {
 
                 return (
                         <form onSubmit={this.handleSubmit}>
-                                <h2> {this.state.userName} you wan to update your profile? </h2>
+                                <h2> {this.state.userName} you want to update your profile? </h2>
                                 <label htmlFor="username">USER NAME</label>
                                 <input
                                         onChange={this.handleChange}
-                                        value={this.state.userName}
                                         type="text"
                                         id="text"
                                         name="username"
+					value={this.state.username}
+					
                                 />
 
 
@@ -127,6 +132,17 @@ componentDidMount() {
                                         type="email"
                                         id="email"
                                         name="email"
+					defaultValue={this.state.email}
+
+                                />
+
+				   <label htmlFor="profileImg">PIC</label>
+                                <input
+                                        onChange={this.handleChange}
+                                        value={this.state.profileImg}
+                                        type="file"
+                                        id="profileImg"
+                                        name="profileImg"
                                 />
 
 

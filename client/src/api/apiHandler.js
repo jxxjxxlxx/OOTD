@@ -49,14 +49,22 @@ const apiHandler = {
     .get("/api/users/me")
     .then((res)=> res.data)
     .catch(errorHandler)
-  }
+  },
 
-  // getItems() {
-  //   return service
-  //     .get("/api/items")
-  //     .then((res) => res.data)
-  //     .catch(errorHandler);
-  // },
+  getUserInfos(){
+    return service
+    .get("/api/users/me")
+    .then((res)=> res.data)
+    .catch(errorHandler)
+  },
+
+  getUserPosts() {
+    return service
+    //check  if backend route is ok. apiHandler to enable user to view his/her own posts
+      .get("/api/ilookgood")
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
 };
 
 export default apiHandler;

@@ -3,7 +3,7 @@ import FormDILG from './FormDILG'
 const CreateDILG = () => {
 	return (
 		<div>
-			<h1> create DILG </h1>
+			<h2> create DILG </h2>
 			<FormDILG/>
 		</div>
 	)
