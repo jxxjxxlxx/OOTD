@@ -41,7 +41,7 @@ class UserProfile extends React.Component {
       <NavMain/>
       <h1>User profile here</h1>
       <FormProfile></FormProfile>
-      {this.state.userInfo.map((userDoc)=> {
+      {/* {this.state.userInfo.map((userDoc)=> {
         console.log(userInfo)
         return (
           
@@ -50,7 +50,7 @@ class UserProfile extends React.Component {
           <p>{this.state.userDoc.email}</p>
           </div>
         )
-      })}
+      })} */}
     </div>
   );
 };

@@ -2,9 +2,11 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
-// import apiHandler from "../../api/apiHandler";
-import axios from 'axios'
+import apiHandler from "../../api/apiHandler";
+import '../../Form/Form.css'
 
+const {service} = apiHandler
+ 
 class FormDILG extends Component {
   state = {
     postingUser: "",
@@ -50,8 +52,8 @@ class FormDILG extends Component {
     postDILG.append("outfitMoodComment", this.state.outfitMoodComment)
 
 
-    axios
-      .post("http://localhost:7777/api/ilookgood", postDILG, { withCredentials: true })
+    service
+      .post("http://localhost:7777/api/ilookgood", postDILG)
       .then((apiResponse) => {
         console.log(apiResponse);
       })

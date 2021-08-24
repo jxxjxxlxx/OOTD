@@ -1,13 +1,15 @@
-import React from 'react';
+
 import './Form.css';
 import React, {Component} from "react"
 import { withRouter } from "react-router-dom";
-import { withUser } from "../../pages/Auth/withUser";
+import { withUser } from "../pages/Auth/withUser";
 import axios from 'axios'
+import apiHandler from '../api/apiHandler'
+
+const {service} = apiHandler
 
 class FormComment extends Component {
-	render() {	
-		state = {
+			state = {
 			comment: "",
 			userId: "",
 			commentingTime: "",
@@ -26,9 +28,11 @@ class FormComment extends Component {
 			postComment.append("comment", this.state.comment)
 			postComment.append("userId", this.state.userId)
 			postComment.append("commentingTime", this.state.commentingTime)
-		
-			axios
-			  .post("http://localhost:7777/api/ilookgood/:id", postComment, { withCredentials: true })
+			
+			const id = this.props.match.params.id;
+
+			service
+			  .post(`http://localhost:7777/api/detail/ilookgood/${id}`, postComment)
 			  .then((apiResponse) => {
 				console.log(apiResponse);
 			  })
@@ -36,14 +40,18 @@ class FormComment extends Component {
 				console.log(error);
 			  });
 		  };
+		  
+		
+		render() {	
+
 		
 		
 		return (
 		<div>
 			<form onSubmit={this.handleSubmit}>
-				<label htmlFor="comment">Comment</label>
+				<label htmlFor="comment">Comment Here</label>
 				<textarea onChange={this.handleChange} row='3' placeholder="be nice :)" maxLength='100' name="comment"/>
-				<button>post</button>
+				<button onChange={this.handleSubmit}>post</button>
 			</form>
 		</div>
 	)

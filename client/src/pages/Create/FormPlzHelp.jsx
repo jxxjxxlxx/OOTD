@@ -2,7 +2,9 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
-import axios from 'axios'
+import apiHandler from "../../api/apiHandler";
+
+const {service} = apiHandler
 
 class FormPlzHelp extends Component {
   state = {
@@ -42,8 +44,8 @@ class FormPlzHelp extends Component {
     postHelp.append("problemComment", this.state.problemComment)
 
 
-    axios
-      .post("http://localhost:7777/api/plzhelp", postHelp, { withCredentials: true })
+    service 
+      .post("http://localhost:7777/api/plzhelp", postHelp)
       .then((apiResponse) => {
         console.log(apiResponse);
       })
