@@ -3,7 +3,6 @@ import './Form.css';
 import React, {Component} from "react"
 import { withRouter } from "react-router-dom";
 import { withUser } from "../pages/Auth/withUser";
-import axios from 'axios'
 import apiHandler from '../api/apiHandler'
 
 const {service} = apiHandler
@@ -48,7 +47,7 @@ class FormComment extends Component {
 		
 		return (
 		<div>
-			
+
 			<form onSubmit={this.handleSubmit}>
 				<label htmlFor="comment">Comment Here</label>
 				<textarea onChange={this.handleChange} row='3' placeholder="be nice :)" maxLength='100' name="comment"/>

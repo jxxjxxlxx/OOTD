@@ -4,12 +4,13 @@ import apiHandler from '../../api/apiHandler'
 // import axios from 'axios'
 const {service} = apiHandler
 
-class OutfitDetail extends React.Component {
+class DILGOutfitDetail extends React.Component {
 	
 	state = {
 		postingUser:"",
 		image:"",
 		itemDescription:"",
+		itemInformation:"",
 		occasionOfOutfit:"",
 		outfitMoodComment:"",
 		postingTime:"",
@@ -40,6 +41,7 @@ class OutfitDetail extends React.Component {
 			<p>{this.state.postingUser}</p>
 			<img src={this.state.image} alt="post picture"/>
 			<p>{this.state.itemDescription}</p>
+			<p>{this.state.itemIformation}</p>
 			<p>{this.state.occasionOfOutfit}</p>
 			<p>{this.state.outfitMoodComment}</p>
 			<p>{this.state.postingTime}</p>
@@ -51,4 +53,4 @@ class OutfitDetail extends React.Component {
 
 }
 
-export default OutfitDetail
+export default DILGOutfitDetail

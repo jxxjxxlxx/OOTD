@@ -1,7 +1,7 @@
 import React from 'react'
 import NavMain from "../../components/NavMain/NavMain";
 import axios from 'axios'
-
+import {Link} from 'react-router-dom'
 class PlzHelp extends React.Component {
 	
 	state={
@@ -28,7 +28,10 @@ class PlzHelp extends React.Component {
 			{this.state.helpPosts.map((helpPost)=>{
 				return(
 					<div key={helpPost._id}>
-					<img src={helpPost.image} alt={helpPost.userName}/>
+						<Link to={`/plzhelp/${helpPost._id}`}>
+						<img src={helpPost.image} alt={helpPost.userName}/>
+						</Link>
+					
 					</div>
 				)
 			})}
