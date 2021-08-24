@@ -3,9 +3,10 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
 import apiHandler from "../../api/apiHandler";
-import '../../Form/Form.css'
+import './CreateDILG.css';
 
-const {service} = apiHandler
+const { service } = apiHandler;
+
  
 class FormDILG extends Component {
   state = {
@@ -76,6 +77,7 @@ class FormDILG extends Component {
     console.log(this.state.image)
 
     return (
+      <div className="DILG-box"> 
       <form onSubmit={this.handleSubmit}>
         <h2>{this.state.postingUser} Show us your OOTD!</h2>
          <label htmlFor="item">Which item you like the most?</label>
@@ -145,6 +147,7 @@ class FormDILG extends Component {
         <button>add more item</button>
         <button onChange={this.handleSubmit}>Submit</button>
       </form>
+      </div>
     );
   }
 }
