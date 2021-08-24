@@ -24,10 +24,10 @@ const commentSchema = new Schema({
     ref: "User",
     },
 
-    commnetingTime: { type: Date, default: Date.now }
+    commentingTime: { type: Date, default: Date.now }
     });
 
-const Comment = mongoose.model("Commnet", commentSchema);
+const Comment = mongoose.model("Comment", commentSchema);
 
 
 module.exports = Comment;

@@ -9,6 +9,8 @@ const {service} = apiHandler
 
 class FormComment extends Component {
 			state = {
+			postId:"",
+			onModel: "",
 			comment: "",
 			userId: "",
 			commentingTime: "",
@@ -24,6 +26,8 @@ class FormComment extends Component {
 			event.preventDefault();
 			
 			const postComment = new FormData();
+			postComment.append("postId", this.state.postId)
+			postComment.append("onModel", this.state.onModel)
 			postComment.append("comment", this.state.comment)
 			postComment.append("userId", this.state.userId)
 			postComment.append("commentingTime", this.state.commentingTime)
@@ -39,7 +43,25 @@ class FormComment extends Component {
 				console.log(error);
 			  });
 		  };
-		  
+		
+		handleCommentValue = (e) => {
+
+			const id = this.props.match.params.id;
+
+			service
+			.get(`http://localhost:7777/api/detail/ilookgood/${id}`)
+			.then((apiRes)=>{
+				console.log(data)
+				const data = apiRes.data;
+				this.setState({
+					...data,
+				})
+				
+			})
+			.catch((error)=>{
+				console.log(error)
+			})
+		}
 		
 		render() {	
 
@@ -50,8 +72,8 @@ class FormComment extends Component {
 
 			<form onSubmit={this.handleSubmit}>
 				<label htmlFor="comment">Comment Here</label>
-				<textarea onChange={this.handleChange} row='3' placeholder="be nice :)" maxLength='100' name="comment"/>
-				<button onChange={this.handleSubmit}>post</button>
+				<input type="text" onChange={this.handleChange} placeholder="be nice :)" name="comment"/>
+				<button>post</button>
 			</form>
 		</div>
 	)

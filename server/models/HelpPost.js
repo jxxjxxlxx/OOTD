@@ -6,9 +6,18 @@ const helpPostSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: "User",
       },
-    occasionOfOutfit: String,
-    image: String,
-    problemComment: String,
+    occasionOfOutfit: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    problemComment: {
+      type: String,
+      required: true,
+    },
     postingTime: { type: Date, default: Date.now }
 })
 

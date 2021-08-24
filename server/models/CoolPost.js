@@ -10,13 +10,18 @@ const coolPostSchema = new Schema ({
       {
         type: String,
         enum: ["top", "bottom", "dress", "outer", "shoes", "accessary", "other"],
+        required: true,
       },
     itemInformation: String,
 		occasionOfOutfit: {
 		type: String,
-		enum: ["office", "school", "date", "festival", "travel", "special day", "sport", "weekend", "other"]
+		enum: ["office", "school", "date", "festival", "travel", "special day", "sport", "weekend", "other"],
+    required: true,
 		},
-    image: String,
+    image: {
+      type: String,
+      required: true,
+    },
     outfitMoodComment: String,
     postingTime: { type: Date, default: Date.now }
 })
