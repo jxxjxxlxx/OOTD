@@ -141,4 +141,3 @@ class FormSignup extends Component {
 }
 
 export default withRouter(withUser(FormSignup));
-

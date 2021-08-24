@@ -15,12 +15,16 @@ class FormProfile extends Component {
 	};
 
 componentDidMount() {
+	console.log(this.props)
 	const id = this.props.match.params.id;
+	
 
 	axios
-		.get("http://localhost:7777/api/users/me" +id)
+		.get("http://localhost:7777/api/users/me/" +id)
 		.then((apiRes) => {
+			console.log(apiRes)
 			const data = apiRes.data;
+			
 			this.setState({
 				...data,
 			})
@@ -62,7 +66,7 @@ componentDidMount() {
 		formProfile.append("password", this.state.password)
 
 		const id = this.props.match.params.id;
-		console.log(this.props.match.params.id)
+		console.log(this.props)
 
 
 		axios
