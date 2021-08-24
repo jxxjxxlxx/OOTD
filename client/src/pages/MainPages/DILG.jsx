@@ -1,7 +1,8 @@
 import React from 'react';
 import NavMain from "../../components/NavMain/NavMain";
 import { NavLink } from "react-router-dom";
-import axios from 'axios'
+import axios from 'axios';
+import './DILG.css';
 
 class DILG extends React.Component {
 
@@ -23,8 +24,14 @@ class DILG extends React.Component {
 	return (
 		<div>
 			<NavMain></NavMain>
+			<div className="DILG">
+			
 			<h1> DILG </h1>
-			<NavLink to="/ilookgood/post"> post here </NavLink>
+			</div>
+			
+			<div>
+			<NavLink to="/ilookgood/post" className="posthere"> post here </NavLink>
+			</div>
 			{this.state.coolPosts.map((coolPost)=>{
 				return(
 					<div key={coolPost._id}>
