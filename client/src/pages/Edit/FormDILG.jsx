@@ -20,11 +20,6 @@ class editDILG extends Component {
     showPopup:false,
   };
 
-  togglePopup() {  
-    this.setState({  
-         showPopup: !this.state.showPopup  
-    });  
-     }  
 
   componentDidMount() {
       const id = this.props.match.params.id;
@@ -109,6 +104,13 @@ class editDILG extends Component {
     })
   }  
 
+  //popup msg when update
+  togglePopup() {  
+    this.setState({  
+         showPopup: !this.state.showPopup  
+    });  
+     }  
+
   render() {
 
     //this part is also for the uploading preview, 
@@ -190,7 +192,7 @@ class editDILG extends Component {
               value={this.state.outfitMoodComment}
               onChange={this.handleChange}
             />
-        <button>add more item</button>
+
         <button onClick={this.togglePopup.bind(this)}>Update</button>
         {this.state.showPopup ?  
         <Popup  
@@ -205,7 +207,6 @@ class editDILG extends Component {
 <button onClick={this.handleDelete}> Delete </button>
 </>
     );
-
   }
 }
 

@@ -13,9 +13,7 @@ const { service } = apiHandler;
 class UserProfile extends React.Component {
 	state = {
 		coolPosts: [],
-		Image: [],
-		helpPosts: [],
-		
+
 	};
 
 	compountDidMount () {
@@ -30,27 +28,22 @@ class UserProfile extends React.Component {
       	.catch((error) => {
         	(console.log(error));
       	});
-  	
-	      
-
-
 	}
-
-
 
 	render() {
 		return (
 			<div>
-				<FormProfile></FormProfile>
+				<NavMain/>
+				<FormProfile/>
 			<p> posts </p>
 			{this.state.coolPosts.map((posts) =>{
-				console.log(this.state.coolPosts)
+				console.log(posts)
 				return(
 					<div key={posts}>
 					
 					<ul>
 						
-					<li> <img src={posts.Image} alt="pic here" ></img></li>
+					<li> <img src={posts.image} alt="pic here" ></img></li>
 					</ul>
 					</div>
 				)

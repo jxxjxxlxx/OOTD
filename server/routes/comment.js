@@ -56,8 +56,8 @@ router.delete("/ilookgood/:id", requireAuth, (req, res, next) => {
 
 //get all comments HELPPOST
 router.get("/plzhelp/:id", (req, res, next) => {
-  Comment.find()
-    .populate()
+  Comment.find({postId:  req.params.id})
+    .populate("userId")
     .then((comments) => {
       res.status(200).json(comments);
     })
