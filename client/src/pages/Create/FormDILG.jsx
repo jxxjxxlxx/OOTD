@@ -7,7 +7,6 @@ import './CreateDILG.css';
 
 const { service } = apiHandler;
 
- 
 class FormDILG extends Component {
   state = {
     postingUser: "",
@@ -73,8 +72,6 @@ class FormDILG extends Component {
     if(this.state.file !== "") {
       file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview upload file"/>
     }
-
-    console.log(this.state.image)
 
     return (
       <div className="DILG-box"> 
