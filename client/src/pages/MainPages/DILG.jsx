@@ -4,6 +4,9 @@ import { NavLink } from "react-router-dom";
 import {Link} from "react-router-dom";
 import axios from 'axios';
 import './DILG.css';
+import apiHandler from '../../api/apiHandler';
+
+const { service } = apiHandler;
 
 class DILG extends React.Component {
 
@@ -12,8 +15,8 @@ class DILG extends React.Component {
 		};
 	
 	componentDidMount() {
-		axios
-		.get("http://localhost:7777/api/ilookgood")
+		service
+		.get("api/ilookgood")
 		.then((apiRes)=>{
 			this.setState({
 				coolPosts: apiRes.data,

@@ -21,9 +21,11 @@ class UserProfile extends React.Component {
 	compountDidMount () {
 
 	service
+
+	
       	.get("/api/me/posts")
       	.then((apiResponse) => {
-        	this.setState({ coolPosts: apiResponse.data });
+        	this.setState({ coolPosts: apiResponse.data, });
 
       		})
 		
@@ -41,12 +43,13 @@ class UserProfile extends React.Component {
 	render() {
 		return (
 			<div>
+				<NavMain></NavMain>
 				<FormProfile></FormProfile>
 			<p> posts </p>
 			{this.state.coolPosts.map((posts) =>{
-				console.log(this.state.coolPosts)
+				console.log(posts)
 				return(
-					<div key={posts}>
+					<div key={this.state.posts}>
 					
 					<ul>
 						

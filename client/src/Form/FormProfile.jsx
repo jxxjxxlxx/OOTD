@@ -78,7 +78,7 @@ class FormProfile extends Component {
     const id = this.props.match.params.id;
 
     service
-      .patch(`http://localhost:777/api/users/me/${id}`, formProfile, {
+      .patch(`me/${id}`, formProfile, {
         withCredentials: true,
       })
       .then((apiRes) => {
@@ -88,6 +88,10 @@ class FormProfile extends Component {
         console.log(err);
       });
   };
+
+
+
+ 
 
   render() {
     let file_preview = null;
@@ -101,8 +105,6 @@ class FormProfile extends Component {
       );
     }
 
-    console.log(this.state.profileImg);
-    console.log(this.state.userName);
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -113,13 +115,12 @@ class FormProfile extends Component {
           type="text"
           id="text"
           name="username"
-          value={this.state.username}
+          defaultValue={this.state.userName}
         />
 
         <label htmlFor="password">PASSWORD</label>
         <input
           onChange={this.handleChange}
-          value={this.state.password}
           type="password"
           id="password"
           name="password"
@@ -134,6 +135,7 @@ class FormProfile extends Component {
           id="profileImg"
           name="profileImg"
         />
+        <img src={this.state.profileImg} alt="pic"></img>
         {file_preview}
 
         <button onClick={() => {window.location.href="/userprofile"}}> Submit </button>
