@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import NavMain from "../../components/NavMain/NavMain";
-import axios from 'axios'
-import {Link} from 'react-router-dom'
+import axios from 'axios';
+import {Link, NavLink } from 'react-router-dom';
+
 class PlzHelp extends React.Component {
 	
 	state={
@@ -25,6 +26,9 @@ class PlzHelp extends React.Component {
 			<NavMain>
 			</NavMain>
 			<h1> Plzz help !! </h1>
+			<div>
+			<NavLink to="/plzhelp/post" className="posthere"> post here </NavLink>
+			</div>
 			{this.state.helpPosts.map((helpPost)=>{
 				return(
 					<div key={helpPost._id}>

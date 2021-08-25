@@ -23,6 +23,7 @@ class FormSignin extends Component {
     event.preventDefault();
 
     apiHandler
+      
       .signin(this.state)
       .then((data) => {
         this.props.context.setUser(data);
