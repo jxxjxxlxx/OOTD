@@ -93,7 +93,7 @@ class FormPlzHelp extends Component {
               value={this.state.problemComment}
               onChange={this.handleChange}
             />
-        <button onChange={this.handleSubmit}>Submit</button>
+        <button onClick={() => {window.location.href="/plzhelp"}}>Submit</button>
       </form>
     );
   }

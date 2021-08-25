@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const CoolPost = require("../models/CoolPost")
+const Comment = require("../models/Comment")
 const uploader = require("../config/cloudinary.config");
 const requireAuth = require("../middleware/requireAuth")
 
@@ -51,6 +52,19 @@ router.post("/", requireAuth, uploader.single("image"), (req, res, next)=>{
         res.status(500).json(e)
     })
 })
+
+//router.get("/:id/comments")
+
+router.get("/:id/comments", (req, res, next) => {
+    Comment.find({})
+    .populate("postId")
+      .then((comments) => {
+        res.status(200).json(comments);
+      })
+      .catch((e) => {
+        res.status(500).json(e);
+      });
+  });
 
 //Edit a coolPost
 

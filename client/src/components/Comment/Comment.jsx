@@ -2,15 +2,15 @@ import React from 'react';
 import './Comment.css';
 import FormComment from '../../Form/FormComment'
 
-const Comment = () => {
+const Comment = ({modelValue}) => {
+
 	return (
 		<div>
-			<h2>comment here below</h2> 
-
-			<FormComment/>
-
+			<h1>comment </h1> 
+			<FormComment model={modelValue} />
 		</div>
 	)
 }
 
 export default Comment
+
