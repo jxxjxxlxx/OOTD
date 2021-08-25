@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/User");
 const requireAuth = require("../middleware/requireAuth");
 const upload = require("../config/cloudinary.config");
+const CoolPost = require("../models/CoolPost")
 
 // GET users listing. 
 
@@ -30,6 +31,17 @@ router.patch("/me", requireAuth, upload.single("profileImg"), (req, res, next)=>
         })
         .catch(next);
 });
+
+/* get user posts */
+router.get("/me/posts", requireAuth, (req, res, next) => {
+  const currentUserId = req.session.currentUser;
+  CoolPost.find({postingUser: currentUserId })
+  .then((user) => {
+      res.status(200).json(user);
+    })
+    .catch(next);
+});
+
 
 /* delete user account */
 router.delete("/me", requireAuth, (req, res, next)=>{

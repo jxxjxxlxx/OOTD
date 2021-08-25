@@ -72,7 +72,6 @@ class FormProfile extends Component {
 
     const formProfile = new FormData();
     formProfile.append("profileImg", this.state.profileImg);
-    formProfile.append("email", this.state.email);
     formProfile.append("userName", this.state.userName);
     formProfile.append("password", this.state.password);
 
@@ -117,26 +116,27 @@ class FormProfile extends Component {
           value={this.state.username}
         />
 
-        <label htmlFor="email">EMAIL</label>
+        <label htmlFor="password">PASSWORD</label>
         <input
           onChange={this.handleChange}
-          value={this.state.email}
-          type="email"
-          id="email"
-          name="email"
-          defaultValue={this.state.email}
+          value={this.state.password}
+          type="password"
+          id="password"
+          name="password"
+          defaultValue={this.state.password}
         />
 
         <label htmlFor="profileImg">PIC</label>
         <input
-          onChange={this.handleChange}
-          value={this.state.profileImg}
+          onChange={this.handleFileOnChange}
+         
           type="file"
           id="profileImg"
           name="profileImg"
         />
+        {file_preview}
 
-        <button> submit </button>
+        <button onClick={() => {window.location.href="/userprofile"}}> Submit </button>
       </form>
     );
   }

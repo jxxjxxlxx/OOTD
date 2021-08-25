@@ -48,7 +48,7 @@ const apiHandler = {
     return service
     .get("/api/users/me")
     .then((res)=> res.data)
-    .catch(errorHandler)
+    .catch(errorHandler);
   },
 
   getUserInfos(){
