@@ -16,7 +16,6 @@ class CommentList extends React.Component {
 	     service
 	       .get("http://localhost:7777/api/detail/ilookgood/" + this.props.match.params.id )
 	       .then((apiRes) => {
-			   console.log(apiRes.data)
 	        this.setState({
 				comments: apiRes.data,
 			})
@@ -25,6 +24,7 @@ class CommentList extends React.Component {
 	         console.log(error);
 	       });
 	   };
+	
 
 	render() {
 
@@ -42,27 +42,11 @@ class CommentList extends React.Component {
 							</ul>
 						</div>
 						)
-					})}
-						
-						
-					
-				
-					
-				
+					})
+					}
 			</div>
 		)
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
 
 export default withRouter(CommentList)

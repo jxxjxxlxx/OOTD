@@ -11,7 +11,6 @@ class FormComment extends Component {
     postId: this.props.match.params.id,
     onModel: this.props.model,
     comment: "",
-	// comments: [],
   };
 
 
@@ -40,6 +39,9 @@ class FormComment extends Component {
       });
   };
 
+  handleRefresh = () => {
+	  window.location.reload();
+  }
 
 
   render() {
@@ -55,7 +57,7 @@ class FormComment extends Component {
             placeholder="be nice :)"
             name="comment"
           />
-          <button>post</button>
+          <button onClick={this.handleRefresh}>post</button>
         </form>
       </div>
     );

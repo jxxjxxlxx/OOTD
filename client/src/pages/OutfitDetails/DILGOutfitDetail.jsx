@@ -4,7 +4,6 @@ import CommentList from "../../components/Comment/CommentList"
 import apiHandler from "../../api/apiHandler";
 import NavMain from '../../components/NavMain/NavMain';
 
-// import axios from 'axios'
 const { service } = apiHandler;
 
 class DILGOutfitDetail extends React.Component {
@@ -41,7 +40,7 @@ class DILGOutfitDetail extends React.Component {
     
     return (
       <div>
-        <NavMain></NavMain>
+        <NavMain/>
         <h2> Outfit Detail  </h2>
         <div key={this.state.detail}>
           <p>{this.state.user}</p>
@@ -55,8 +54,8 @@ class DILGOutfitDetail extends React.Component {
        <CommentList/>
         <Comment modelValue="CoolPost" />
       </div>
-    );
+    )
   }
-}
+};
 
 export default DILGOutfitDetail;
