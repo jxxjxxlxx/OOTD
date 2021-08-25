@@ -37,12 +37,16 @@ class DILG extends React.Component {
 			{this.state.coolPosts.map((coolPost)=>{
 				return(
 
+					<div className="grid-container">
+					<div className="coolpost-grid">
 					<div key={coolPost._id}>
 						<Link to={`/ilookgood/${coolPost._id}`}>
 							<img src={coolPost.image} alt={coolPost.userName}/>
 						</Link>
 					
 					<p>{coolPost.postingUser.userName}</p>
+					</div>
+					</div>
 					</div>
 				)
 			})}
