@@ -144,7 +144,7 @@ class FormDILG extends Component {
               value={this.state.outfitMoodComment}
               onChange={this.handleChange}
             />
-        <button>add more item</button>
+      
         <button onClick={() => {window.location.href="/ilookgood"}}>Submit</button>
       </form>
       </div>
