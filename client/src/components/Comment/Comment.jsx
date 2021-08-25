@@ -5,8 +5,10 @@ import FormComment from '../../Form/FormComment'
 const Comment = () => {
 	return (
 		<div>
-			<h1>comment </h1> 
+			<h2>comment here below</h2> 
+
 			<FormComment/>
+
 		</div>
 	)
 }
