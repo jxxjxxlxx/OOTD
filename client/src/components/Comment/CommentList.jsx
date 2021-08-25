@@ -1,5 +1,6 @@
 import React from 'react';
 import apiHandler from "../../api/apiHandler";
+import {withRouter} from "react-router-dom"
 
 const { service } = apiHandler;
 
@@ -10,72 +11,48 @@ class CommentList extends React.Component {
 		comments: [],
 	};
 
-	componentDidMount = () => {
-		console.log(this.props.match.params.id)
-		const id = this.props.match.params.id;
-
-
+	componentDidMount  () {
+		
 	     service
-	       .get(`http://localhost:7777/api//ilookgood/${id}/comments`)
+	       .get("http://localhost:7777/api/detail/ilookgood/" + this.props.match.params.id )
 	       .then((apiRes) => {
-	         console.log(data);
-	         const data = apiRes.data;
-	         this.setState({
-	           ...data,
-	         });
+			   console.log(apiRes.data)
+	        this.setState({
+				comments: apiRes.data,
+			})
 	       })
 	       .catch((error) => {
 	         console.log(error);
 	       });
 	   };
 
-
-
-	//	const postComments = this.state.comments.find(c => c.postId === id)
-	//		if (!postComments) postComments = []
-	//	else postComments = postComments.comments
-	//		this.setState({comments: postComments})
-  	//	}
-  	//
-	//	  onCommentPost = (comment) => {
-//
-	//	this.setState((state) => {
-	//	const found = state.comments.find(c => c.id === comment.id)
-	//	if (found) return {comments: state.comments}
-	//	state.comments.push(comment)
-	//	return {
-	//		comments: state.comments
-	//	}
-	//})
-
 	render() {
-		return (
-			<div>
-				{/*</div>///{this.state.comments.find((comment => comment.postId === id)
-				//	if (!postComments) postComments = []
-				//	else postComments = postComments.comments
-				//	this.setState({ comments: postComments })
-				//)} */}
 
+		return (
+			
+			<div>
 					<h2>comment list </h2> 
-				{this.state.comments.map((comment) => {
-					return(
-						<div key={comment._id}>
-							<p> {comment.comment}</p>
+				
+					{this.state.comments.map((commentList)=>{
+						console.log(commentList.userId.userName)
+						return(
+						<div key={commentList}>
+							<ul>
+							<li> {commentList.userId.userName} : {commentList.comment}</li>
+							</ul>
 						</div>
+						)
+					})}
 						
-					)
-				})}
+						
+					
+				
 					
 				
 			</div>
 		)
 	}
-
-
-
-	}
-
+}
 
 
 
@@ -84,4 +61,8 @@ class CommentList extends React.Component {
 
 
 
-export default CommentList
+
+
+
+
+export default withRouter(CommentList)

@@ -4,9 +4,10 @@ const Comment = require("../models/Comment");
 const requireAuth = require("../middleware/requireAuth");
 
 //get all comments COOLPOST
+
 router.get("/ilookgood/:id", (req, res, next) => {
-  Comment.find()
-    .populate()
+  Comment.find({postId:  req.params.id})
+    .populate("userId")
     .then((comments) => {
       res.status(200).json(comments);
     })

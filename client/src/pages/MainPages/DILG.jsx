@@ -41,7 +41,7 @@ class DILG extends React.Component {
 					<div className="coolpost-grid">
 					<div key={coolPost._id}>
 						<Link to={`/ilookgood/${coolPost._id}`}>
-							<img src={coolPost.image} alt={coolPost.userName}/>
+							<img src={coolPost.image} alt={coolPost.postingUser.userName}/>
 						</Link>
 					
 					<p>{coolPost.postingUser.userName}</p>

@@ -8,8 +8,7 @@ const upload = require("../config/cloudinary.config");
 
 router.get("/me", requireAuth, (req, res, next) => {
   User.findById(req.session.currentUser._id)
-    .then((user) => {
-
+  .then((user) => {
       res.status(200).json(user);
     })
     .catch(next);
