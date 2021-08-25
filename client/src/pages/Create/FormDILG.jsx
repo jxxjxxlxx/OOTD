@@ -145,7 +145,7 @@ class FormDILG extends Component {
               onChange={this.handleChange}
             />
         <button>add more item</button>
-        <button onChange={this.handleSubmit}>Submit</button>
+        <button onClick={() => {window.location.href="/ilookgood"}}>Submit</button>
       </form>
       </div>
     );

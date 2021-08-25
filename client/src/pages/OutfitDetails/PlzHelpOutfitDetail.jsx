@@ -13,6 +13,7 @@ class PlzHelpOutfitDetail extends React.Component {
 		occasionOfOutfit:"",
 		problemComment:"",
 		postingTime:"",
+		_id: "",
 	};
 
 	componentDidMount () {
@@ -46,7 +47,7 @@ class PlzHelpOutfitDetail extends React.Component {
 			<p>{this.state.postingTime}</p>
 			</div>
 
-			<Comment/>
+			<Comment modelValue="HelpPost"/>
 		</div>
 	)}
 

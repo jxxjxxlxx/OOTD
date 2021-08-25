@@ -132,7 +132,7 @@ class FormPlzHelp extends Component {
               value={this.state.problemComment}
               onChange={this.handleChange}
             />
-        <button>Update</button>
+        <button onClick={() => {window.location.href="/home"}}>Update</button>
         <button onClick={this.handleDelete}>Delete</button>
       </form>
     );
