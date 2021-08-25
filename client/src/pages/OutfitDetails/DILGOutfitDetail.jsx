@@ -1,5 +1,6 @@
 import React from "react";
 import Comment from "../../components/Comment/Comment";
+import CommentList from "../../components/Comment/CommentList"
 import apiHandler from "../../api/apiHandler";
 import NavMain from '../../components/NavMain/NavMain';
 
@@ -8,21 +9,20 @@ const { service } = apiHandler;
 
 class DILGOutfitDetail extends React.Component {
   state = {
-    postingUser: "",
-    image: "",
-    itemDescription: "",
-    itemInformation: "",
-    occasionOfOutfit: "",
-    outfitMoodComment: "",
-    postingTime: "",
-    _id: "",
-    userName: "",
+    // postingUser: "",
+    // image: "",
+    // itemDescription: "",
+    // itemInformation: "",
+    // occasionOfOutfit: "",
+    // outfitMoodComment: "",
+    // postingTime: "",
+    // _id: "",
+    // userName: "",
     detail: [],
   };
 
   componentDidMount() {
-    const id = this.props.match.params.id;
-
+    
     service
       .get(`http://localhost:7777/api/ilookgood/`)
 
@@ -37,25 +37,8 @@ class DILGOutfitDetail extends React.Component {
       });
   }
 
-  //componentDidMount () {
-  //  const id = this.props.match.params.id;
-//
-  //  service
-  //    .get(`http://localhost:7777/api//ilookgood/${id}/comments/`)
-  //    .then((apiRes) => {
-  //      console.log(data);
-  //      const data = apiRes.data;
-  //      this.setState({
-  //        ...data,
-  //      });
-  //    })
-  //    .catch((error) => {
-  //      console.log(error);
-  //    });
-  //};
-
   render() {
-    const detail = this.state.detail;
+    
     return (
       <div>
         <NavMain></NavMain>
@@ -69,7 +52,7 @@ class DILGOutfitDetail extends React.Component {
           <p>Outfit Mood: {this.state.outfitMoodComment}</p>
           <p>Posting Time: {this.state.postingTime}</p>
         </div>
-        
+       <CommentList/>
         <Comment modelValue="CoolPost" />
       </div>
     );
