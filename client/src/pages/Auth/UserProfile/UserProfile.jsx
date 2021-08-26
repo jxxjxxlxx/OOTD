@@ -1,7 +1,11 @@
 import React from 'react';
 import NavMain from "../../../components/NavMain/NavMain";
+<<<<<<< HEAD
 import FeedBack from "../../../base/FeedBack";
 import { withUser } from "../../Auth/withUser";
+=======
+import withUser from "../withUser";
+>>>>>>> d29b43bc0791ee8aee9fb4b375576e95561c042a
 import  apiHandler  from '../../../api/apiHandler';
 import { Link } from "react-router-dom";
 
@@ -17,6 +21,7 @@ class UserProfile extends React.Component {
 
 	};
 
+<<<<<<< HEAD
 
 
 
@@ -36,25 +41,48 @@ class UserProfile extends React.Component {
       	.catch((error) => {
 		     
         	(console.log(error));
+=======
+	componentDidMount () {
+	
+	service
+
+	
+	.get("/api/users/me/posts")
+	.then((apiResponse) => {
+		this.setState({ coolPosts: apiResponse.data, });
+      		})
+		
+      	.catch((error) => {
+        	console.log(error)
+>>>>>>> d29b43bc0791ee8aee9fb4b375576e95561c042a
       	});
 	}
 	 
 	render() {
+		
 		return (
 			<div>
 				<NavMain/>
 				<FormProfile/>
-			<p> posts </p>
+			<p> your posts </p>
+
 			{this.state.coolPosts.map((posts) =>{
-				console.log(posts)
+				
 				return(
 					<div key={this.state.posts}>
+<<<<<<< HEAD
 					
 					
 					<ul>
 						
 					<li> <img src={posts.image} alt="pic here" ></img></li>
 					</ul>
+=======
+
+					<Link to={`/ilookgood/${posts._id}/edit`}>
+					<img src={posts.image} alt="pic here" />
+					</Link>
+>>>>>>> d29b43bc0791ee8aee9fb4b375576e95561c042a
 					</div>
 				)
 			})}

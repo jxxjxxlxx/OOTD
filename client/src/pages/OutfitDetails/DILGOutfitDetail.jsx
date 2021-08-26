@@ -26,7 +26,8 @@ class DILGOutfitDetail extends React.Component {
       .get(`/api/ilookgood/`)
 
       .then((apiRes) => {
-        const detail = apiRes.data.find(detail => detail._id === this.props.match.params.id);
+        const detail = apiRes.data.find
+        (detail => detail._id === this.props.match.params.id);
         this.setState({
           ...detail,
         })
@@ -46,7 +47,7 @@ class DILGOutfitDetail extends React.Component {
           <p>{this.state.user}</p>
           <div className="detailImage">
           <img src={this.state.image} alt="post picture" />
-          <button className="wow">WOW</button>
+          <button className="wow">WoW</button>
           </div>
           <div className="infoContainer">
           <p> Item Description: {this.state.itemDescription}  </p>
