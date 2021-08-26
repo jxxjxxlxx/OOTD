@@ -9,17 +9,19 @@ h1 {
 	border: 1px solid blue;
 }
 
+.mainContainer {
+	border: 2px solid black;
+	width: 30%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
 }
-
-.coolpost-grid {
-	height: 150px 150px 150px 150px;
+.mainPost {
+	width:30%
 }
-
-img {
+.postImg {
 object-fit: cover;
-width: 100%;
+width: 30%;
 }
