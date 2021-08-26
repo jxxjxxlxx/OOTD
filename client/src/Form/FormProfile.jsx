@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import UploadWidget from "../pages/Auth/UploadWidget";
-import FeedBack from "../base/FeedBack";
 import apiHandler from "../api/apiHandler";
 import { withUser } from "../pages/Auth/withUser";
 import { withRouter } from "react-router-dom";
-import axios from "axios";
 import "./Form.css";
 
 const { service } = apiHandler;
@@ -100,9 +97,7 @@ class FormProfile extends Component {
         />
       );
     }
-
-    console.log(this.state.profileImg);
-    console.log(this.state.userName);
+    
 
     return (
       <form onSubmit={this.handleSubmit}>

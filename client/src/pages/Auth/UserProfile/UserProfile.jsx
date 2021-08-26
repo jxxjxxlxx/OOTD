@@ -1,6 +1,5 @@
 import React from 'react';
 import NavMain from "../../../components/NavMain/NavMain";
-import FeedBack from "../../../base/FeedBack";
 import withUser from "../withUser";
 import  apiHandler  from '../../../api/apiHandler';
 import { Link } from "react-router-dom";
@@ -12,7 +11,7 @@ const { service } = apiHandler;
 
 class UserProfile extends React.Component {
 	state = {
-		coolPosts: [],
+		userPosts: [],
 
 	};
 
@@ -21,8 +20,8 @@ class UserProfile extends React.Component {
 	service
       	.get("/api/me/posts")
       	.then((apiResponse) => {
-        	this.setState({ coolPosts: apiResponse.data });
-
+        	this.setState({ userPosts: apiResponse.data });
+			console.log(apiResponse)
       		})
 		
       	.catch((error) => {
@@ -36,15 +35,13 @@ class UserProfile extends React.Component {
 				<NavMain/>
 				<FormProfile/>
 			<p> posts </p>
-			{this.state.coolPosts.map((posts) =>{
-				console.log(posts)
+			{this.state.userPosts.map((posts) =>{
+				
 				return(
 					<div key={posts}>
 					
-					<ul>
-						
-					<li> <img src={posts.image} alt="pic here" ></img></li>
-					</ul>
+					<img src={posts.image} alt="pic here" />
+					
 					</div>
 				)
 			})}
