@@ -1,5 +1,6 @@
 
 
+
 body {
    margin: 0;
    padding: 0;
@@ -48,6 +49,7 @@ position: fixed;
  opacity: 0;
 pointer-events: none;
  /* cursor: url(../images/cursor-close.svg) 10 10, auto; */
+
 
 
 

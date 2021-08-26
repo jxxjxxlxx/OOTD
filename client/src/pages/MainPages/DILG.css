@@ -31,7 +31,14 @@ h1 {
 .mainPage {
 	display: flex;
 	flex-direction: row;
-	margin-top: 15%
+	margin-top: 15%}
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+
+h2 {
+	color: blue;
+	font-family: 'Indie Flower', cursive;
 }
 
 .posthere {

@@ -4,6 +4,8 @@ import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
 import apiHandler from "../../api/apiHandler";
 import './CreateDILG.css';
+import Footer from "../../components/Footer/Footer";
+
 
 const { service } = apiHandler;
 
@@ -79,7 +81,7 @@ class FormDILG extends Component {
     return (
       <div className="DILG-box"> 
       <form onSubmit={this.handleSubmit}>
-        <h2>{this.state.postingUser} Show us your OOTD!</h2>
+        <h2>{this.state.postingUser.userName} Show us your OOTD!</h2>
          <label htmlFor="item">Which item you like the most?</label>
         <select
           onChange={this.handleChange}
@@ -147,7 +149,9 @@ class FormDILG extends Component {
       
         <button onClick={() => {window.location.href="/ilookgood"}}>Submit</button>
       </form>
+      <Footer />
       </div>
+      
     );
   }
 }

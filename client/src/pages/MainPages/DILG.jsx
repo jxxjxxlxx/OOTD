@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./DILG.css";
 import apiHandler from "../../api/apiHandler";
+import Footer from "../../components/Footer/Footer";
 
 const { service } = apiHandler;
 
@@ -39,6 +40,7 @@ class DILG extends React.Component {
             
 
           <div className="mainPage">
+		
 
           {this.state.coolPosts.map((coolPost) => {
             return (
@@ -62,6 +64,12 @@ class DILG extends React.Component {
             );
           })}
         </div>
+                <p className="postUser">{coolPost.occasionOfOutfit} by {coolPost.postingUser.userName}</p>
+              </div>
+            </div>
+          );
+        })}
+	<Footer/>
       </>
     );
   }
