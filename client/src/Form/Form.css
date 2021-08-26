@@ -107,8 +107,8 @@ div button:hover {
 	border-radius: 10px;
 	background: transparent;
 	color: #EF2917;
-	width: 150px;
-	text-transform: uppercase;
+	width: 200px;
+	/*text-transform: uppercase;*/
 	transition: .2s background;
 	font-size: 14px;
 	cursor: pointer;

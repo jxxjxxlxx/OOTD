@@ -12,17 +12,13 @@ const FormProfile = (props) => {
   
   function getUserdetails () {
     service
-      .get("/api/users/me")
-      .then((apiRes) => {
-        const data = apiRes;
-        this.setState({
-          ...data,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
+    .getUser()
+    .then(() => {
+      context.setUser();
+    }) 
+    .catch((err)=> {
+      console.log(err);
+    });
   }
 
   function handleSubmit (event) {

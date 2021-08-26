@@ -6,9 +6,10 @@ import ReactDOM from 'react-dom';
 
 const SignOut = () => {
 	return (
-		<div>
+		<div>	
+			<ul>
 			<React.Fragment>
-			
+		
              <li className="signin">
               <NavLink to="/signin">Sign in</NavLink>
             </li>
@@ -20,10 +21,11 @@ const SignOut = () => {
 		<li className="signup">
 		<NavLink to ="/signup">Sign up</NavLink> 
 		</li>
-
+		
 			</React.Fragment>
+			</ul>
 		</div>
 	)
 }
 
-export default SignOut
+export default SignOut;

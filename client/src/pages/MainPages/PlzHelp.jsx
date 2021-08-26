@@ -30,7 +30,7 @@ class PlzHelp extends React.Component {
       <>
         <NavMain></NavMain>
         <div className="mainPageHeader">
-          <h1> Plzz help !! </h1>
+          <h1 className="header"> Plzz help !! </h1>
         </div>
 
         <div className="postHereBtn">
@@ -52,7 +52,7 @@ class PlzHelp extends React.Component {
                 </Link>
 
                 <p className="postUser">
-                  {helpPost.postingUser.userName} needs help!{" "}
+                  {helpPost.postingUser.userName} needs help!
                 </p>
               </div>
             </div>

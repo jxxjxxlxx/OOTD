@@ -14,7 +14,8 @@ import SignUp from "./pages/Auth/SignUp/SignUp";
 import UserHome from "./pages/Home&Landing/Home/UserHome";
 import SignOut from "./pages/Auth/SignOut/SignOut";
 import DILGOutfitDetail from "./pages/OutfitDetails/DILGOutfitDetail"
-import PlzHelpOutfitDetail from "./pages/OutfitDetails/PlzHelpOutfitDetail"
+import PlzHelpOutfitDetail from "./pages/OutfitDetails/PlzHelpOutfitDetail";
+
 
 
 import './App.css';

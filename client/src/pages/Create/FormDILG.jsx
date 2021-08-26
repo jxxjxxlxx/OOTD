@@ -79,7 +79,7 @@ class FormDILG extends Component {
     return (
       <div className="DILG-box"> 
       <form onSubmit={this.handleSubmit}>
-        <h2>{this.state.postingUser} Show us your OOTD!</h2>
+        <h2>{this.state.postingUser.userName} Show us your OOTD!</h2>
          <label htmlFor="item">Which item you like the most?</label>
         <select
           onChange={this.handleChange}
