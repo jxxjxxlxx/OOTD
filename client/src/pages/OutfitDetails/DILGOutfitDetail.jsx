@@ -23,7 +23,7 @@ class DILGOutfitDetail extends React.Component {
   componentDidMount() {
     
     service
-      .get(`http://localhost:7777/api/ilookgood/`)
+      .get(`/api/ilookgood/`)
 
       .then((apiRes) => {
         const detail = apiRes.data.find(detail => detail._id === this.props.match.params.id);
