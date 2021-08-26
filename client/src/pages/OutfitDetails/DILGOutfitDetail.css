@@ -1,0 +1,28 @@
+.detailImage {
+    border: 1px solid black;
+    width: 45%;
+}
+.imageContainer {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+}
+.infoContainer {
+    padding: 50px;
+    border: 1px solid black;
+    width: 40%;
+    margin-right: 10%;
+}
+.wow {
+    position: relative;
+    left: 82%;
+    bottom: 10%;
+    background-color: black;
+    width: 70px;
+    height: 35px;
+    color: white;
+    font-weight: 900;
+    font-size: 20;
+    border-radius: 10px;
+    border: 2px solid white
+}

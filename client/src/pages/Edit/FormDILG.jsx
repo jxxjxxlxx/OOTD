@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
 import axios from 'axios'
 import apiHandler from '../../api/apiHandler.js'
+import Popup from '../../base/popup';  
 
 const {service} = apiHandler;
 
@@ -16,9 +17,9 @@ class editDILG extends Component {
     image: "",
     previewURL:"",
     outfitMoodComment: "",
+    showPopup:false,
   };
 
-  
 
   componentDidMount() {
       const id = this.props.match.params.id;
@@ -103,6 +104,13 @@ class editDILG extends Component {
     })
   }  
 
+  //popup msg when update
+  togglePopup() {  
+    this.setState({  
+         showPopup: !this.state.showPopup  
+    });  
+     }  
+
   render() {
 
     //this part is also for the uploading preview, 
@@ -116,7 +124,7 @@ class editDILG extends Component {
    
     
     return (
-    
+    <>
       <form onSubmit={this.handleSubmit} >
         <h2>{this.state.postingUser} Show us your OOTD!</h2>
          <label htmlFor="item">Which item you like the most?</label>
@@ -184,15 +192,21 @@ class editDILG extends Component {
               value={this.state.outfitMoodComment}
               onChange={this.handleChange}
             />
-        <button>add more item</button>
-        <button>Update</button>        
-        <button onClick={this.handleDelete}> Delete </button>
+
+        <button onClick={this.togglePopup.bind(this)}>Update</button>
+        {this.state.showPopup ?  
+        <Popup  
+          text='update done'  
+          closePopup={this.togglePopup.bind(this)}  
+        />  
+        : null  
+        }  
 
         </form>
 
-
+<button onClick={this.handleDelete}> Delete </button>
+</>
     );
-
   }
 }
 

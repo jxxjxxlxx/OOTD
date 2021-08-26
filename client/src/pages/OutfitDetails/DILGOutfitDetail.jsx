@@ -3,7 +3,7 @@ import Comment from "../../components/Comment/Comment";
 import CommentList from "../../components/Comment/CommentList"
 import apiHandler from "../../api/apiHandler";
 import NavMain from '../../components/NavMain/NavMain';
-
+import './DILGOutfitDetail.css'
 const { service } = apiHandler;
 
 class DILGOutfitDetail extends React.Component {
@@ -42,14 +42,19 @@ class DILGOutfitDetail extends React.Component {
       <div>
         <NavMain/>
         <h2> Outfit Detail  </h2>
-        <div key={this.state.detail}>
+        <div className="imageContainer" key={this.state.detail}>
           <p>{this.state.user}</p>
+          <div className="detailImage">
           <img src={this.state.image} alt="post picture" />
+          <button className="wow">WOW</button>
+          </div>
+          <div className="infoContainer">
           <p> Item Description: {this.state.itemDescription}  </p>
           <p>Item Information {this.state.itemInformation}</p>
           <p>Occassion of Outfit: {this.state.occasionOfOutfit}</p>
           <p>Outfit Mood: {this.state.outfitMoodComment}</p>
           <p>Posting Time: {this.state.postingTime}</p>
+        </div>
         </div>
        <CommentList/>
         <Comment modelValue="CoolPost" />

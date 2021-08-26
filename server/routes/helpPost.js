@@ -21,6 +21,7 @@ router.get("/", (req, res, next) =>{
 
 router.get("/:id", (req, res, next) =>{
 	HelpPost.findById(req.params.id)
+		.populate("postingUser")
 		.then((onePost)=>{
 			res.status(200).json(onePost)
 		})

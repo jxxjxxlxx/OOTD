@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
 import axios from 'axios'
 import apiHandler from '../../api/apiHandler'
+import Popup from '../../base/popup'; 
 
 const {service} = apiHandler;
 
@@ -14,7 +15,11 @@ class FormPlzHelp extends Component {
     iamge: "",
     previewURL:"",
     problemComment: "",
+    showPopup:false,
   };
+
+
+
 
   componentDidMount() {
     const id = this.props.match.params.id;
@@ -91,6 +96,12 @@ class FormPlzHelp extends Component {
         console.log(error)
     })
   }  
+  //popup msg when update 
+  togglePopup() {  
+    this.setState({  
+         showPopup: !this.state.showPopup  
+    });  
+     }  
 
   render() {
     console.log(this.state.image)
@@ -101,6 +112,7 @@ class FormPlzHelp extends Component {
     }
 
     return (
+      <>
       <form onSubmit={this.handleSubmit}>
         <h2>{this.state.postingUser} Ask for some advice </h2>
 
@@ -132,9 +144,19 @@ class FormPlzHelp extends Component {
               value={this.state.problemComment}
               onChange={this.handleChange}
             />
-        <button onClick={() => {window.location.href="/home"}}>Update</button>
-        <button onClick={this.handleDelete}>Delete</button>
-      </form>
+ <button onClick={this.togglePopup.bind(this)}>Update</button>
+        {this.state.showPopup ?  
+        <Popup  
+          text='update done'  
+          closePopup={this.togglePopup.bind(this)}  
+        />  
+        : null  
+        }  
+
+        </form>
+
+<button onClick={this.handleDelete}> Delete </button>
+</>
     );
   }
 }
