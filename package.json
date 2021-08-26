@@ -4,7 +4,8 @@
   "description": "Outfit Of The dayumnnn / final project Ironhack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "cd ./server && npm install && cd ..",
+      "start": "node ./server/bin/wwww"
   },
   "repository": {
     "type": "git",
