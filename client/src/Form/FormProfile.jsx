@@ -52,9 +52,6 @@ const FormProfile = (props) => {
 
     <div>
 
-
-      <p> {context.user && context.user.userName}</p>
-      <p> {context.user && context.user.email} </p> 
       <section className="form-section">
                       <form autoComplete="off" className="form" onSubmit={handleSubmit}>
                               <h1 className="header"> Edit profile </h1>

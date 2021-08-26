@@ -5,7 +5,7 @@ const requireAuth = require("../middleware/requireAuth");
 const upload = require("../config/cloudinary.config");
 const CoolPost = require("../models/CoolPost")
 
-// GET users listing. 
+// GET one user
 
 router.get("/me", requireAuth, (req, res, next) => {
   User.findById(req.session.currentUser._id)
