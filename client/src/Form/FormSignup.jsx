@@ -3,8 +3,7 @@ import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import { withUser } from "../pages/Auth/withUser";
 import apiHandler from "../api/apiHandler";
-import UploadWidget from "../pages/Auth/UploadWidget";
-import axios from 'axios';
+
 
 
 class FormSignup extends Component {
@@ -59,8 +58,8 @@ class FormSignup extends Component {
 
 
 
-  //      axios
-  //    .post("http://localhost:7777/api/auth/signup", signUp)
+  //      service
+  //    .post("/api/auth/signup", signUp)
   //    .then((apiRes) => {
   //      console.log(apiRes);
   //    })
@@ -85,12 +84,14 @@ class FormSignup extends Component {
 
 
     return (
+
+      <div className="form-container">
       <form onSubmit={this.handleSubmit}>
         <h2>Signup</h2>
          <label htmlFor="userName">Username </label>
         <input
           onChange={this.handleChange}
-          value={this.state.username}
+          defaultValue="UserName"
           type="userName"
           id="userName"
           name="userName"
@@ -136,6 +137,7 @@ class FormSignup extends Component {
         
         <button onClick={() => {window.location.href='/userhome'}}>Submit</button>
       </form>
+      </div>
     );
   }
 }

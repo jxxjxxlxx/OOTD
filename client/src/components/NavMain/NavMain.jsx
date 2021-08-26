@@ -23,20 +23,7 @@ const NavMain = (props) => {
         {context.isLoggedIn && (
           <React.Fragment>
             <div className="navbar">
-              <div className="dropdown">
-                <button class="dropbtn"> Home </button>
-                <div class="dropdown-content">
-                  <li className="userHome">
-                    <NavLink to="/userhome">Create post</NavLink>
-                  </li>
-                  <li className="link-dilg">
-                    <NavLink to="/ilookgood">DILG</NavLink>
-                  </li>
-                  <li className="link-plzhelp">
-                    <NavLink to="/plzhelp">Plz help!</NavLink>
-                  </li>
-                </div>
-                </div>
+           
 
                 <div className="dropdown">
                   <button class="dropbtn">
@@ -47,6 +34,17 @@ const NavMain = (props) => {
                     <li className="profilepage">
                       <NavLink to="/userprofile">Profile</NavLink>
                     </li>
+                      <li className="userHome">
+                    <NavLink to="/userhome">Create post</NavLink>
+                  </li>
+                  <li className="link-dilg">
+                    <NavLink to="/ilookgood">DILG</NavLink>
+                  </li>
+                    <li className="link-plzhelp">
+                    <NavLink to="/plzhelp">Plz help!</NavLink>
+                  </li>
+                  
+
                     <li className="signout">
                       <NavLink to="/signin" onClick={handleLogout}>
                         Sign out
@@ -66,10 +64,10 @@ const NavMain = (props) => {
           <React.Fragment>
             <div className="navbar">
   
-            <li className="signup-nav">
+            <li className="signup-nav notLoggedIn">
               <NavLink to="/signup">Create Account</NavLink>
             </li>
-            <li className="signin">
+            <li className="signin notLoggedIn">
               <NavLink to="/signin">Log In</NavLink>
             </li>
 
