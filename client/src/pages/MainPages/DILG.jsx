@@ -28,34 +28,40 @@ class DILG extends React.Component {
   render() {
     return (
       <>
-        <NavMain/>
+      <div className="nav">
+        <NavMain />
+      </div>
         <div className="mainPageHeader">
-          <h1> DILG </h1>
+          <h1 className="header"> OOTD </h1>
+          {/* <p className="headerP"> Outfit Of The Dayummn</p> */}
         </div>
+        
+            
 
-		<div className="postHereBtn">
-          <NavLink to="/ilookgood/post" className="posthere">
-            post here
-          </NavLink>
-        </div>
+          <div className="mainPage">
 
-        {this.state.coolPosts.map((coolPost) => {
-          return (
-            <div className="mainContainer">
-              <div className="mainPost" key={coolPost._id}>
-                <Link to={`/ilookgood/${coolPost._id}`}>
-                  <img
-                    className="postImg"
-                    src={coolPost.image}
-                    alt={coolPost.postingUser.userName}
-                  />
-                </Link>
+          {this.state.coolPosts.map((coolPost) => {
+            return (
+              <div className="mainContainer">
 
-                <p className="postUser">{coolPost.postingUser.userName}</p>
+                <div className="mainPost" key={coolPost._id}>
+                  
+                    <img
+                      className="postImg"
+                      src={coolPost.image}
+                      alt={coolPost.postingUser.userName}
+                    />
+                  
+                <div className="overlay">
+                  <Link to={`/ilookgood/${coolPost._id}`}>
+                  <p className="postUser">{coolPost.postingUser.userName}</p>
+                  </Link>
+                </div>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </>
     );
   }
