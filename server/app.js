@@ -24,7 +24,7 @@ app.use(logger("dev"));
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false })); 
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public/build")));
 
 app.use(
   session({
@@ -46,17 +46,24 @@ app.use("/api/plzhelp", require("./routes/helpPost"))
 app.use("/api/detail", require("./routes/comment"))
 
 //404
-app.use((req, res, next) => {
+app.use("/api/*", (req, res, next) => {
     const error = new Error("Resource not found.");
     error.status = 404;
     next(error);
   });
 
+
+  if (process.env.NODE_ENV === "production") {
+    app.use("*", (req, res, next ) => {
+      res.sendFile(path.join(__dirname, "public/build/index.html"));
+    });
+  }
 //404 handler middleware
 app.use((err, req, res, next) => {
-    if (process.env.NODE_ENV !== "production") {
-      console.error(err);
-    }
+
+
+  console.log(err)
+
     console.log("An error occured");
     res.status(err.status || 500);
     if (!res.headersSent) {

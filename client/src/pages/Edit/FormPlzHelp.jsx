@@ -25,7 +25,7 @@ class FormPlzHelp extends Component {
     const id = this.props.match.params.id;
 
     axios
-    .get("http://localhost:7777/api/plzhelp/"+id)
+    .get("/api/plzhelp/"+id)
     .then((apiRes)=>{
         const data = apiRes.data;
         this.setState({
@@ -69,7 +69,7 @@ class FormPlzHelp extends Component {
     const id = this.props.match.params.id; 
 
     service
-      .patch(`http://localhost:7777/api/plzhelp/${id}`, postHelp)
+      .patch(`/api/plzhelp/${id}`, postHelp)
       .then((apiResponse) => {
         console.log(apiResponse);
       })
@@ -83,7 +83,7 @@ class FormPlzHelp extends Component {
     const id = this.props.match.params.id;
 
     service
-    .delete(`http://localhost:7777/api/plzhelp/${id}`)
+    .delete(`/api/plzhelp/${id}`)
     .then((apiRes)=>{
         console.log(apiRes)
         this.setState({

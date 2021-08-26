@@ -45,7 +45,7 @@ class FormPlzHelp extends Component {
 
 
     service 
-      .post("http://localhost:7777/api/plzhelp", postHelp)
+      .post("/api/plzhelp", postHelp)
       .then((apiResponse) => {
         console.log(apiResponse);
       })

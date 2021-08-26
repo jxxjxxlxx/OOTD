@@ -134,7 +134,7 @@ class FormSignup extends Component {
        </UploadWidget> */}
         
         
-        <button>Submit</button>
+        <button onClick={() => {window.location.href='/userhome'}}>Submit</button>
       </form>
     );
   }

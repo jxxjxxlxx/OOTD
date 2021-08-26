@@ -42,6 +42,17 @@ router.get("/me/posts", requireAuth, (req, res, next) => {
     .catch(next);
 });
 
+//router.get("/me/posts", async (req, res) => {
+//  try {
+//
+//    const posts = await Post.find({ user: req.users._id}).sort({date: -1}). lean();
+//    res.status(200).send(posts);
+//  }
+//  catch (err) {
+//    res.status(500).send({err: error.message});
+//  }
+//}); 
+
 
 /* delete user account */
 router.delete("/me", requireAuth, (req, res, next)=>{

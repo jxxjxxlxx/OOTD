@@ -14,7 +14,7 @@ class CommentList extends React.Component {
 	componentDidMount  () {
 		
 	     service
-	       .get("http://localhost:7777/api/detail/ilookgood/" + this.props.match.params.id )
+	       .get("/api/detail/ilookgood/" + this.props.match.params.id )
 	       .then((apiRes) => {
 	        this.setState({
 				comments: apiRes.data,

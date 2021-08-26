@@ -18,10 +18,12 @@ class UserProfile extends React.Component {
 	compountDidMount () {
 
 	service
+
+	
       	.get("/api/me/posts")
       	.then((apiResponse) => {
-        	this.setState({ userPosts: apiResponse.data });
-			console.log(apiResponse)
+        	this.setState({ coolPosts: apiResponse.data, });
+
       		})
 		
       	.catch((error) => {
@@ -38,7 +40,7 @@ class UserProfile extends React.Component {
 			{this.state.userPosts.map((posts) =>{
 				
 				return(
-					<div key={posts}>
+					<div key={this.state.posts}>
 					
 					<img src={posts.image} alt="pic here" />
 					

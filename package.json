@@ -1,0 +1,21 @@
+{
+  "name": "OOTD",
+  "version": "1.0.0",
+  "description": "Outfit Of The dayumnnn / final project Ironhack",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "cd ./server && npm install && cd ..",
+      "start": "cd ./server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jxxjxxlxx/OOTD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jxxjxxlxx/OOTD/issues"
+  },
+  "homepage": "https://github.com/jxxjxxlxx/OOTD#readme"
+}
