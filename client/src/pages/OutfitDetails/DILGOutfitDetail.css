@@ -20,6 +20,7 @@
     border: 1px solid black;
     width: 40%;
     margin-right: 10%;
+    text-align: center;
 }
 .wow {
     position: absolute;
@@ -42,3 +43,11 @@
     pointer-events: none; 
 }
 
+.pageContainer {
+    margin-top: 100px;
+}
+
+
+h2 {
+    text-align: center;
+}

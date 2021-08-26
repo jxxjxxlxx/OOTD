@@ -3,7 +3,8 @@ import Comment from '../../components/Comment/Comment';
 import CommentList from '../../components/Comment/CommentList';
 import apiHandler from '../../api/apiHandler';
 import NavMain from '../../components/NavMain/NavMain';
-
+import './DILGOutfitDetail.css';
+import Footer from "../../components/Footer/Footer";
 
 const {service} = apiHandler
 
@@ -22,7 +23,7 @@ class PlzHelpOutfitDetail extends React.Component {
 		const id = this.props.match.params.id;
 
 		service 
-		.get(`http://localhost:7777/api/plzhelp/${id}`)
+		.get(`/api/plzhelp/${id}`)
 		
 		.then((apiRes)=>{
 			const post = apiRes.data
@@ -36,23 +37,41 @@ class PlzHelpOutfitDetail extends React.Component {
 	render() {
 		
 		return (
-			
-		<div>
+		<>	
+		<div className="nav">
 			<NavMain/>
-			<h1> Outfit detail </h1>
+		</div>
+			
+			<div className="pageContainer">
+			<h2> Outfit detail </h2>
+			<div className="imageContainer" key={this.state.detail}>
 
-			<div key={this.state.postingUser}>
-			<h3>{this.state.postingUser.userName}</h3>
+			
+			
+
+			<div className="detailImagebox">
 			<img src={this.state.image} alt="posted picture"/>
-			<h4>This outfit is for the {this.state.occasionOfOutfit}</h4>
-			<p>{this.state.problemComment}</p>
-			<p>{this.state.postingTime}</p>
+			<button className="wow">WoW</button>
 			</div>
+
+			<div className="infoContainer">
+			<h4>This outfit is for the {this.state.occasionOfOutfit}</h4>
+			<p>{this.state.postingUser.userName}'s fashion problem: {this.state.problemComment}</p>
+			<p>{this.state.postingTime}</p>
+			<div className="commentBox">
 			<CommentList/>
 			<Comment modelValue="HelpPost"/>
-		</div>
-	)}
+			</div>
+			</div>
+			</div>
+			</div>
+			
+			
+		<Footer/>
+		</>
+	);
+}
 
-};
+}
 
 export default PlzHelpOutfitDetail;

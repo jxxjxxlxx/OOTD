@@ -4,6 +4,7 @@ import CommentList from "../../components/Comment/CommentList"
 import apiHandler from "../../api/apiHandler";
 import NavMain from '../../components/NavMain/NavMain';
 import './DILGOutfitDetail.css'
+import Footer from '../../components/Footer/Footer';
 const { service } = apiHandler;
 
 class DILGOutfitDetail extends React.Component {
@@ -31,8 +32,9 @@ class DILGOutfitDetail extends React.Component {
   render() {
     
     return (
-      <div>
-        <div><NavMain/></div>
+      <>
+      <div className="nav">
+       <NavMain/></div>
         <div className="pageContainer">
         <h2> Outfit Detail  </h2>
         <div className="imageContainer" key={this.state.detail}>
@@ -55,7 +57,9 @@ class DILGOutfitDetail extends React.Component {
         </div>
         </div>
        
-      </div>
+       <Footer />
+     
+      </>
     )
   }
 };
