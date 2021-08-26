@@ -15,7 +15,7 @@ import UserHome from "./pages/Home&Landing/Home/UserHome";
 import SignOut from "./pages/Auth/SignOut/SignOut";
 import DILGOutfitDetail from "./pages/OutfitDetails/DILGOutfitDetail"
 import PlzHelpOutfitDetail from "./pages/OutfitDetails/PlzHelpOutfitDetail";
-
+import Footer from "./components/Footer/Footer";
 
 
 import './App.css';
@@ -49,6 +49,8 @@ function App() {
         <Route exact path="/userprofile" component={UserProfile}/>
         
       </Switch>
+
+      <Footer/>
     </div>
   );
 }

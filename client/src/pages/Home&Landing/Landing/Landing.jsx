@@ -1,5 +1,6 @@
 import React from 'react';
 import "../Landing/Landing.css";
+
 // import { useHistory } from "react-router-dom";
 
 
@@ -8,7 +9,7 @@ import "../Landing/Landing.css";
 const Landing = () => {
 	return (
 		
-		<div className="master-close">
+		<div className="animate__animated animate__bounce">
 			 <meta name="viewport" content="initial-scale=1"></meta>
 			<div className="container" id="container-landing" onClick={() => {window.location.href="/home"}}>
 				<div className="first" id="first-landing"> 

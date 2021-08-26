@@ -3,9 +3,12 @@ import './Footer.css';
 
 const Footer = () => {
 	return (
-		<div>
-			
-		</div>
+		 <div className="footer">
+    <p> OOTD© | Digital Fashion Magazine | jinjoo x jessie
+
+    </p>
+  
+  </div>
 	)
 }
 

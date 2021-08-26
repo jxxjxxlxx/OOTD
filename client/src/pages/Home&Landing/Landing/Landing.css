@@ -1,5 +1,5 @@
 
-
+@import "~animate.css/animate.css";
 
 body {
    margin: 0;
@@ -56,6 +56,7 @@ position: fixed;
  opacity: 0;
 pointer-events: none;
  /* cursor: url(../images/cursor-close.svg) 10 10, auto; */
+
 
 
 

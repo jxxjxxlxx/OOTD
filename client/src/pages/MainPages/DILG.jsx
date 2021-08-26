@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./DILG.css";
 import apiHandler from "../../api/apiHandler";
+import Footer from "../../components/Footer/Footer";
 
 const { service } = apiHandler;
 
@@ -52,6 +53,7 @@ class DILG extends React.Component {
             </div>
           );
         })}
+	<Footer/>
       </>
     );
   }

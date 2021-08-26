@@ -4,6 +4,8 @@ import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
 import apiHandler from "../../api/apiHandler";
 import './CreateDILG.css';
+import Footer from "../../components/Footer/Footer";
+
 
 const { service } = apiHandler;
 
@@ -147,7 +149,9 @@ class FormDILG extends Component {
       
         <button onClick={() => {window.location.href="/ilookgood"}}>Submit</button>
       </form>
+      <Footer />
       </div>
+      
     );
   }
 }

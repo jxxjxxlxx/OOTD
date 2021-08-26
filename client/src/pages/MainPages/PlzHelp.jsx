@@ -4,6 +4,8 @@ import axios from "axios";
 import { Link, NavLink } from "react-router-dom";
 import apiHandler from '../../api/apiHandler';
 import './DILG.css';
+import Footer from "../../components/Footer/Footer";
+
 
 const { service } = apiHandler;
 
@@ -58,6 +60,7 @@ class PlzHelp extends React.Component {
             </div>
           );
         })}
+	<Footer />
       </>
     );
   }
