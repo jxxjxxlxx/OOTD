@@ -7,6 +7,7 @@ import './CreateDILG.css';
 
 const { service } = apiHandler;
 
+ 
 class FormDILG extends Component {
   state = {
     postingUser: "",
@@ -53,7 +54,7 @@ class FormDILG extends Component {
 
 
     service
-      .post("http://localhost:7777/api/ilookgood", postDILG)
+      .post("/api/ilookgood", postDILG)
       .then((apiResponse) => {
         console.log(apiResponse);
       })
@@ -73,10 +74,12 @@ class FormDILG extends Component {
       file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview upload file"/>
     }
 
+    console.log(this.state.image)
+
     return (
       <div className="DILG-box"> 
       <form onSubmit={this.handleSubmit}>
-        <h2> {this.state.postingUser} Show us your OOTD!</h2>
+        <h2>{this.state.postingUser} Show us your OOTD!</h2>
          <label htmlFor="item">Which item you like the most?</label>
         <select
           onChange={this.handleChange}
