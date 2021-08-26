@@ -53,14 +53,17 @@ app.use("/api/*", (req, res, next) => {
   });
 
 
+  if (process.env.NODE_ENV === "production") {
+    app.use("*", (req, res, next ) => {
+      res.sendFile(path.join(__dirname, "public/build/index.html"));
+    });
+  }
 //404 handler middleware
 app.use((err, req, res, next) => {
-    if (process.env.NODE_ENV !== "production") {
-      app.use("*", (req, res, next ) => {
-        res.sendFile(path.join(__dirname, "public/build/index.html"));
-      console.error(err);
-      });
-    }
+
+
+  console.log(err)
+
     console.log("An error occured");
     res.status(err.status || 500);
     if (!res.headersSent) {
