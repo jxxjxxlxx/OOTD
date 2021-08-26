@@ -1,6 +1,8 @@
-/*nav {
+.nav {
 	border-bottom: 5px solid #39FF14;
-	position: relative;
+	width: 100%;
+	position: fixed;
+	top:0
 }
 
 
@@ -11,7 +13,7 @@ li {
 
 .signout {
 
-	margin-left: 77%;
+	margin-left: 85%;
 }
 
 .logout {

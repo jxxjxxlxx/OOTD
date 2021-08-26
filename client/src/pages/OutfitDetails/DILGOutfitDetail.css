@@ -1,7 +1,14 @@
-.detailImage {
+.detailImagebox {
+    position: relative;
     border: 1px solid black;
     width: 45%;
 }
+
+.detailImagebox img {
+    width:100%;
+    height: auto;
+}
+
 .imageContainer {
     display: flex;
     flex-direction: row;
@@ -14,12 +21,12 @@
     margin-right: 10%;
 }
 .wow {
-    position: relative;
-    left: 82%;
+    position: absolute;
+    left: 80%;
     bottom: 10%;
     background-color: black;
-
-    
+    text-align: center;
+    cursor: pointer;
     width: 70px;
     height: 35px;
     color: white;
@@ -27,6 +34,9 @@
     font-size: 20;
     border-radius: 10px;
     border: 2px solid white;
-    
 }
 
+.wow:focus {
+    background-color:blueviolet;
+    pointer-events: none; 
+}

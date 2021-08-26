@@ -22,6 +22,7 @@ router.get("/", (req, res, next)=>{
 
 router.get("/:id", (req, res, next)=>{
     CoolPost.findById(req.params.id)
+    .populate("postingUser")
     .then((onePost)=>{
         res.status(200).json(onePost)
     })
@@ -76,6 +77,7 @@ router.patch("/:id", requireAuth, uploader.single("image"), (req, res, next)=> {
     }
 
     CoolPost.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    .populate("postingUser")
     .then((updatePost)=>{
         
         res.status(200).json(updatePost)

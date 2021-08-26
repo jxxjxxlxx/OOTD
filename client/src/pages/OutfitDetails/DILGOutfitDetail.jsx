@@ -8,15 +8,6 @@ const { service } = apiHandler;
 
 class DILGOutfitDetail extends React.Component {
   state = {
-    // postingUser: "",
-    // image: "",
-    // itemDescription: "",
-    // itemInformation: "",
-    // occasionOfOutfit: "",
-    // outfitMoodComment: "",
-    // postingTime: "",
-    // _id: "",
-    // userName: "",
     detail: [],
   };
 
@@ -45,7 +36,7 @@ class DILGOutfitDetail extends React.Component {
         <h2> Outfit Detail  </h2>
         <div className="imageContainer" key={this.state.detail}>
           <p>{this.state.user}</p>
-          <div className="detailImage">
+          <div className="detailImagebox">
           <img src={this.state.image} alt="post picture" />
           <button className="wow">WoW</button>
           </div>
@@ -55,10 +46,13 @@ class DILGOutfitDetail extends React.Component {
           <p>Occassion of Outfit: {this.state.occasionOfOutfit}</p>
           <p>Outfit Mood: {this.state.outfitMoodComment}</p>
           <p>Posting Time: {this.state.postingTime}</p>
-        </div>
-        </div>
-       <CommentList/>
+        <div className="commentBox">
+        <CommentList/>
         <Comment modelValue="CoolPost" />
+        </div>
+        </div>
+        </div>
+       
       </div>
     )
   }

@@ -8,7 +8,7 @@ return (
 <div className='popup'>  
 <div className='popup_open'>  
 <h1>{this.props.text}</h1>  
-<button onClick={() => {window.location.href="/useprofile"}}>go back to main page!</button>  
+<button onClick={() => {window.location.href="/userprofile"}}>go back to main page!</button>  
 </div>  
 </div>  
 
