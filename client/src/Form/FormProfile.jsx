@@ -59,7 +59,7 @@ const FormProfile = (props) => {
                       <form autoComplete="off" className="form" onSubmit={handleSubmit}>
                               <h1 className="header"> Edit profile </h1>
 
-                        <h2> {context.user && context.user.userName} you want to update your profile? </h2>
+                        <h2 className=""> {context.user && context.user.userName} you want to update your profile? </h2>
         <label htmlFor="username">USER NAME</label>
         <input
           onChange={handleChange}

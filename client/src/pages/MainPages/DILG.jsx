@@ -56,7 +56,7 @@ class DILG extends React.Component {
                   
                 <div className="overlay">
                   <Link to={`/ilookgood/${coolPost._id}`}>
-                  <p className="postUser">{coolPost.postingUser.userName}</p>
+                  <p className="postUser">{coolPost.occasionOfOutfit} by {coolPost.postingUser.userName}</p>
                   </Link>
                 </div>
                 </div>
@@ -64,11 +64,6 @@ class DILG extends React.Component {
             );
           })}
         </div>
-                <p className="postUser">{coolPost.occasionOfOutfit} by {coolPost.postingUser.userName}</p>
-              </div>
-            </div>
-          );
-        })}
 	<Footer/>
       </>
     );
