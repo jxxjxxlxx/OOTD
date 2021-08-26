@@ -18,8 +18,7 @@ class FormProfile extends Component {
 
   componentDidMount() {
     service
-
-      .get("/api/users/me/")
+      .get("/api/users/me")
       .then((apiRes) => {
         const data = apiRes;
         this.setState({
@@ -30,17 +29,6 @@ class FormProfile extends Component {
         console.log(err);
       });
 
-    // apiHandler.getUser()
-    // .then((apiRes) => {
-    //      const data = apiRes;
-    //      console.log(data)
-    //      this.setState({
-    //              ...data,
-    //      })
-    // })
-    // .catch((err)=> {
-    //      console.log(err)
-    // })
   }
 
   handleFileOnChange = (event) => {
@@ -75,9 +63,7 @@ class FormProfile extends Component {
     const id = this.props.match.params.id;
 
     service
-      .patch(`me/${id}`, formProfile, {
-        withCredentials: true,
-      })
+      .patch(`me/${id}`, formProfile,)
       .then((apiRes) => {
         console.log(apiRes);
       })
@@ -101,9 +87,9 @@ class FormProfile extends Component {
         />
       );
     }
-    
 
     return (
+      
       <form onSubmit={this.handleSubmit}>
         <h2> {this.state.userName} you want to update your profile? </h2>
         <label htmlFor="username">USER NAME</label>
@@ -112,16 +98,16 @@ class FormProfile extends Component {
           type="text"
           id="text"
           name="username"
-          defaultValue={this.state.userName}
+          value={this.state.userName}
         />
 
         <label htmlFor="password">PASSWORD</label>
         <input
           onChange={this.handleChange}
-          type="password"
+          type="currentPassword"
           id="password"
           name="password"
-          defaultValue={this.state.password}
+          value={this.state.password}
         />
 
         <label htmlFor="profileImg">PIC</label>
@@ -132,7 +118,7 @@ class FormProfile extends Component {
           id="profileImg"
           name="profileImg"
         />
-        <img src={this.state.profileImg} alt="pic"></img>
+        <img src={data.profileImg} alt="pic"></img>
         {file_preview}
 
         <button onClick={() => {window.location.href="/userprofile"}}> Submit </button>

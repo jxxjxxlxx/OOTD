@@ -11,39 +11,41 @@ const { service } = apiHandler;
 
 class UserProfile extends React.Component {
 	state = {
-		userPosts: [],
+		coolPosts: [],
 
 	};
 
-	compountDidMount () {
-
+	componentDidMount () {
+	
 	service
 
 	
-      	.get("/api/me/posts")
-      	.then((apiResponse) => {
-        	this.setState({ coolPosts: apiResponse.data, });
-
+	.get("/api/users/me/posts")
+	.then((apiResponse) => {
+		this.setState({ coolPosts: apiResponse.data, });
       		})
 		
       	.catch((error) => {
-        	(console.log(error));
+        	console.log(error)
       	});
 	}
 
 	render() {
+		
 		return (
 			<div>
 				<NavMain/>
 				<FormProfile/>
-			<p> posts </p>
-			{this.state.userPosts.map((posts) =>{
+			<p> your posts </p>
+
+			{this.state.coolPosts.map((posts) =>{
 				
 				return(
 					<div key={this.state.posts}>
-					
+
+					<Link to={`/ilookgood/${posts._id}/edit`}>
 					<img src={posts.image} alt="pic here" />
-					
+					</Link>
 					</div>
 				)
 			})}

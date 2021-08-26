@@ -24,7 +24,7 @@ class editDILG extends Component {
   componentDidMount() {
       const id = this.props.match.params.id;
 
-      axios
+      service
       .get("/api/ilookgood/"+id)
       .then((apiRes)=>{
           const data = apiRes.data;
