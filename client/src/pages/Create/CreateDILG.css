@@ -1,6 +1,52 @@
-/* .DILG-box {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
 
-	border: 1px solid blue;
-	margin-bottom: 150px;
-	margin-top: 150px;
-} */
+.DILG-box {
+display:flex;
+flex-direction: row;
+justify-content: center;
+text-align: center;
+margin: 300px
+}
+
+.form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 30px;
+	padding: 50px;
+	max-height: 100vh;
+	background-color: cadetblue;
+}
+
+.DILG-header {
+	margin:0;
+	padding: 40px;
+font-size: 30px;
+
+font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#outfitMoodComment {
+	padding:5px;
+	border: 2px solid black;
+	border-radius: 10px
+}
+
+.file_preview {
+	object-fit: cover;
+	max-width: 420px;
+	border-radius: 30px;
+	margin-right: 100px
+}
+.outfitmoodLabel {
+	display: flex;
+	align-items: center;
+	margin:0
+}
+
+.fileImg {
+	width:60%;
+	padding:80px;
+	border-radius: 30px;
+	background-color: burlywood;
+}

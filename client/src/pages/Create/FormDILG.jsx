@@ -5,11 +5,10 @@ import { withUser } from "../../pages/Auth/withUser";
 import apiHandler from "../../api/apiHandler";
 import './CreateDILG.css';
 import Footer from "../../components/Footer/Footer";
-
+import NavMain from "../../components/NavMain/NavMain"
 
 const { service } = apiHandler;
 
- 
 class FormDILG extends Component {
   state = {
     postingUser: "",
@@ -21,6 +20,24 @@ class FormDILG extends Component {
     outfitMoodComment: "",
   };
   
+    componentDidMount () {
+
+      service
+      .get("/api/users/me")
+      .then((apiRes)=>{
+          console.log(apiRes)
+          const data = apiRes.data;
+          this.setState({
+              ...data,
+          })
+      })
+      .catch((error)=>{
+          console.log(error)
+      })
+  }
+
+
+
   //this is where the preview happens 
   //and our be loved DOC ref !! https://developer.mozilla.org/en-US/docs/Web/API/FileReader
   handleFileOnChange = (event) => {
@@ -54,7 +71,6 @@ class FormDILG extends Component {
     postDILG.append("occasionOfOutfit", this.state.occasionOfOutfit)
     postDILG.append("outfitMoodComment", this.state.outfitMoodComment)
 
-
     service
       .post("/api/ilookgood", postDILG)
       .then((apiResponse) => {
@@ -63,7 +79,7 @@ class FormDILG extends Component {
       .catch((error) => {
         console.log(error);
       });
-  };
+    }
 
 
   render() {
@@ -73,16 +89,17 @@ class FormDILG extends Component {
     //and puttin it in the src, it shows in preview !!  
     let file_preview = null;
     if(this.state.file !== "") {
-      file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview upload file"/>
+      file_preview = <img className="file_preview" src={this.state.previewURL} onerror="this.style.display='none'"/>
     }
-
-    console.log(this.state.image)
 
     return (
       <div className="DILG-box"> 
+
+      <div className="form">
       <form onSubmit={this.handleSubmit}>
-        <h2>{this.state.postingUser.userName} Show us your OOTD!</h2>
-         <label htmlFor="item">Which item you like the most?</label>
+        <h2 className="DILG-header">{this.state.userName} Show us your OOTD!</h2>
+        <div>
+        <label htmlFor="item">Which item you like the most?</label>
         <select
           onChange={this.handleChange}
           value={this.state.itemDescription}
@@ -98,7 +115,7 @@ class FormDILG extends Component {
         <option value="accessary">Accessary</option>
         <option value="other">Other</option>
         </select>
-
+        </div>
         <label htmlFor="itemInformation">Where is this item from?</label>
         <input
           onChange={this.handleChange}
@@ -107,7 +124,8 @@ class FormDILG extends Component {
           id="itemInformation"
           name="itemInformation"
         />
-
+        
+        <div>
         <label htmlFor="occasionOfOutfit">What was the occasion of this outfit?</label>
         <select
           onChange={this.handleChange}
@@ -126,7 +144,7 @@ class FormDILG extends Component {
         <option value="specialDay">Special day</option>
         <option value="other">Other</option>
         </select>
-        
+          </div>
         <div>
             <label htmlFor="image">Your outfit picture</label>
             <input
@@ -135,20 +153,26 @@ class FormDILG extends Component {
               name="image"
               onChange={this.handleFileOnChange}
             />
-            {file_preview}
+            
           </div>
 
-
-          <label htmlFor="outfitMoodComment">say sth</label>
+          <div className="outfitCommentbox">
+          <label className="outfitmoodLabel" htmlFor="outfitMoodComment">add some comments</label>
             <textarea
               id="outfitMoodComment"
               name="outfitMoodComment"
+              cols="30" rows="5"
               value={this.state.outfitMoodComment}
               onChange={this.handleChange}
             />
-      
+           </div>
+           <div>
         <button onClick={() => {window.location.href="/ilookgood"}}>Submit</button>
+      </div>
       </form>
+      </div>
+      <div><div className="fileImg">{file_preview}</div></div>
+      
       <Footer />
       </div>
       
