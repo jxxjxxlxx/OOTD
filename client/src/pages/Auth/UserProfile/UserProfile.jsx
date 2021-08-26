@@ -35,13 +35,8 @@ class UserProfile extends React.Component {
 	render() {
 		return (
 			<div>
-<<<<<<< HEAD
-				<NavMain></NavMain>
-				<FormProfile></FormProfile>
-=======
 				<NavMain/>
 				<FormProfile/>
->>>>>>> f1147c98797ea549ab78ab80edb0b151159b9965
 			<p> posts </p>
 			{this.state.coolPosts.map((posts) =>{
 				console.log(posts)
