@@ -32,7 +32,8 @@ class DILGOutfitDetail extends React.Component {
     
     return (
       <div>
-        <NavMain/>
+        <div><NavMain/></div>
+        <div className="pageContainer">
         <h2> Outfit Detail  </h2>
         <div className="imageContainer" key={this.state.detail}>
           <p>{this.state.user}</p>
@@ -49,6 +50,7 @@ class DILGOutfitDetail extends React.Component {
         <div className="commentBox">
         <CommentList/>
         <Comment modelValue="CoolPost" />
+        </div>
         </div>
         </div>
         </div>

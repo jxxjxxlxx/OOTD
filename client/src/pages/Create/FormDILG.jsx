@@ -79,7 +79,7 @@ class FormDILG extends Component {
     console.log(this.state.image)
 
     return (
-      <div className="DILG-box"> 
+      <div className="DILG-box form-container"> 
       <form onSubmit={this.handleSubmit}>
         <h2>{this.state.postingUser.userName} Show us your OOTD!</h2>
          <label htmlFor="item">Which item you like the most?</label>
