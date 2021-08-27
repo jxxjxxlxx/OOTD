@@ -27,8 +27,7 @@ const NavMain = (props) => {
 
                 <div className="dropdown">
                   <button class="dropbtn">
-                    <span> Hi, </span>
-                    {context.user && context.user.userName}
+                    <span className="Hi">Hi, </span>{context.user && context.user.userName}
                   </button>
                   <div class="dropdown-content">
                         <li className="profilepage">

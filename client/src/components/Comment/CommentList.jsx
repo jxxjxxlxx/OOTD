@@ -32,7 +32,7 @@ class CommentList extends React.Component {
 			
 			<div>
 				<hr className="hrLine"/>
-				<h1> comment </h1> 
+				<h1 className="comment"> comment </h1> 
 					{this.state.comments.map((commentList)=>{
 						console.log(commentList.userId.userName)
 						return(

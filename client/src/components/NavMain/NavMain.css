@@ -1,3 +1,8 @@
+* {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+
 .nav {
 	border-bottom: 5px solid #caff00;
 	width: 100%;
@@ -6,10 +11,6 @@
 
 }
 
-
-
-
-
 .signout {
 
 	margin-left: 85%;
@@ -17,12 +18,10 @@
 
 .logout {
 	margin-left: 70%;
-}*/
+}
 
 .navbar {
 	overflow: hidden;
-  background-color: #f0f0f0;
-  
   
 
 }
@@ -53,7 +52,7 @@
 }
 
 .navbar li:hover, .dropdown:hover .dropbtn {
-  background-color: #063a79;
+  background-color: black;
 }
 
 .dropdown-content {
@@ -76,7 +75,7 @@
 }
 
 .dropdown-content a:hover {
-  background-color: #063a79;
+  background-color: black;
 }
 
 
@@ -93,13 +92,14 @@ ul {
 
 a {
 	text-decoration: none;
+  color: black
 }
 
 .signout {
   display: block;
   text-decoration: none;
   float: right;
-
+  color:black
 }
 
 a:hover {
@@ -107,3 +107,8 @@ a:hover {
     text-decoration:none; 
     cursor:pointer;  
 }
+
+.H {
+  color:black
+}
+

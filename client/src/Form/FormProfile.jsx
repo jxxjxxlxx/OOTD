@@ -55,11 +55,12 @@ const FormProfile = (props) => {
       <section className="form-section">
                       <form autoComplete="off" className="userprofileForm" onSubmit={handleSubmit}>
                               <h1 className="header"> Edit profile </h1>
+                              <p className="headerTextUser"> and check out your posts </p>
 
           <div className="form-container">
 
-    <p>Update your profile and edit your posts here, {context.user && context.user.userName}  </p> 
-          </div>
+    <h4>Update your profile and edit your posts here, {context.user && context.user.userName}  </h4> 
+          
         <div>
         <label htmlFor="username">User Name</label>
         <input
@@ -85,21 +86,22 @@ const FormProfile = (props) => {
 
         <div>
            <label htmlFor="email">Email</label>
-        <input
+           <br/>
+          <input
           onChange={handleChange}
           type="email"
           id="email"
           name="email"
           placeholder={context.user && context.user.email}
           style={{ width: "100px" }}
-        />
+        /><button className="profileSubmit" onClick={() => {window.location.href="/userprofile"}}> Submit </button>
         </div>
-        
-        <div>
-        <button onClick={() => {window.location.href="/userprofile"}}> Submit </button>
-       </div>
+        </div>
 
-                         
+        
+
+
+                           
        
                     </form>
                    
