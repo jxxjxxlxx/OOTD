@@ -1,98 +1,91 @@
-
-
-
-
 .formProfile {
-	margin-top: 25vh;
-	
-	margin-left: 38%;
-	align-content: center;
-	
+  margin-top: 25vh;
+
+  margin-left: 38%;
+  align-content: center;
 }
 
 p {
-	text-align: center;
+  text-align: center;
 }
 
 li {
-	align-items: center;
+  align-items: center;
 }
 
 .headerTextUser {
-	position: fixed;
-	left: 60%;
-	top: 24vh;
-	transform: translate(-50%, -50%);
-	margin-left:-150px;   
-	color: black;
-	margin:0;
-	text-align: center;
+  position: fixed;
+  left: 60%;
+  top: 24vh;
+  transform: translate(-50%, -50%);
+  margin-left: -150px;
+  color: black;
+  margin: 0;
+  text-align: center;
 }
 
 .userContainer {
-		display: flex;
-	flex-direction: row;
-	margin-left: 70px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 70px;
 }
 
 .mainPageUser {
-	margin-top: 15%;
-	margin-left: 50px;
+  margin-top: 15%;
+  margin-left: 50px;
 }
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 .form-container {
-	display:flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	margin-left: -550px;
-	border: 5px #063a79 solid;
-	border-radius: 30px;
-	padding:40px
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-left: -550px;
+  border: 5px #063a79 solid;
+  border-radius: 30px;
+  padding: 40px;
 }
 
 .profileSubmit {
-	background-color: #caff00;
-	margin-left: 5px;
-	border: none;
-	height: 39px;	
-	border-radius: 10px;
+  background-color: #caff00;
+  margin-left: 5px;
+  border: none;
+  height: 39px;
+  border-radius: 10px;
 }
 
 .mainPostUser {
-
-	align-items: center;
+  align-items: center;
 }
 
 .postImg {
-display: block;
-object-fit: contain;
-width: 100%;
-max-height: 750px;
+  display: block;
+  object-fit: contain;
+  width: 100%;
+  max-height: 750px;
 }
 
 .mainPostUser:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .mainPostUser img {
-	filter: grayscale();
-	width: 30vw;
-	margin-bottom: 1rem;
-	transition: filter 0.4s ease-in-out;
+  filter: grayscale();
+  width: 30vw;
+  margin-bottom: 1rem;
+  transition: filter 0.4s ease-in-out;
 }
 
 .mainPostUser:hover img {
-	filter: none;
+  filter: none;
 }
 
-
 .mainPostUser:hover {
-	width: 100%;
-	left: 0;
+  width: 100%;
+  left: 0;
 }
 
 h3 {
-	text-align: center;
+  text-align: center;
 }

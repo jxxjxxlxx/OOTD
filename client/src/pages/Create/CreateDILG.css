@@ -1,67 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 
 .DILG-box {
-display:flex;
-flex-direction: row;
-justify-content: center;
-margin: 280px
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 280px;
 }
 
 .form {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 30px;
-	padding: 50px;
-	max-height: 100vh;
-	background-color:#063a79;
-	color: white;
-	font-family: 'Montserrat Alternates', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  padding: 50px;
+  max-height: 100vh;
+  background-color: #063a79;
+  color: white;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 .DILG-header {
-	margin:0;
-	padding: 40px;
-font-size: 30px;
-color:white;
-font-family: 'Montserrat Alternates', sans-serif;
+  margin: 0;
+  padding: 40px;
+  font-size: 30px;
+  color: white;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 #outfitMoodComment {
-	padding:5px;
-	border: 2px solid black;
-	border-radius: 10px
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 .file_preview {
-	object-fit: cover;
-	max-width: 420px;
-	border-radius: 30px;
-	margin-right: 100px
+  object-fit: cover;
+  max-width: 420px;
+  border-radius: 30px;
+  margin-right: 100px;
 }
 .outfitmoodLabel {
-	display: flex;
-	align-items: center;
-	margin:0
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
 
 .fileImg {
-	width:28%;
-	height:auto;
-	padding:60px;
-	border-radius: 30px;
-	background-color: #caff00;
-	font-family: 'Open Sans', sans-serif;
+  width: 28%;
+  height: auto;
+  padding: 60px;
+  border-radius: 30px;
+  background-color: #caff00;
+  font-family: "Open Sans", sans-serif;
 }
 
 .postOOTD {
-	position: fixed;
-    top: 10%;    
-	left: 50%;
-	transform: translate(-50%, -50%);
-    font-size: 80px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
 }
 
 /* 
