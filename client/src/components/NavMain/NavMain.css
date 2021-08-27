@@ -3,13 +3,12 @@
 	width: 100%;
 	position: fixed;
 	top:0
+
 }
 
 
 
-li {
-  display: inline-block;
-}
+
 
 .signout {
 
@@ -23,15 +22,17 @@ li {
 .navbar {
 	overflow: hidden;
   background-color: #f0f0f0;
+  
+  
 
 }
 
 .navbar li {
 	float: left;
-  font-size: 16px;
+  font-size: 14px;
   color: #39FF14;
   text-align: center;
-  padding: 14px 16px;
+  padding: 8px 10px;
   text-decoration: none
 }
 
@@ -44,8 +45,8 @@ li {
   font-size: 16px;
   border: none;
   outline: none;
-  color: black;
-  padding: 14px 16px;
+  color: #39FF14;
+  padding: 10px 12px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
@@ -58,9 +59,10 @@ li {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 400px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  
 }
 
 .dropdown-content a {
@@ -93,3 +95,8 @@ a {
 	text-decoration: none;
 }
 
+.signout {
+  display: block;
+
+  float: right;
+}

@@ -31,29 +31,26 @@ const NavMain = (props) => {
                     {context.user && context.user.userName}
                   </button>
                   <div class="dropdown-content">
-                    <li className="profilepage">
-                      <NavLink to="/userprofile">Profile</NavLink>
-                    </li>
-                      <li className="userHome">
-                    <NavLink to="/userhome">Create post</NavLink>
-                  </li>
-                  <li className="link-dilg">
-                    <NavLink to="/ilookgood">DILG</NavLink>
-                  </li>
-                    <li className="link-plzhelp">
-                    <NavLink to="/plzhelp">Plz help!</NavLink>
-                  </li>
-                  
-
-                    <li className="signout">
-                      <NavLink to="/signin" onClick={handleLogout}>
-                        Sign out
-                      </NavLink>
-                    </li>
+                        <li className="profilepage">
+                          <NavLink to="/userprofile">Profile</NavLink>
+                        </li>
+                        <li className="userHome">
+                          <NavLink to="/userhome">Create post</NavLink>
+                        </li>
+                        <li className="link-dilg">
+                        <NavLink to="/ilookgood">DILG</NavLink>
+                        </li>
+                        <li className="link-plzhelp">
+                        <NavLink to="/plzhelp">Plz help!</NavLink>
+                        </li>
+                       
+                        
                   
                 </div>
               </div>
-
+            <li className="signout">
+                        <NavLink to="/signin" onClick={handleLogout}> Sign out   </NavLink>   
+                        </li>
 
             </div>
           </React.Fragment>

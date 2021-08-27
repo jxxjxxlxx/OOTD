@@ -125,6 +125,7 @@ class editDILG extends Component {
     
     return (
     <>
+      <div className="DILG-box">
       <form onSubmit={this.handleSubmit} >
         <h2>{this.state.postingUser.userName} Show us your OOTD!</h2>
          <label htmlFor="item">Which item you like the most?</label>
@@ -205,6 +206,7 @@ class editDILG extends Component {
         </form>
 
 <button onClick={this.handleDelete}> Delete </button>
+</div>
 </>
     );
   }

@@ -30,36 +30,44 @@ class PlzHelp extends React.Component {
   render() {
     return (
       <>
-        <NavMain></NavMain>
+      <div className="nav">
+        <NavMain />
+        </div>
         <div className="mainPageHeader">
           <h1 className="header"> Plzz help !! </h1>
         </div>
 
-        <div className="postHereBtn">
-          <NavLink to="/plzhelp/post" className="posthere">
-            post here
-          </NavLink>
-        </div>
+
+        <div className="mainPage">
+
 
         {this.state.helpPosts.map((helpPost) => {
           return (
             <div className="mainContainer">
               <div className="mainPost" key={helpPost._id}>
-                <Link to={`/plzhelp/${helpPost._id}`}>
-                  <img
+
+               <img
                     className="postImg"
                     src={helpPost.image}
                     alt={helpPost.userName}
                   />
-                </Link>
 
-                <p className="postUser">
+              
+                <div className="overlay">
+
+
+                <Link to={`/plzhelp/${helpPost._id}`}>
+                 <p className="postUser">
                   {helpPost.postingUser.userName} needs help!
                 </p>
+                </Link>
+              </div>
+                
               </div>
             </div>
           );
         })}
+        </div>
 	<Footer />
       </>
     );
