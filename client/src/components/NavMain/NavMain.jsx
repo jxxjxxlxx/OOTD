@@ -48,7 +48,7 @@ const NavMain = (props) => {
                 </div>
               </div>
             <li className="signout">
-                        <NavLink to="/signin" onClick={handleLogout}> Sign out</NavLink>   
+                        <NavLink to="/home" onClick={handleLogout}> Sign out</NavLink>   
                         </li>
 
             </div>
