@@ -5,7 +5,7 @@ import NavMain from "../../components/NavMain/NavMain"
 const CreateDILG = () => {
 	return (
 		<div>
-			<NavMain/>
+			
 			<div><FormDILG/></div>
 		</div>
 	)
