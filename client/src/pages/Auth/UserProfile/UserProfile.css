@@ -1,5 +1,9 @@
 .formProfile {
-	margin-top: 30vh;
+	margin-top: 25vh;
+	
+	margin-left: 38%;
+	align-content: center;
+	
 }
 
 p {
@@ -57,6 +61,13 @@ li {
 	align-items: center;
 }
 
+.postImg {
+display: block;
+object-fit: contain;
+width: 100%;
+max-height: 750px;
+}
+
 .mainPostUser:hover {
 	cursor: pointer;
 }
@@ -76,5 +87,9 @@ li {
 .mainPostUser:hover {
 	width: 100%;
 	left: 0;
+}
+
+h3 {
+	text-align: center;
 }
 

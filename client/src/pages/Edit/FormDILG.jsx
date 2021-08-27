@@ -4,7 +4,10 @@ import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
 import axios from 'axios'
 import apiHandler from '../../api/apiHandler.js'
-import Popup from '../../base/popup';  
+import Popup from '../../base/popup'; 
+import '../Create/CreateDILG.css';
+import Footer from '../../components/Footer/Footer';
+import NavMain from '../../components/NavMain/NavMain';
 
 const {service} = apiHandler;
 
@@ -125,9 +128,14 @@ class editDILG extends Component {
     
     return (
     <>
+      <div className="nav"> <NavMain> </NavMain></div>
       <div className="DILG-box">
+
+        <div className="form">
       <form onSubmit={this.handleSubmit} >
         <h2>{this.state.postingUser.userName} Show us your OOTD!</h2>
+
+        <div>
          <label htmlFor="item">Which item you like the most?</label>
         <select
           onChange={this.handleChange}
@@ -135,6 +143,7 @@ class editDILG extends Component {
           id="itemDescription"
           name="itemDescription"
         >
+         
 
         <option value="top">Top</option>
         <option value="bottom">Bottom</option>
@@ -144,6 +153,7 @@ class editDILG extends Component {
         <option value="accessary">Accessary</option>
         <option value="other">Other</option>
         </select>
+         </div>
 
         <label htmlFor="itemInformation">Where is this item from?</label>
         <input
@@ -154,6 +164,7 @@ class editDILG extends Component {
           name="itemInformation"
         />
 
+        <div>
         <label htmlFor="occasionOfOutfit">What was the occasion of this outfit?</label>
         <select
           onChange={this.handleChange}
@@ -172,6 +183,7 @@ class editDILG extends Component {
         <option value="specialDay">Special day</option>
         <option value="other">Other</option>
         </select>
+        </div>
         
         <div>
             <label htmlFor="image">Your outfit picture</label>
@@ -181,11 +193,14 @@ class editDILG extends Component {
               name="image"
               onChange={this.handleFileOnChange}
             />
-            {file_preview}
+         
+
+
+
             <img src={this.state.image}/>
           </div>
 
-
+          <div className="outfitCommentbox">
           <label htmlFor="outfitMoodComment">say sth</label>
             <textarea
               id="outfitMoodComment"
@@ -193,20 +208,33 @@ class editDILG extends Component {
               value={this.state.outfitMoodComment}
               onChange={this.handleChange}
             />
+             </div>
 
+        <div>
         <button onClick={this.togglePopup.bind(this)}>Update</button>
-        {this.state.showPopup ?  
+         {this.state.showPopup ?  
         <Popup  
           text='update done'  
           closePopup={this.togglePopup.bind(this)}  
         />  
         : null  
         }  
-
+        </div>
         </form>
+        </div>
 
+        <div><div className="fileImg"> Your outfit pic preview {file_preview}</div></div>
+
+ 
+  <div className="deleteButton">
 <button onClick={this.handleDelete}> Delete </button>
+        </div>
+
 </div>
+
+
+
+<Footer />
 </>
     );
   }
