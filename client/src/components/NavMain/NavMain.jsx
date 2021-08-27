@@ -34,7 +34,7 @@ const NavMain = (props) => {
                           <NavLink to="/userprofile">Profile</NavLink>
                         </li>
                         <li className="userHome">
-                          <NavLink to="/userhome">Create post</NavLink>
+                          <NavLink to="/create">Create post</NavLink>
                         </li>
                         <li className="link-dilg">
                         <NavLink to="/ilookgood">DILG</NavLink>
@@ -48,7 +48,7 @@ const NavMain = (props) => {
                 </div>
               </div>
             <li className="signout">
-                        <NavLink to="/signin" onClick={handleLogout}> Sign out   </NavLink>   
+                        <NavLink to="/signin" onClick={handleLogout}> Sign out</NavLink>   
                         </li>
 
             </div>

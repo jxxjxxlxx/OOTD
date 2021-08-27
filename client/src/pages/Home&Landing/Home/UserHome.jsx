@@ -1,21 +1,25 @@
-import React from 'react';
 import '../Home/Home.css';
-
+import React from 'react';
+import DILG from './DILG.png';
+import Help from './help.png'
 const UserHome = () => {
 	return (
 		<div>
 			<div>
-			<div className="container" id="container" /*onClick={() => {window.location.href="/signin"}}*/	>		
+			<div className="container" id="container">
+				
 				<div className="first" id="first" onClick={() => {window.location.href="/ilookgood"}}> 
-				<h1> DAMN I LOOK GOOD</h1>
+				<img className="homeimg" src={DILG} alt="ilookgood"/>
 				</div>
 				<div className="second" id="second" onClick={() => {window.location.href="/plzhelp"}}>
-				<h1> PLZZ I NEED HELP!</h1>
-				</div>			
+				<img className="homeimg" src={Help} alt="plzhelp"/>
+				</div>
+			
 			</div>
 		</div>
 		</div>
 	)
+}
 
-	}
-export default UserHome;
+export default UserHome
+

@@ -48,16 +48,24 @@ font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .fileImg {
-	width:45%;
+	width:28%;
 	height:auto;
-	padding:80px;
+	padding:60px;
 	border-radius: 30px;
 	background-color: #caff00;
 	font-family: 'Open Sans', sans-serif;
 }
 
+.postOOTD {
+	position: fixed;
+    top: 10%;    
+	left: 50%;
+	transform: translate(-50%, -50%);
+    font-size: 80px;
+}
+
 /* 
-#caff00
+#black;
 yellow-green
 1 h 08
 #063a79

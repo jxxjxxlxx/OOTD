@@ -15,7 +15,7 @@ import UserHome from "./pages/Home&Landing/Home/UserHome";
 import SignOut from "./pages/Auth/SignOut/SignOut";
 import DILGOutfitDetail from "./pages/OutfitDetails/DILGOutfitDetail"
 import PlzHelpOutfitDetail from "./pages/OutfitDetails/PlzHelpOutfitDetail";
-
+import Create from "./pages/MainPages/Create"
 
 
 import './App.css';
@@ -32,6 +32,8 @@ function App() {
 
         <Route exact path="/ilookgood" component={DILG}/>
         <Route exact path="/plzhelp" component={PlzHelp}/>
+
+        <Route exact path="/create" component={Create}/>
 
         <Route exact path="/ilookgood/post" component={CreateDILG}/>
         <Route exact path="/plzhelp/post" component={CreatePlzHelp}/>
