@@ -54,39 +54,61 @@ const FormProfile = (props) => {
 
       <section className="form-section">
                       <form autoComplete="off" className="form" onSubmit={handleSubmit}>
-                              <h1 className="header"> Edit profile </h1>
+                    
+                              <h2 className="header"> User profile </h2>
 
-                        <h2 className=""> {context.user && context.user.userName} you want to update your profile? </h2>
-        <label htmlFor="username">USER NAME</label>
+          
+                        
+                        
+        <div>
+
+          <div className="form-container">
+
+    <p>Update your profile and edit your posts here, {context.user && context.user.userName}  </p> 
+          </div>
+        <div>
+        <label htmlFor="username">User Name</label>
         <input
           onChange={handleChange}
           type="text"
           id="text"
           name="username"
           placeholder={context.user && context.user.userName}
+          style={{ width: "100px" }}
         />
-        <label htmlFor="password">PASSWORD</label>
+        </div>
+        <div>
+        <label htmlFor="password">Password</label>
         <input
           onChange={handleChange}
           type="currentPassword"
           id="password"
           name="password"
           placeholder="password"
+          style={{ width: "100px" }}
         />
-           <label htmlFor="email">EMAIL</label>
+        </div>
+
+        <div>
+           <label htmlFor="email">Email</label>
         <input
           onChange={handleChange}
           type="email"
           id="email"
           name="email"
           placeholder={context.user && context.user.email}
+          style={{ width: "100px" }}
         />
+        </div>
         
+        <div>
         <button onClick={() => {window.location.href="/userprofile"}}> Submit </button>
+       </div>
 
-                          
+                            </div>
        
                     </form>
+                   
 
                        
                          
