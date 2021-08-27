@@ -10,7 +10,7 @@ const Landing = () => {
 	return (
 		<div>
 		<div>
-		<div className="landingContainer" id="landingContainer">
+		<div className="landingContainer" id="container">
 			
 			<div className="first" id="first-landing" onClick={() => {window.location.href="/home"}}>
 				
