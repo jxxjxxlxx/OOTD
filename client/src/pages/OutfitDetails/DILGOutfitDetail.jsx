@@ -36,18 +36,17 @@ class DILGOutfitDetail extends React.Component {
       <div className="nav">
        <NavMain/></div>
         <div className="pageContainer">
-        <h2> Outfit Detail  </h2>
         <div className="imageContainer" key={this.state.detail}>
           <p>{this.state.user}</p>
-          <div className="detailImagebox">
-          <img src={this.state.image} alt="post picture" />
+          <div className="detailImagebox"> Preview picture here
+          <img src={this.state.image} onerror="this.style.display='none'"/>
           <button className="wow">WoW</button>
           </div>
           <div className="infoContainer">
-          <p> Item Description: {this.state.itemDescription}  </p>
-          <p>Item Information {this.state.itemInformation}</p>
+          <p> The item I love the most of this outfit is the {this.state.itemDescription}  </p>
+          <p>Item Information : {this.state.itemInformation}</p>
           <p>Occassion of Outfit: {this.state.occasionOfOutfit}</p>
-          <p>Outfit Mood: {this.state.outfitMoodComment}</p>
+          <p>Outfit mood : {this.state.outfitMoodComment}</p>
           <p>Posting Time: {this.state.postingTime}</p>
         <div className="commentBox">
         <CommentList/>
