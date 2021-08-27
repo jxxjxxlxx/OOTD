@@ -34,7 +34,8 @@ class PlzHelp extends React.Component {
         <NavMain />
         </div>
         <div className="mainPageHeader">
-          <h1 className="header"> Plzz help !! </h1>
+          <h1 className="header"> SOS </h1>
+          <p className="headerTextHelp">EMERGENCY</p>
         </div>
 
 

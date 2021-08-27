@@ -43,20 +43,16 @@ class PlzHelpOutfitDetail extends React.Component {
 		</div>
 			
 			<div className="pageContainer">
-			<h2> Outfit detail </h2>
 			<div className="imageContainer" key={this.state.detail}>
-
 			
-			
-
 			<div className="detailImagebox">
 			<img src={this.state.image} alt="posted picture"/>
 			<button className="wow">WoW</button>
 			</div>
 
 			<div className="infoContainer">
-			<h4>This outfit is for the {this.state.occasionOfOutfit}</h4>
-			<p>{this.state.postingUser.userName}'s fashion problem: {this.state.problemComment}</p>
+			<h4 className="occasionHelp">This outfit is for the {this.state.occasionOfOutfit}</h4>
+			<p><b>{this.state.postingUser.userName}'s fashion problem : </b>{this.state.problemComment}</p>
 			<p>{this.state.postingTime}</p>
 			<div className="commentBox">
 			<CommentList/>

@@ -86,7 +86,6 @@ const FormProfile = (props) => {
 
         <div>
            <label htmlFor="email">Email</label>
-           <br/>
           <input
           onChange={handleChange}
           type="email"
