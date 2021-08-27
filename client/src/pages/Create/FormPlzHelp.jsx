@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
 import apiHandler from "../../api/apiHandler";
+import Footer from '../../components/Footer/Footer';
+import NavMain from '../../components/NavMain/NavMain';
+import '../Create/CreateDILG.css';
 
 const {service} = apiHandler
 
@@ -63,9 +66,15 @@ class FormPlzHelp extends Component {
     }
 
     return (
+      <>
+      <div className="nav"> <NavMain> </NavMain></div>
+      <div className="DILG-box">
+
+        <div className="form">
       <form onSubmit={this.handleSubmit}>
         <h2>{this.state.userName} Ask for some advice </h2>
 
+      <div>
         <label htmlFor="occasionOfOutfit">What would be the occasion of this outfit?</label>
         <input
           onChange={this.handleChange}
@@ -74,6 +83,7 @@ class FormPlzHelp extends Component {
           id="occasionOfOutfit"
           name="occasionOfOutfit"
         />
+        </div>
 
         <div>
             <label htmlFor="image">Show us your outfit!</label>
@@ -95,6 +105,10 @@ class FormPlzHelp extends Component {
             />
         <button onClick={() => {window.location.href="/plzhelp"}}>Submit</button>
       </form>
+      </div>
+      </div>
+      <Footer />
+      </>
     );
   }
 }

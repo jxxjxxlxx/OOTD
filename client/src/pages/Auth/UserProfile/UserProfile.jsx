@@ -49,7 +49,7 @@ class UserProfile extends React.Component {
 			<div className="formProfile">
 				<FormProfile/>
 			</div>
-			<p> check out your posts </p>
+			<h3> check out your posts </h3>
 
 			{this.state.coolPosts.map((posts) =>{
 				

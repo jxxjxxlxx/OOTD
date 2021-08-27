@@ -1,5 +1,9 @@
 .formProfile {
 	margin-top: 25vh;
+	
+	margin-left: 38%;
+	align-content: center;
+	
 }
 
 p {
@@ -39,7 +43,7 @@ li {
 display: block;
 object-fit: contain;
 width: 100%;
-max-height: 750px;git
+max-height: 750px;
 
 }
 
@@ -56,5 +60,9 @@ button {
 	
 	padding: 10px 20px;
 	border-radius: 10px;
+}
+
+h3 {
+	text-align: center;
 }
 

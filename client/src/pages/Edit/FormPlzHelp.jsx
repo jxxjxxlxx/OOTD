@@ -5,6 +5,7 @@ import { withUser } from "../../pages/Auth/withUser";
 import axios from 'axios'
 import apiHandler from '../../api/apiHandler'
 import Popup from '../../base/popup'; 
+import '../Create/CreateDILG.css';
 
 const {service} = apiHandler;
 

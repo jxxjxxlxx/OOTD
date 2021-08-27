@@ -8,11 +8,12 @@ import "../Landing/Landing.css";
 
 const Landing = () => {
 	return (
-		
-		<div className="animate__animated animate__bounce">
-			 <meta name="viewport" content="initial-scale=1"></meta>
-			<div className="container" id="container-landing" onClick={() => {window.location.href="/home"}}>
-				<div className="first" id="first-landing"> 
+		<div>
+		<div>
+		<div className="landingContainer" id="landingContainer">
+			
+			<div className="first" id="first-landing" onClick={() => {window.location.href="/home"}}>
+				
 			<h1> DAMN I LOOK GOOD  </h1>
 				</div>
 				<div className="second" id="second-landing">
@@ -21,6 +22,8 @@ const Landing = () => {
 			
 			</div>
 		</div>
+		</div>
+		
 	)
 }
 

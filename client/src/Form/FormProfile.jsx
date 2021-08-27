@@ -99,7 +99,7 @@ const FormProfile = (props) => {
         <button onClick={() => {window.location.href="/userprofile"}}> Submit </button>
        </div>
 
-                            </div>
+                         
        
                     </form>
                    
