@@ -5,7 +5,6 @@ import { withUser } from "../../pages/Auth/withUser";
 import apiHandler from "../../api/apiHandler";
 import './CreateDILG.css';
 import Footer from "../../components/Footer/Footer";
-import NavMain from "../../components/NavMain/NavMain"
 
 const { service } = apiHandler;
 
@@ -94,7 +93,8 @@ class FormDILG extends Component {
 
     return (
       <div className="DILG-box"> 
-
+      <p className="guideText">share your own</p>
+      <h1 className="header">OOTD</h1>
       <div className="form">
       <form onSubmit={this.handleSubmit}>
         <h2 className="DILG-header">{this.state.userName} Show us your OOTD!</h2>
@@ -171,7 +171,7 @@ class FormDILG extends Component {
       </div>
       </form>
       </div>
-      <div><div className="fileImg">Your outfit pic preview {file_preview}</div></div>
+      <div className="fileImg">Your outfit pic preview {file_preview}</div>
       
       <Footer />
       </div>

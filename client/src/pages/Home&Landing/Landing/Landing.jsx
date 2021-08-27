@@ -21,12 +21,12 @@ const Landing = () => {
 				</div>
 			
 				
-				<div className="first" id="first-landing"> 
+				{/* <div className="first" id="first-landing"> 
 				<img className="homeimg" src={DILG} alt="ilookgood"/>
 				</div>
 				<div className="second" id="second-landing">
 				<img className="homeimg" src={Help} alt="plzhelp"/>
-				</div>
+				</div> */}
 			
 			
 </>

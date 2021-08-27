@@ -1,10 +1,12 @@
 import React from 'react'
 import FormPlzHelp from './FormPlzHelp'
+import NavMain from "../../components/NavMain/NavMain"
+
 const CreatePlzHelp = () => {
 	return (
 		<div>
-			<h1>create plzhelp</h1>
-			<FormPlzHelp/>
+			<NavMain/>
+			<div><FormPlzHelp/></div>
 		</div>
 	)
 }

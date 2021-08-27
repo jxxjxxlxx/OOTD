@@ -68,11 +68,13 @@ class FormPlzHelp extends Component {
     return (
       <>
       <div className="nav"> <NavMain> </NavMain></div>
+      <p className="guideText">share your own</p>
+      <h1 className="header">OOTD</h1>
       <div className="DILG-box">
 
         <div className="form">
       <form onSubmit={this.handleSubmit}>
-        <h2>{this.state.userName} Ask for some advice </h2>
+        <h2> Ask for some advice </h2>
 
       <div>
         <label htmlFor="occasionOfOutfit">What would be the occasion of this outfit?</label>
@@ -93,7 +95,6 @@ class FormPlzHelp extends Component {
               name="image"
               onChange={this.handleFileOnChange}
             />
-            {file_preview}
           </div>
 
           <label htmlFor="problemComment">some comments?</label>
@@ -106,8 +107,10 @@ class FormPlzHelp extends Component {
         <button onClick={() => {window.location.href="/plzhelp"}}>Submit</button>
       </form>
       </div>
-      </div>
+      <div className="fileImg">Your outfit pic preview {file_preview}</div>
       <Footer />
+      </div>
+      
       </>
     );
   }
