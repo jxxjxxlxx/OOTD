@@ -64,7 +64,7 @@ class FormSignin extends Component {
       <div className="second sign" id="second">
 
         <div className="second-container">
-        <h2> NEED FASHION ADVICE? </h2>
+        <h2 className="signUpText"> NEED FASHION ADVICE? </h2>
         <NavLink to="signup" className="signup"> SIGN UP </NavLink>
       </div>
       </div>
