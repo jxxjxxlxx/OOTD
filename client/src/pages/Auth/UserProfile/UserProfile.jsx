@@ -43,44 +43,40 @@ class UserProfile extends React.Component {
 		
 		return (
 			<>
+			
 			<div className="nav">
 				<NavMain/>
 			</div>
+			<div className="userContainer">
 			<div className="formProfile">
 				<FormProfile/>
 			</div>
-			<p> check out your posts </p>
+			
 
 			{this.state.coolPosts.map((posts) =>{
 				
 				return(
-					<div className="mainPage">
+					<div className="mainPageUser">
 
 					<div key={this.state.posts}>
 					
-					<div className="mainContainer">
-					
-					<div className="mainPost">
-					<ul>
-						
-					<li> <img src={posts.image} className="postImg" alt="pic here" ></img></li>
-					</ul>
-
-					<div className="overlay">
-
+					<div className="mainPostUser">
 					<Link to={`/ilookgood/${posts._id}/edit`}>
 					<img src={posts.image} alt="pic here" />
 					</Link>
 					</div>
+
 					</div>
+					
 					</div>
-					</div>
-					</div>
+					
+					
 				)
 			})}
-		
+		</div>
 		<Footer />
 		</>
+		
 		);
 	}
 }
