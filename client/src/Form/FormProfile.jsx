@@ -32,6 +32,7 @@ const FormProfile = (props) => {
     service
       .patch(`me/${id}`, formProfile)
       .then((apiRes) => {
+        this.props.history.push("/userprofile")
         console.log(apiRes);
       })
       .catch((err) => {
@@ -42,14 +43,7 @@ const FormProfile = (props) => {
   function handleChange(event) {
     const value = event.target.value;
     const key = event.target.name;
-<<<<<<< HEAD
-
-    this.setState({ [key]: value });
-  };
-
-=======
   }
->>>>>>> 00a5e694057e3e4db709dadc91d3ec3abd0afd2e
 
   return (
     <div>

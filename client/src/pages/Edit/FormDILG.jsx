@@ -77,6 +77,7 @@ class editDILG extends Component {
     service
       .patch(`/api/ilookgood/${id}`, editDILG)
       .then((apiResponse) => {
+        this.props.history.push("/userprofile")
         console.log(apiResponse);
       })
       .catch((error) => {
@@ -91,6 +92,7 @@ class editDILG extends Component {
     service
       .delete(`/api/ilookgood/${id}`)
       .then((apiRes) => {
+        this.props.history.push("/userprofile")
         console.log(apiRes);
         this.setState({
           data: this.state.data.filter((coolpost) => coolpost._id !== id),

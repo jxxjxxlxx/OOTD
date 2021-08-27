@@ -2,17 +2,10 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withUser } from "../../pages/Auth/withUser";
-<<<<<<< HEAD
 import apiHandler from "../../api/apiHandler";
 import Popup from "../../base/popup";
 import "../Create/CreateDILG.css";
 import { Link } from "react-router-dom";
-=======
-import axios from "axios";
-import apiHandler from "../../api/apiHandler";
-import Popup from "../../base/popup";
-import "../Create/CreateDILG.css";
->>>>>>> 00a5e694057e3e4db709dadc91d3ec3abd0afd2e
 
 const { service } = apiHandler;
 
@@ -29,11 +22,7 @@ class FormPlzHelp extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
 
-<<<<<<< HEAD
     service
-=======
-    axios
->>>>>>> 00a5e694057e3e4db709dadc91d3ec3abd0afd2e
       .get("/api/plzhelp/" + id)
       .then((apiRes) => {
         const data = apiRes.data;
@@ -80,6 +69,7 @@ class FormPlzHelp extends Component {
     service
       .patch(`/api/plzhelp/${id}`, postHelp)
       .then((apiResponse) => {
+        this.props.history.push("/userprofile")
         console.log(apiResponse);
       })
       .catch((error) => {
@@ -93,6 +83,7 @@ class FormPlzHelp extends Component {
 
     service
       .delete(`/api/plzhelp/${id}`)
+      this.props.history.push("/userprofile")
       .then((apiRes) => {
         console.log(apiRes);
         this.setState({
@@ -167,14 +158,8 @@ class FormPlzHelp extends Component {
             />
           ) : null}
         </form>
-<<<<<<< HEAD
-        <Link to="/userprofile" onClick={this.handleDelete}>
-          Delete and go back to your profile page!
-        </Link>
-=======
 
         <button onClick={this.handleDelete}> Delete </button>
->>>>>>> 00a5e694057e3e4db709dadc91d3ec3abd0afd2e
       </>
     );
   }
