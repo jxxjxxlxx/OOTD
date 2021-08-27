@@ -44,7 +44,7 @@ const FormProfile = (props) => {
     const value = event.target.value;
     const key = event.target.name;
 
-  
+    this.setState({ [key]: value });
   };
 
 

@@ -121,14 +121,14 @@ class editDILG extends Component {
     //and puttin it in the src, it shows in preview !!  
     let file_preview = null;
     if(this.state.file !== "") {
-      file_preview = <img className="file_preview" src={this.state.previewURL} alt="preview upload file"/>
+      file_preview = <img className="file_preview" src={this.state.previewURL} onerror="this.style.display='none'"/>
     }
 
    
     
     return (
     <>
-      <div className="nav"> <NavMain> </NavMain></div>
+      <div className="nav"> <NavMain/></div>
       <div className="DILG-box">
 
         <div className="form">
@@ -193,10 +193,7 @@ class editDILG extends Component {
               name="image"
               onChange={this.handleFileOnChange}
             />
-         
-
-
-
+        
             <img src={this.state.image}/>
           </div>
 

@@ -45,7 +45,7 @@ class PlzHelp extends React.Component {
         {this.state.helpPosts.map((helpPost) => {
           return (
             <div className="mainContainer">
-              <div className="mainPost" key={helpPost._id}>
+              <div className="mainPost" key={helpPost.postingUser.userName}>
 
                <img
                     className="postImg"

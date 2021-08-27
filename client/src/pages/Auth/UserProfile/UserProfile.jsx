@@ -24,13 +24,11 @@ class UserProfile extends React.Component {
 	componentDidMount () {
 
 	service
-
-	
       	.get("/api/users/me/posts")
 	     
       	.then((apiResponse) => {
         	this.setState({ coolPosts: apiResponse.data });
-		console.log(this.state.apiResponse.data)
+		
       		})
 		
       	.catch((error) => {
@@ -43,7 +41,6 @@ class UserProfile extends React.Component {
 		
 		return (
 			<>
-			
 			<div className="nav">
 				<NavMain/>
 			</div>
