@@ -1,6 +1,6 @@
 import React from 'react';
-// import DILG from '../Home/DILG.png';
-// import Help from '../Home/help.png';
+import DILG from '../Home/DILG.png';
+ import Help from '../Home/help.png';
 import "../Landing/Landing.css";
 import { Link } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
