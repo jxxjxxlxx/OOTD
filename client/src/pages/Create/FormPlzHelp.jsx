@@ -49,7 +49,7 @@ class FormPlzHelp extends Component {
     service
       .post("/api/plzhelp", postHelp)
       .then((apiResponse) => {
-        console.log(apiResponse);
+        this.props.history.push("/plzhelp")
       })
       .catch((error) => {
         console.log(error);
@@ -58,14 +58,8 @@ class FormPlzHelp extends Component {
 
   render() {
     let file_preview = null;
-    if (this.state.file !== "") {
-      file_preview = (
-        <img
-          className="file_preview"
-          src={this.state.previewURL}
-          alt="preview upload file"
-        />
-      );
+    if(this.state.file !== "") {
+      file_preview = <img className="file_preview" src={this.state.previewURL} onerror="this.style.display='none'"/>
     }
 
     return (

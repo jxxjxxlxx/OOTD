@@ -32,6 +32,7 @@ const FormProfile = (props) => {
     service
       .patch(`me/${id}`, formProfile)
       .then((apiRes) => {
+        this.props.history.push("/userprofile")
         console.log(apiRes);
       })
       .catch((err) => {

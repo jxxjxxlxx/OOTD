@@ -77,6 +77,7 @@ class editDILG extends Component {
     service
       .patch(`/api/ilookgood/${id}`, editDILG)
       .then((apiResponse) => {
+        this.props.history.push("/userprofile")
         console.log(apiResponse);
       })
       .catch((error) => {
@@ -91,6 +92,7 @@ class editDILG extends Component {
     service
       .delete(`/api/ilookgood/${id}`)
       .then((apiRes) => {
+        this.props.history.push("/userprofile")
         console.log(apiRes);
         this.setState({
           data: this.state.data.filter((coolpost) => coolpost._id !== id),
@@ -113,14 +115,8 @@ class editDILG extends Component {
     //if a file is uploaded, will have a url representing the file's data
     //and puttin it in the src, it shows in preview !!
     let file_preview = null;
-    if (this.state.file !== "") {
-      file_preview = (
-        <img
-          className="file_preview"
-          src={this.state.previewURL}
-          alt="preview upload file"
-        />
-      );
+    if(this.state.file !== "") {
+      file_preview = <img className="file_preview" src={this.state.previewURL} onerror="this.style.display='none'"/>
     }
 
     return (
