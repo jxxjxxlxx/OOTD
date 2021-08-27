@@ -71,6 +71,7 @@ class FormDILG extends Component {
       .post("/api/ilookgood", postDILG)
       .then((apiResponse) => {
         console.log(apiResponse);
+          this.props.history.push("/ilookgood")
       })
       .catch((error) => {
         console.log(error);
@@ -173,9 +174,7 @@ class FormDILG extends Component {
             </div>
             <div>
               <button
-                onClick={() => {
-                  window.location.href = "/ilookgood";
-                }}
+              
               >
                 Submit
               </button>
