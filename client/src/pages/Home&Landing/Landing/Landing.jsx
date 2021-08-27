@@ -1,6 +1,8 @@
 import React from 'react';
+import DILG from '../Home/DILG.png';
+import Help from '../Home/help.png';
 import "../Landing/Landing.css";
-
+import {Link} from 'react-router-dom'
 // import { useHistory } from "react-router-dom";
 
 
@@ -8,37 +10,27 @@ import "../Landing/Landing.css";
 
 const Landing = () => {
 	return (
+		<>
+		<div className="enterHome"><Link to="/home">Click to enter</Link></div>
 		
-		<div className="animate__animated animate__bounce">
-			 <meta name="viewport" content="initial-scale=1"></meta>
-			<div className="container" id="container-landing" onClick={() => {window.location.href="/home"}}>
-				<div className="first" id="first-landing"> 
-			<h1> DAMN I LOOK GOOD  </h1>
-				</div>
-				<div className="second" id="second-landing">
-			<h1> PLZZ I NEED HELP!</h1>
+<div className="landingText">
+				
+				<h1>share your outfit on<br/>OOTD</h1>
+				
+				<span>Outfit <br/>Of <br/> The Dayumnnn</span>
 				</div>
 			
-			</div>
-		</div>
+				
+				<div className="first" id="first-landing"> 
+				<img className="homeimg" src={DILG} alt="ilookgood"/>
+				</div>
+				<div className="second" id="second-landing">
+				<img className="homeimg" src={Help} alt="plzhelp"/>
+				</div>
+			
+			
+</>
 	)
 }
 
-export default Landing
-
-
-
-
-
-//function Landing() {
-//  const history = useHistory();
-//  
-//  const handleRoute = () =>{ 
-//    history.push("/home");
-//  }
-//  
-//  return (                     
-//          
-//  );
-//}
-//export default Landing;
+export default Landing;

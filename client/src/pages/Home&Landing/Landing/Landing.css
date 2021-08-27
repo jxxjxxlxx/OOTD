@@ -6,50 +6,39 @@ body {
    padding: 0;
 }
 
-#container-landing {
-    width: 100%;
-    height: 100%;
-    margin: auto;
-}
 #first-landing {
     width: 50%;
-    float: left;
-    min-height: 700px;
-        background-color: #F08080;
-	color: #FFDAB9;
+    min-height: 100vh;
     text-align: center;
-   
+    opacity: 0.3;
 }
 #second-landing {
+    text-align: center;
     width: 50%;
     float: right;
-    min-height: 700px;
-    background-color: #FFFFFF;
-	color: #F08080;
+    min-height: 100vh;
+    opacity: 0.3;
 }
 
-
-
-/* trying to put transition effect -- not working so far :( 
-Before click:
-.container, .master-close {
- transition: all .4s;
+.landingText {
+    display: flex;
+    width: 100vw;
+    font-size: 100px;
 }
 
-.master-close (div) {
- background: rgba(0,0,0,.7);
-position: fixed;
- width: 100%;
- height: 100%;
- top: 0;
-  left: 0;
- right: 0;
- bottom: 0;
- z-index: 100;
- opacity: 0;
-pointer-events: none;
- /* cursor: url(../images/cursor-close.svg) 10 10, auto; */
+.landingText span {
+    color:#063a79;
+    display: flex;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-weight: 900;
+}
+.landingText h1 {
+    text-align: start;
+}
 
-
-
-
+.enterHome {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}

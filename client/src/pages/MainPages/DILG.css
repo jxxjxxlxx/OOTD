@@ -104,3 +104,14 @@ max-height: 750px;
 	transform: translate(-50%, -50%);
 	text-align: center;
   }
+
+  .headerTextHelp {
+	position: fixed;
+	left: 56%;
+	top: 22vh;
+	transform: translate(-50%, -50%);
+	margin-left:-150px;   
+	color: black;
+	margin:0;
+	text-align: center;
+}
