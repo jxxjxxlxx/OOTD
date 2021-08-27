@@ -1,7 +1,7 @@
 import React from 'react';
 import apiHandler from "../../api/apiHandler";
 import {withRouter} from "react-router-dom"
-
+import './CommentList.css'
 const { service } = apiHandler;
 
 
@@ -31,14 +31,14 @@ class CommentList extends React.Component {
 		return (
 			
 			<div>
-					<h2>comment list </h2> 
-				
+				<hr className="hrLine"/>
+				<h1> comment </h1> 
 					{this.state.comments.map((commentList)=>{
 						console.log(commentList.userId.userName)
 						return(
-						<div key={commentList}>
+						<div className="commentListBox" key={commentList}>
 							<ul>
-							<li> {commentList.userId.userName} : {commentList.comment}</li>
+							<li className="comments"> <b>{commentList.userId.userName}</b> : {commentList.comment}</li>
 							</ul>
 						</div>
 						)

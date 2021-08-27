@@ -7,7 +7,7 @@ const Comment = ({modelValue}) => {
 	return (
 		<div>
 
-			<h1> comment </h1> 
+			
 
 			<FormComment model={modelValue} />
 		</div>

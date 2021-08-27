@@ -50,14 +50,14 @@ class FormComment extends Component {
       <div>
 
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="comment">Comment Here</label>
+          <label htmlFor="comment"/>
           <input
             type="text"
             onChange={this.handleChange}
             placeholder="be nice :)"
             name="comment"
           />
-          <button onClick={this.handleRefresh}>post</button>
+          <button className="commentSubmit" onClick={this.handleRefresh}>post</button>
         </form>
       </div>
     );

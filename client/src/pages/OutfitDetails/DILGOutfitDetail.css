@@ -1,31 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+
+
 .detailImagebox {
     position: relative;
-    border: 1px solid black;
     width: 45%;
 }
 
 .detailImagebox img {
-    width:100%;
-    height: auto;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    object-fit: contain;
 }
 
 .imageContainer {
     display: flex;
     flex-direction: row;
     margin-left: 10%;
+    width: 100vh
     
 }
 .infoContainer {
     padding: 50px;
-    border: 1px solid black;
     width: 40%;
-    margin-right: 10%;
     text-align: center;
+    color:#6f7b8c;
 }
 .wow {
     position: absolute;
-    left: 80%;
-    bottom: 10%;
+    left: 75%;
+    bottom: 8%;
     background-color: black;
     text-align: center;
     cursor: pointer;
@@ -43,11 +48,35 @@
     pointer-events: none; 
 }
 
+
+
 .pageContainer {
-    margin-top: 100px;
+    padding: 50px;
+   	width: 100vw;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 
 h2 {
     text-align: center;
+}
+
+
+
+p {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.commentSubmit {
+    width: 50px;
+    height: 38px;
+    border-radius: 12px;
+    background-color: #063a79;
+    color: white;
+    border: 2px solid white;
 }

@@ -4,7 +4,7 @@ import './Footer.css';
 const Footer = () => {
 	return (
 		 <div className="footer">
-    <p> OOTD© | Digital Fashion Magazine | jinjoo x jessie
+    <p className="footerP"> OOTD© | Digital Fashion Magazine | jinjoo x jessie
 
     </p>
   

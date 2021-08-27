@@ -171,7 +171,7 @@ class FormDILG extends Component {
       </div>
       </form>
       </div>
-      <div><div className="fileImg">{file_preview}</div></div>
+      <div><div className="fileImg">Your outfit pic preview {file_preview}</div></div>
       
       <Footer />
       </div>

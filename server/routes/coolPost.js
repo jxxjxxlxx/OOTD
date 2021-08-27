@@ -54,7 +54,7 @@ router.post("/", requireAuth, uploader.single("image"), (req, res, next)=>{
     })
 })
 
-//router.get("/:id/comments")
+//get comments from a post
 
 router.get("/:id/comments", (req, res, next) => {
     Comment.find({})

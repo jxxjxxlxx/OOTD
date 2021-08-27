@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+
 
 .DILG-box {
 display:flex;
 flex-direction: row;
 justify-content: center;
-text-align: center;
-margin: 300px
+margin: 280px
 }
 
 .form {
@@ -15,15 +17,15 @@ margin: 300px
 	border-radius: 30px;
 	padding: 50px;
 	max-height: 100vh;
-	background-color: darkgray;
-	
+	background-color:#063a79;
+	color: white;
+	font-family: 'Montserrat Alternates', sans-serif;
 }
-
 .DILG-header {
 	margin:0;
 	padding: 40px;
 font-size: 30px;
-
+color:white;
 font-family: 'Montserrat Alternates', sans-serif;
 }
 
@@ -47,7 +49,27 @@ font-family: 'Montserrat Alternates', sans-serif;
 
 .fileImg {
 	width:60%;
+	height:auto;
 	padding:80px;
 	border-radius: 30px;
-	background-color: burlywood;
+	background-color: #caff00;
+	font-family: 'Open Sans', sans-serif;
 }
+
+/* 
+#caff00
+yellow-green
+1 h 08
+#063a79
+dark-blue
+
+
+
+#eeedef
+
+1 h 09
+#e1e0e2
+light-gray
+1 h 10
+#6f7b8c
+-gray */
