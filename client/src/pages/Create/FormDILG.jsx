@@ -5,6 +5,7 @@ import { withUser } from "../../pages/Auth/withUser";
 import apiHandler from "../../api/apiHandler";
 import "./CreateDILG.css";
 import Footer from "../../components/Footer/Footer";
+import NavMain from "../../components/NavMain/NavMain";
 
 const { service } = apiHandler;
 
@@ -94,6 +95,12 @@ class FormDILG extends Component {
     }
 
     return (
+      <>
+
+      <div className="nav">
+        {" "}
+          <NavMain> </NavMain>
+        </div>
       <div className="DILG-box">
         <p className="guideText">share your own</p>
         <h1 className="header">OOTD</h1>
@@ -185,6 +192,8 @@ class FormDILG extends Component {
 
         <Footer />
       </div>
+      
+       </>
     );
   }
 }
