@@ -1,6 +1,6 @@
 import React from 'react';
 import DILG from '../Home/DILG.png';
- import Help from '../Home/help.png';
+import Help from '../Home/help.png';
 import "../Landing/Landing.css";
 import { Link } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
@@ -30,7 +30,11 @@ const Landing = () => {
 				</div>
 				<div className="second" id="second-landing">
 				<img className="homeimg" src={Help} alt="plzhelp"/>
+<<<<<<< HEAD
+				</div>
+=======
 				</div> 
+>>>>>>> 44b5a4b264f93e86a95e0f3053a61062e1c001bc
     </>
   );
 };

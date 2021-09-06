@@ -20,7 +20,6 @@ class DILG extends React.Component {
         this.setState({
           coolPosts: apiRes.data,
         });
-        console.log(apiRes);
       })
       .catch((error) => {
         console.log(error);

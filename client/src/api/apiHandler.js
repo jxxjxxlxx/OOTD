@@ -65,15 +65,13 @@ const apiHandler = {
       .then((res) => res.data)
       .catch(errorHandler);
   },
-
+  
   getUserHelpPosts() {
     return service
-    //check  if backend route is ok. apiHandler to enable user to view his/her own posts
-      .get("/api/users/me/helpposts")
-      .then((res) => res.data)
-      .catch(errorHandler);
-  },
-
+    .get("/api/users/me/helpposts")
+    .then((res)=>res.data)
+    .catch(errorHandler)
+  }
 
 };
 
