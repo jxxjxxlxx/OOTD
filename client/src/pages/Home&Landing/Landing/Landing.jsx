@@ -1,6 +1,6 @@
 import React from 'react';
-// import DILG from '../Home/DILG.png';
-// import Help from '../Home/help.png';
+import DILG from '../Home/DILG.png';
+import Help from '../Home/help.png';
 import "../Landing/Landing.css";
 import { Link } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
@@ -25,12 +25,12 @@ const Landing = () => {
         </span>
       </div>
 
-      {/* <div className="first" id="first-landing"> 
+      <div className="first" id="first-landing"> 
 				<img className="homeimg" src={DILG} alt="ilookgood"/>
 				</div>
 				<div className="second" id="second-landing">
 				<img className="homeimg" src={Help} alt="plzhelp"/>
-				</div> */}
+				</div>
     </>
   );
 };

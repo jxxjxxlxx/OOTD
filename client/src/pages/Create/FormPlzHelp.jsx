@@ -49,6 +49,7 @@ class FormPlzHelp extends Component {
     service
       .post("/api/plzhelp", postHelp)
       .then((apiResponse) => {
+        console.log(apiResponse)
         this.props.history.push("/plzhelp")
       })
       .catch((error) => {
