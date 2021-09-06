@@ -38,7 +38,7 @@ router.post("/", requireAuth, uploader.single("image"), (req, res, next)=>{
     newPost.postingUser = req.session.currentUser;
     (req.file) && (newPost.image = req.file.path);
 	
-	HelpPost.create(req.body)
+	HelpPost.create(newPost)
 		.then((posts)=>{
 			posts
 			.populate("postingUser", "-password")

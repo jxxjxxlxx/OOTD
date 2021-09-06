@@ -3,7 +3,8 @@ const router = express.Router();
 const User = require("../models/User");
 const requireAuth = require("../middleware/requireAuth");
 const upload = require("../config/cloudinary.config");
-const CoolPost = require("../models/CoolPost")
+const CoolPost = require("../models/CoolPost");
+const HelpPost = require("../models/HelpPost");
 
 // GET one user
 
@@ -41,6 +42,16 @@ router.get("/me/posts", requireAuth, (req, res, next) => {
     })
     .catch(next);
 });
+
+//router.get("/me/posts", requireAuth, (req, res, next) => {
+//  const currentUserId = req.session.currentUser;
+//  HelpPost.find({ postingUser: currentUserId })
+//  .then((user) => {
+//    res.status(200).json(user);
+//  })
+//  .catch(next);
+//
+//          });
 
 //router.get("/me/posts", async (req, res) => {
 //  try {

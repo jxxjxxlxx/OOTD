@@ -12,22 +12,43 @@ const { service } = apiHandler;
 class UserProfile extends React.Component {
   state = {
     coolPosts: [],
+    helpPosts: [],
   };
 
-  componentDidMount() {
-    service
+ componentDidMount() {
+ //   service
 
-      .get("/api/users/me/posts")
+  
 
-      .then((apiResponse) => {
-        this.setState({ coolPosts: apiResponse.data });
-        console.log(this.state.apiResponse.data);
-      })
+      //.get("/api/users/me/coolposts")
+//
+      //.then((apiResponse) => {
+      //  this.setState({ coolPosts: apiResponse.data });
+      //  console.log(this.state.apiResponse.data);
+      //})
+//
+      //.catch((error) => {
+      //  console.log(error);
+      //});
 
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+
+ // 
+
+Promise.all([
+  fetch('/api/users/me/coolposts'),
+  fetch('/api/users/me/helpposts')
+])
+
+.then(async([coolPosts, helpPosts]) => {
+  const coolPost = await coolPosts.json();
+  const helpPost = await helpPosts.json();
+  console.log(helpPost);
+})
+.catch(err => {
+  console.log(err);
+});
+
+ }
 
   render() {
     return (
