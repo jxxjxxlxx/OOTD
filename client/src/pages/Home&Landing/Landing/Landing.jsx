@@ -30,11 +30,7 @@ const Landing = () => {
 				</div>
 				<div className="second" id="second-landing">
 				<img className="homeimg" src={Help} alt="plzhelp"/>
-<<<<<<< HEAD
-				</div>
-=======
 				</div> 
->>>>>>> 44b5a4b264f93e86a95e0f3053a61062e1c001bc
     </>
   );
 };

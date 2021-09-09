@@ -14,7 +14,7 @@ class UserProfileHelp extends React.Component {
   componentDidMount() {
     service
 
-      .get("/api/users/me/helpPosts")
+      .get("/api/users/me/helpposts")
       .then((apiResponse) => {
         
         this.setState({ helpPosts: apiResponse.data });

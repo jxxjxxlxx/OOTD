@@ -123,7 +123,7 @@ class editDILG extends Component {
       <>
         <div className="nav">
           {" "}
-          <NavMain> </NavMain>
+          <NavMain/>
         </div>
         <div className="DILG-box">
           <div className="form">

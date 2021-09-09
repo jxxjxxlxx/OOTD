@@ -5,13 +5,14 @@ import { withUser } from "../../pages/Auth/withUser";
 import apiHandler from "../../api/apiHandler";
 import Popup from "../../base/popup";
 import "../Create/CreateDILG.css";
-import { Link } from "react-router-dom";
+import NavMain from "../../components/NavMain/NavMain";
+import Footer from "../../components/Footer/Footer";
 
 const { service } = apiHandler;
 
 class FormPlzHelp extends Component {
   state = {
-    userName: "",
+    postingUser: "",
     occasionOfOutfit: "",
     iamge: "",
     previewURL: "",
@@ -27,7 +28,7 @@ class FormPlzHelp extends Component {
       .then((apiRes) => {
         const data = apiRes.data;
         this.setState({
-          ...data,
+        ...data,
         });
       })
       .catch((error) => {
@@ -83,8 +84,9 @@ class FormPlzHelp extends Component {
 
     service
       .delete(`/api/plzhelp/${id}`)
-      this.props.history.push("/userprofile")
+      
       .then((apiRes) => {
+      this.props.history.push("/userprofile")
         console.log(apiRes);
         this.setState({
           data: this.state.data.filter((postHelp) => postHelp._id !== id),
@@ -117,8 +119,13 @@ class FormPlzHelp extends Component {
 
     return (
       <>
+              <div className="nav">
+          {" "}
+          <NavMain/>
+        </div>
+        <div className="form">
         <form onSubmit={this.handleSubmit}>
-          <h2>{this.state.postingUser} Ask for some advice </h2>
+          <h2>{this.state.postingUser.userName} Ask for some advice </h2>
 
           <label htmlFor="occasionOfOutfit">
             What would be the occasion of this outfit?
@@ -158,8 +165,11 @@ class FormPlzHelp extends Component {
             />
           ) : null}
         </form>
-
-        <button onClick={this.handleDelete}> Delete </button>
+        <div className="deleteButton">
+            <button onClick={this.handleDelete}> Delete </button>
+          </div>
+          </div>
+        <Footer />
       </>
     );
   }

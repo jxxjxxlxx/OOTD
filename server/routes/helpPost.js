@@ -62,7 +62,8 @@ router.patch("/:id", requireAuth, uploader.single("image"), (req, res, next)=>{
     }
 
 	HelpPost.findByIdAndUpdate(req.params.id, req.body, {new:true})
-		.then((updatePost)=>{
+	.populate("postingUser")	
+	.then((updatePost)=>{
 			res.status(200).json(updatePost)
 		})
 		.catch((e)=>{
