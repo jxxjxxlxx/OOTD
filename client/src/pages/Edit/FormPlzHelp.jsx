@@ -11,7 +11,7 @@ const { service } = apiHandler;
 
 class FormPlzHelp extends Component {
   state = {
-    userName: "",
+    postingUser: "",
     occasionOfOutfit: "",
     iamge: "",
     previewURL: "",
@@ -88,12 +88,15 @@ class FormPlzHelp extends Component {
         console.log(apiRes);
         this.setState({
           data: this.state.data.filter((postHelp) => postHelp._id !== id),
+          
         });
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
+  
   //popup msg when update
   togglePopup() {
     this.setState({
@@ -117,8 +120,9 @@ class FormPlzHelp extends Component {
 
     return (
       <>
+    
         <form onSubmit={this.handleSubmit}>
-          <h2>{this.state.postingUser} Ask for some advice </h2>
+          <h2>{this.state.postingUser.userName} Ask for some advice </h2>
 
           <label htmlFor="occasionOfOutfit">
             What would be the occasion of this outfit?
